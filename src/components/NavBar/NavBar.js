@@ -12,7 +12,6 @@ import "./NavBar.css";
 
 const NavBar = () => {
     const history = useNavigate();
-
     const [toggled, setToggled] = useState(false);
     const [theme, setTheme] = useState({mode: 'dark'})
     
@@ -75,13 +74,18 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/Create" onClick={() => closeMenu()}>
-                                    Create
+                                <Link to='/MarketPlace' onClick={() => closeMenu()}>
+                                    Marketplace
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/Subscriptions" onClick={() => closeMenu()}>
-                                    Subscriptions
+                                <Link to="/" onClick={() => closeMenu()}>
+                                    Creators Hub
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/UserProfile" onClick={() => closeMenu()}>
+                                    User
                                 </Link>
                             </li>
                             <li>
