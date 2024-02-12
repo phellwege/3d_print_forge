@@ -41,7 +41,7 @@ nav {
 
 nav li a:hover:not(.active) {
     background-color: ${props =>
-        props.theme.mode === 'dark' ? '#807272' : '#5499C7'};
+        props.theme.mode === 'dark' ? '#E49A88' : '#5499C7'};
     color: ${props =>
         props.theme.mode === 'dark' ? 'black' : 'white'};
     border: ${props =>
@@ -55,7 +55,7 @@ nav li a:hover:not(.active) {
 }
 ul li a {
     color: ${props =>
-        props.theme.mode === 'dark' ? '#E4FDE1' : 'black'}
+        props.theme.mode === 'dark' ? 'black' : 'black'}
 }
 #nav li a {
     color: ${props =>
