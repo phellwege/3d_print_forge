@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
-// import NavBar from './NavBar/NavBar';
+import NavBar from './NavBar/NavBar';
 import "./header.css";
-import logo from '../static/logos/DwarvenForgeLogo5.PNG';
+import logo from '../static/logos/DwarvenForgeLogo3.PNG';
 
 
 function Header(props) {
@@ -12,21 +12,22 @@ function Header(props) {
 
 return (
     <>
-    {/* <NavBar /> */}
+    <NavBar />
     <div className="head_wrap">
         <div className='headerLeft'>
-            <h1>
-                3D Forge <span className='betaTag'>Beta</span>
-            </h1>
+            
         </div>
         <div className="headerMid">
             <div className='logobkg'>
                 <img src={logo} alt="Logo" id="LogoSmall2"/>
             </div>
+            <h1>
+                3D Forge <span className='betaTag'>Beta</span>
+            </h1>
             {error && <Alert variant='danger' className='alerts' dismissible>{error}</Alert>}
         </div>
         <div className='headerRight'>
-            Right
+            USER STUFF
         </div>
     </div>
     </>

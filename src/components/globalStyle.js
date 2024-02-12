@@ -11,7 +11,7 @@ body {
 }
 h1 {
     color: ${props => 
-        props.theme.mode === 'dark' ? '#E4FDE1' : '#E4FDE1' };
+        props.theme.mode === 'dark' ? 'white' : '#E4FDE1' };
 }
 h2 {
     color: ${props => 
@@ -23,12 +23,7 @@ h2 {
     color: ${props => 
         props.theme.mode === 'dark' ? '#E4FDE1' : 'white' };
 }
-.tiersSegments {
-    background-color: ${props =>
-        props.theme.mode === 'dark' ? '#456990' : '#114B5F'};
-    color: ${props => 
-        props.theme.mode === 'dark' ? 'white' : '#E4FDE1' };
-}
+
 .cardInnerDiv {
     background-color: ${props =>
         props.theme.mode === 'dark' ? '#456990' : 'aliceblue'};
@@ -37,36 +32,30 @@ h2 {
 }
 nav {
     box-shadow: ${props =>
-        props.theme.mode === 'dark' ? '0 0 15px #56f981' : '0 0 8px rgba(55,55,55,1)'};
+        props.theme.mode === 'dark' ? '0 0 15px #E0AC9D' : '0 0 8px rgba(55,55,55,1)'};
     background-color: ${props =>
-        props.theme.mode === 'dark' ? '#456990' : '#EAF2F8'};
+        props.theme.mode === 'dark' ? '#E0AC9D' : '#EAF2F8'};
     transition: ${props => 
         props.theme.mode === 'dark' ? 'all 0.3s ease-in-out': 'all 0.5s ease-in-out'};
 };
 
 nav li a:hover:not(.active) {
     background-color: ${props =>
-        props.theme.mode === 'dark' ? '#6B2737' : '#5499C7'};
+        props.theme.mode === 'dark' ? '#807272' : '#5499C7'};
     color: ${props =>
-        props.theme.mode === 'dark' ? 'white' : 'white'};
+        props.theme.mode === 'dark' ? 'black' : 'white'};
     border: ${props =>
-        props.theme.mode === 'dark' ? '1px solid #F45B69' : '1px solid black'};
+        props.theme.mode === 'dark' ? '1px solid #E6BBAE' : '1px solid black'};
 };
 .menuNav.showMenu {
     border-top: ${props =>
-        props.theme.mode === 'dark' ? '1px solid #F45B69' : '1px solid #E4FDE1'};
+        props.theme.mode === 'dark' ? '1px solid #E6BBAE' : '1px solid #E4FDE1'};
     border-right: ${props =>
-        props.theme.mode === 'dark' ? '1px solid #F45B69' : '1px solid #E4FDE1'};
+        props.theme.mode === 'dark' ? '2px solid #E6BBAE' : '1px solid #E4FDE1'};
 }
 ul li a {
     color: ${props =>
         props.theme.mode === 'dark' ? '#E4FDE1' : 'black'}
-}
-#footer_links a {
-    color: ${props =>
-        props.theme.mode === 'dark' ? '#56f981' : '#222222'};
-    text-shadow: ${props =>
-        props.theme.mode === 'dark' ? '0 0 1px #56f981' : 'none'};
 }
 #nav li a {
     color: ${props =>
@@ -80,25 +69,9 @@ ul li a {
 }
 .head_wrap {
     background-color: ${props => 
-    props.theme.mode === 'dark' ? '#114B5F' : '#456990'};
+    props.theme.mode === 'dark' ? '#414341' : '#456990'};
     border-bottom: ${props => 
-    props.theme.mode === 'dark' ? '2px solid #F45B69' : '2px solid #E4FDE1'};
-}
-.reviewDefaultResumeSections {
-    border-bottom: ${props => 
-        props.theme.mode === 'dark' ? '2px solid #F45B69' : '2px solid black'};
-}
-.backButton {
-    border: ${props => 
-        props.theme.mode === 'dark' ? '2px solid #E4FDE1' : '2px solid black'};
-    color: ${props => 
-        props.theme.mode === 'dark' ? '#E4FDE1' : 'black'};
-}
-.footWrap {
-    background-color: ${props => 
-        props.theme.mode === 'dark' ? '#114B5F' : '#456990'};
-    border-top: ${props => 
-        props.theme.mode === 'dark' ? '2px solid #F45B69' : '2px solid #E4FDE1'};
+    props.theme.mode === 'dark' ? '2px solid #E0AC9D' : '2px solid #E4FDE1'};
 }
 #headspace {
     box-shadow: ${props =>
@@ -106,14 +79,16 @@ ul li a {
 }
 .menuNav {
     background: ${props =>
-        props.theme.mode === 'dark' ? '#456990' : '#7FBEEB'};
+        props.theme.mode === 'dark' ? '#5C6D70' : '#7FBEEB'};
     color: ${props =>
-        props.theme.mode === 'dark' ? '#E4FDE1' : 'black'};
+        props.theme.mode === 'dark' ? 'black' : 'black'};
 }
+
 .pgNum {
     color: ${props =>
-        props.theme.mode === 'dark' ? '#1ABC9C' : 'royalblue'};
+        props.theme.mode === 'dark' ? '#E0AC9D' : 'royalblue'};
 }
+
 #nightMoon {
     display: ${props =>
         props.theme.mode === 'dark' ? '' : 'none'};
@@ -126,6 +101,7 @@ ul li a {
     color: ${props =>
         props.theme.mode === 'dark' ? '' : 'yellow'};
 }
+
 .lightboxWrap {
     border: ${props =>
         props.theme.mode === 'dark' ? '5px solid #114B5F' : '5px solid #456990'};
@@ -133,16 +109,6 @@ ul li a {
 .lightboxCloseButton {
     color: ${props =>
         props.theme.mode === 'dark' ? '#E4FDE1' : 'black'};
-}
-.legalLightBoxWrap {
-    background-color: ${props => 
-        props.theme.mode === 'dark' ? '#114B5F' : '#456990' };
-    border: ${props => 
-        props.theme.mode === 'dark' ? '2px solid #E4FDE1' : '2px solid black'};
-}
-.showAdsWrap {
-    background-color: ${props => 
-        props.theme.mode === 'dark' ? '#114B5F' : '#456990'};
 }
 
 :root {
