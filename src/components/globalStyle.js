@@ -19,9 +19,9 @@ h2 {
 }
 .card {
     background-color: ${props => 
-        props.theme.mode === 'dark' ? '#114B5F' : '#456990' };
+        props.theme.mode === 'dark' ? '#5C6D70' : '#456990' };
     color: ${props => 
-        props.theme.mode === 'dark' ? '#E4FDE1' : 'white' };
+        props.theme.mode === 'dark' ? 'black' : 'white' };
 }
 
 .cardInnerDiv {
@@ -30,6 +30,7 @@ h2 {
     color: ${props => 
         props.theme.mode === 'dark' ? 'white' : 'black' };
 }
+
 nav {
     box-shadow: ${props =>
         props.theme.mode === 'dark' ? '0 0 15px #E0AC9D' : '0 0 8px rgba(55,55,55,1)'};

@@ -20,3 +20,11 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.cardInnerDiv {
+    border: 1px solid lightgrey;
+    border-radius: .25em;
+    padding: 2%;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}

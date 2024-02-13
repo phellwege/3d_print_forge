@@ -14,8 +14,10 @@ export default function Home() {
         <h1>Welcome</h1>
         <Card>
           <Card.Body>
-            <h3>About</h3>
-            <p>3d printing community</p>
+            <div className='cardInnerDiv'>
+              <h3>About</h3>
+              <p>3d printing community</p>
+            </div>
           </Card.Body>
         </Card>
       </div>
