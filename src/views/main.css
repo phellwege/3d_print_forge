@@ -19,7 +19,7 @@ body {
     width: 100%;
 }
 .card {
-    /* margin: 2%; */
+    margin: 2%;
     width: 30%;
     /* height: 25vh; */
     border-radius: .25em;
