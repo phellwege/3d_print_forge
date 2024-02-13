@@ -16,13 +16,15 @@ export default function Storefront() {
         <Card.Body>
           <h3>About</h3>
           <div className='cardInnerDiv'>
-            text
+            <p>text</p>
           </div>
         </Card.Body>
       </Card>
+
       {/* add service or item to your store */}
       {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}
       {/* Owner only -> can go to creationhub where they have a todo and list of current jobs */}
+
       </div>
     </div>
     </>

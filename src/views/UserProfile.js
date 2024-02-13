@@ -40,7 +40,7 @@ export default function UserProfile() {
         </Card>
         <Card>
           <Card.Body>
-            <h3>My Store</h3>
+            <h3>My Shop</h3>
             <div className='cardInnerDiv'>
             {/* ternary if store owner or not */}
             {storeOwner()}

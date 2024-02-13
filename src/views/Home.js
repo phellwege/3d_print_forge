@@ -14,9 +14,11 @@ export default function Home() {
       <div className='secondaryPageWrapper'>
         <Card className='homeCard'>
           <Card.Body>
-            <h3>This</h3>
+            <h3>Featured</h3>
             <div className='cardInnerDiv'>
-              thing
+              things
+              <br/>
+              probably swiper
             </div>
           </Card.Body>
         </Card>
