@@ -19,7 +19,7 @@ export default function selectAvatar(props) {
     useEffect(() => {
         let handler = (event) => {
             if(!avatarRef.current.contains(event.target)){
-                if (document.getElementsByClassName('openAvatarWindow')[0].style.display == 'block') showChangeAvatarWindow();
+                if (document.getElementsByClassName('openAvatarWindow')[0].style.display == 'block') openAvatarWindow();
             }
         }
         document.addEventListener('mousedown', handler)
@@ -30,7 +30,8 @@ export default function selectAvatar(props) {
     // const {
     //     profilePic,
     //     setUserPic,
-    //     profilePicBkgClr
+    //     profilePicBkgClr,
+    //     avatarbkgClr,
     // } = useAuth();
 
   return (
@@ -64,6 +65,28 @@ export default function selectAvatar(props) {
             </div>
         ))}
       </div>
+      <Card>
+        <Card.Body>
+          <div className='cardInnerDiv'>
+            <h5>Select Background</h5>
+            <div className='selectBkgClrButtons'>
+              {profilePicBkg.key.map((color, bkgIndex) => (    
+              <Button 
+              aria-label='select Avatar'
+              key={bkgIndex}
+              style={{backgroundColor: color}} 
+              className='selectBkgClrButton'
+                  onClick={async (e) => {
+                      await avatarbkgClr(bkgIndex)
+                  }}
+              >
+                  Select
+              </Button>
+              ))}
+            </div>
+          </div>
+        </Card.Body>
+      </Card>
     </div>
   )
 }
