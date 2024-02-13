@@ -79,13 +79,13 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/" onClick={() => closeMenu()}>
-                                    Creators Hub
+                                <Link to="/UserProfile" onClick={() => closeMenu()}>
+                                    Profile
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/UserProfile" onClick={() => closeMenu()}>
-                                    User
+                                <Link to="/About" onClick={() => closeMenu()}>
+                                    About
                                 </Link>
                             </li>
                             <li>

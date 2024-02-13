@@ -69,7 +69,7 @@ ul li a {
 }
 .head_wrap {
     background-color: ${props => 
-    props.theme.mode === 'dark' ? '#414341' : '#456990'};
+    props.theme.mode === 'dark' ? '#525C5C' : '#456990'};
     border-bottom: ${props => 
     props.theme.mode === 'dark' ? '2px solid #E0AC9D' : '2px solid #E4FDE1'};
 }
