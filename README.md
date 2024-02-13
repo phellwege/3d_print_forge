@@ -17,21 +17,23 @@ this app is a community of 3d printing enthusiasts.
         - user avatar
         - bio
 
-- storefront (true/false)
+- storefront (true / false)
     - if true
-        - storefront img
-        - about my store
-        - rough geo-location
-        - Current Items for sale
-        - willing to produce prints (true/false)
-            - if true
-                - prints completed
-                - TODO for current jobs
-                - custom prints (true / false)
-                    - quote portal
-        - sales history
-        - earnings history broken down by day / month / year
-        - chat (last 30 days)
+        - Public
+            - Storefront img
+            - About my store
+            - Rough geo-location
+            - Current Items for sale
+            - sales history
+            - willing to produce prints (true/false)
+                - if true
+                    - prints completed
+                    - TODO for current jobs
+                    - custom prints (true / false)
+                        - quote portal
+        - Private
+            - earnings history broken down by day / month / year
+            - chat (last 30 days)
 
 - Transactions
     - Item snapshot
