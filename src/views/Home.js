@@ -10,12 +10,20 @@ export default function Home() {
     <>
     <Header />
     <div className='pageWrap'>
-      <div>
-        <h1>Welcome</h1>
+      <h1>Welcome</h1>
+      <div className='secondaryPageWrapper'>
         <Card>
           <Card.Body>
+            <h3>This</h3>
             <div className='cardInnerDiv'>
-              <h3>About</h3>
+              thing
+            </div>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <h3>About</h3>
+            <div className='cardInnerDiv'>
               <p>3d printing community</p>
             </div>
           </Card.Body>

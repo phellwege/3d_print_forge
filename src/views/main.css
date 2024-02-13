@@ -3,17 +3,31 @@ body {
     background-repeat: no-repeat;
 }
 .pageWrap {
-    /* padding-top: 15%; */
+    padding-top: 15%;
     padding-bottom: 5%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     margin-bottom:3%;
-    min-height: 95vh;
+    /* min-height: 95vh; */
+}
+.secondaryPageWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 .card {
-    margin: 2%;
+    /* margin: 2%; */
+    width: 30%;
+    /* height: 25vh; */
+    border-radius: .25em;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .cardBody {
     display: flex;
@@ -26,5 +40,5 @@ body {
     padding: 2%;
     text-align: center;
     height: 100%;
-    width: 100%;
+    width: 80%;
 }

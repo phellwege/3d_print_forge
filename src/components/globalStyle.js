@@ -26,9 +26,9 @@ h2 {
 
 .cardInnerDiv {
     background-color: ${props =>
-        props.theme.mode === 'dark' ? '#456990' : 'aliceblue'};
+        props.theme.mode === 'dark' ? '#A37774' : 'aliceblue'};
     color: ${props => 
-        props.theme.mode === 'dark' ? 'white' : 'black' };
+        props.theme.mode === 'dark' ? 'black' : 'black' };
 }
 
 nav {
