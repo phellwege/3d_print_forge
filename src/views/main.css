@@ -35,7 +35,7 @@ body {
     align-items: center;
 }
 .cardInnerDiv {
-    border: 1px solid lightgrey;
+    border: 1px solid #E0AC9D;
     border-radius: .25em;
     padding: 2%;
     text-align: center;

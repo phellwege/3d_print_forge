@@ -19,14 +19,14 @@ h2 {
 }
 .card {
     background-color: ${props => 
-        props.theme.mode === 'dark' ? '#5C6D70' : '#456990' };
+        props.theme.mode === 'dark' ? '#6E7071' : '#456990' };
     color: ${props => 
         props.theme.mode === 'dark' ? 'black' : 'white' };
 }
 
 .cardInnerDiv {
     background-color: ${props =>
-        props.theme.mode === 'dark' ? '#A37774' : 'aliceblue'};
+        props.theme.mode === 'dark' ? '#5c6d70' : 'aliceblue'};
     color: ${props => 
         props.theme.mode === 'dark' ? 'black' : 'black' };
 }
