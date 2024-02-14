@@ -2,9 +2,9 @@ import React from 'react'
 import Header from '../components/Header'
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
 import './main.css';
-import UploadStl from '../components/UploadStl.js';
+import UploadStl from '../components/UploadStl';
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
   return (
@@ -19,11 +19,17 @@ export default function Storefront() {
         <Card.Body>
           <h3>About</h3>
           <div className='cardInnerDiv'>
-            <p>text</p>
+            <img src={StoreImagePlaceHolder} alt='Store Logo' className='storeImgPlaceholder'/>
+            <br/>
+            <Button>Upload New Logo</Button>
+            <h5>Address</h5>
+            <Button>Edit</Button>
+            <p>Info About My shop</p>
             <Button>Edit</Button>
           </div>
         </Card.Body>
       </Card>
+
       <UploadStl />
       {/* add service or item to your store */}
       {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}

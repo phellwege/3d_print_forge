@@ -48,3 +48,6 @@ body {
 .uploadPlusSign:hover {
     cursor: pointer;
 }
+.storeImgPlaceholder {
+    max-width:50%;
+}
