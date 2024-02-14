@@ -10,13 +10,14 @@ export default function Storefront() {
     <div className='pageWrap'>
       {/* this will be renamed if the customer has a store */}
       <h1>My Store</h1>
-      {/* store image */}
+      {/* store image, with a place to upload new image */}
       <div className='secondaryPageWrapper'>
       <Card>
         <Card.Body>
           <h3>About</h3>
           <div className='cardInnerDiv'>
             <p>text</p>
+            <Button>Edit</Button>
           </div>
         </Card.Body>
       </Card>
