@@ -45,3 +45,6 @@ body {
     height: 100%;
     width: 80%;
 }
+.uploadPlusSign:hover {
+    cursor: pointer;
+}
