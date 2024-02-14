@@ -2,6 +2,9 @@ import React from 'react'
 import Header from '../components/Header'
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
+import './main.css';
+import UploadStl from '../components/UploadStl.js';
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
   return (
@@ -21,7 +24,7 @@ export default function Storefront() {
           </div>
         </Card.Body>
       </Card>
-
+      <UploadStl />
       {/* add service or item to your store */}
       {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}
       {/* Owner only -> can go to creationhub where they have a todo and list of current jobs */}
