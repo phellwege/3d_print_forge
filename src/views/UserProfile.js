@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../components/Header';
 import { Button, Card, Alert} from 'react-bootstrap';
+import Table from 'react-bootstrap/Table';
+
 import { Link } from 'react-router-dom';
 import './main.css'
 
@@ -35,6 +37,40 @@ export default function UserProfile() {
                 <br/>
                 <Button>Edit Bio</Button>
               </div>
+            </div>
+          </Card.Body>
+        </Card>
+        <Card id='purchaseHistory'>
+          <Card.Body>
+            <h3>My Purchases</h3>
+            <div className='cardInnerDiv'>
+            <Table className='striped bordered hover' id='purchaseHistoryTable'>
+              <thead>
+                <tr>
+                  <th>Order Number</th>
+                  <th>Date Purchased</th>
+                  <th>Purchase Price</th>
+                  <th>Get it printed</th>
+                  <th>Review</th>
+                  <th>Need Help</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    img
+                    <br/>
+                    Order
+                  </td>
+                  <td>Date</td>
+                  <td>$$$</td>
+                  <td>Yes / No</td>
+                  <td>Yes | Already Reviewed</td>
+                  <td>Yes / No</td>
+                </tr>
+              </tbody>
+            </Table>
+
             </div>
           </Card.Body>
         </Card>
