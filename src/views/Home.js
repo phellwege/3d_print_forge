@@ -36,7 +36,7 @@ export default function Home() {
                 <li>Charge Fair prices</li>
                 <li>Follow the shipping schedule if you're producing prints</li>
                 <li>update your TODO's</li>
-                <li>Dont be a jerk</li>
+                <li>Don't be a jerk</li>
               </ul>
             </div>
           </Card.Body>

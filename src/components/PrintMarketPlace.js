@@ -13,7 +13,7 @@
 
 import React from 'react'
 import Table from 'react-bootstrap/Table';
-import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
+import { FaRegCircleCheck, FaRegCircleXmark } from "react-icons/fa6";
 import { MdNotes, MdOutlineSpeakerNotes } from "react-icons/md";
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -41,9 +41,9 @@ export default function PrintMarketPlace() {
                         <tbody>
                             <tr>
                                 <td>
-                                    <AiOutlineCheck /> 
+                                    <FaRegCircleCheck size={25} color={'#34b233'}/> 
                                     {/* onClick Accepts */}
-                                    <AiOutlineClose />
+                                    <FaRegCircleXmark size={25} color={'red'}/>
                                     {/* onClick Declines */}
                                 </td>
                                 <td>File(s)</td>
@@ -51,11 +51,11 @@ export default function PrintMarketPlace() {
                                 <td>$$$</td>
                                 <td>Someplace, Somewhere</td>
                                 <td>
-                                    <MdNotes />
+                                    <MdNotes size={25} />
                                     {/* onclick opens a modal with notes */}
                                 </td>
                                 <td>
-                                    <MdOutlineSpeakerNotes />
+                                    <MdOutlineSpeakerNotes size={25} />
                                     {/* onclick opens chat */}
                                 </td>
                             </tr>
