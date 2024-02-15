@@ -1,15 +1,17 @@
 import React, {useState, useEffect, useContext} from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { Button, Alert } from 'react-bootstrap';
 import NavBar from './NavBar/NavBar';
 import "./header.css";
 import logo from '../static/logos/DwarvenForgeLogo3.PNG';
-import UserAvatar from '../static/UserAvatars/astro1.png'
+import UserAvatar from '../static/UserAvatars/Zebra.png'
 
 function Header(props) {
     const history = useNavigate();
     const [error, setError] = useState('');
-
+    const handleClickImg = () => {
+        history('/UserProfile')
+    }
 return (
     <>
     <NavBar />
@@ -28,9 +30,9 @@ return (
         </div>
         <div className='headerRight'>
             <div className='avatarWindow'>
-                <img src={UserAvatar} alt='userAvatar'/>
+                <img src={UserAvatar} alt='userAvatar' onClick={handleClickImg}/>
                 <br/>
-                <Link to='/'>UserName</Link>
+                <Link to='/UserProfile'>UserName</Link>
                 <Link to='/'>Login/Logout</Link>
             </div>
         </div>
