@@ -66,7 +66,7 @@
 }
 .headerRight a {
     text-decoration: none;
-    color: #F45B69;
+    color: #E0AC9D;
 }
 #LogoSmall2 {
     width:17.5%;
@@ -106,17 +106,21 @@ h1 {
     user-select: none;
 }
 .avatarWindow {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    margin-left: 43%;
+    border-radius: 5%;
+    padding: 5px;
+    width: 150px;
+    /* height: 150px; */
+    margin-left: 45%;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border: 2px solid #E0AC9D;
 }
 .avatarWindow img {
-    height: 90%;
-    width: 90%;
+    height: 60%;
+    width: 60%;
+    border-radius: 50%;
 }
 .backButton {
     position: fixed;
@@ -132,7 +136,7 @@ h1 {
     cursor: pointer;
 }
 .betaTag {
-    color: #E88873;
+    color: #E0AC9D;
     font-style: italic;
     padding: 2.5px;
 }

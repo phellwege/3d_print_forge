@@ -4,7 +4,7 @@ import { Button, Alert } from 'react-bootstrap';
 import NavBar from './NavBar/NavBar';
 import "./header.css";
 import logo from '../static/logos/DwarvenForgeLogo3.PNG';
-
+import UserAvatar from '../static/UserAvatars/astro1.png'
 
 function Header(props) {
     const history = useNavigate();
@@ -27,11 +27,12 @@ return (
             {error && <Alert variant='danger' className='alerts' dismissible>{error}</Alert>}
         </div>
         <div className='headerRight'>
-            Avatar
-            <br/>
-            UserName
-            <br/>
-            Login/Logout
+            <div className='avatarWindow'>
+                <img src={UserAvatar} alt='userAvatar'/>
+                <br/>
+                <Link to='/'>UserName</Link>
+                <Link to='/'>Login/Logout</Link>
+            </div>
         </div>
     </div>
     </>
