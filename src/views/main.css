@@ -73,3 +73,9 @@ input[type=radio]{
 .ratingComponent {
     padding: 2.5%;
 }
+#marketplaceTable {
+    width: 100%;
+}
+#marketplaceTable td {
+    padding: 5px;
+}

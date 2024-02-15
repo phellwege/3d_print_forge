@@ -26,7 +26,7 @@ export default function PrintMarketPlace() {
             <Card.Body>
                 <h3>Printing marketplace</h3>
                 <div className='cardInnerDiv'>
-                    <Table className='striped bordered hover'>
+                    <Table className='striped bordered hover' id='marketplaceTable'>
                         <thead>
                             <tr>
                                 <th>Accept / Decline</th>
@@ -41,12 +41,14 @@ export default function PrintMarketPlace() {
                         <tbody>
                             <tr>
                                 <td>
-                                    <FaRegCircleCheck size={25} color={'#34b233'}/> 
+                                    <FaRegCircleCheck size={25} color={'#34b233'} /> 
                                     {/* onClick Accepts */}
-                                    <FaRegCircleXmark size={25} color={'red'}/>
+                                    {' '}
+                                    <FaRegCircleXmark size={25} color={'#e50000'} />
                                     {/* onClick Declines */}
                                 </td>
                                 <td>File(s)</td>
+                                {/* files will be in a swiper and can be viewed in detail */}
                                 <td>Date</td>
                                 <td>$$$</td>
                                 <td>Someplace, Somewhere</td>
@@ -64,7 +66,6 @@ export default function PrintMarketPlace() {
                 </div>
             </Card.Body>
         </Card>
-        
     </>
   )
 }
