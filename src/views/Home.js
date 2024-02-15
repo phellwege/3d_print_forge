@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import LeaveAReview from '../components/LeaveAReview';
 import './main.css'
 
 export default function Home() {
@@ -41,6 +41,7 @@ export default function Home() {
             </div>
           </Card.Body>
         </Card>
+        <LeaveAReview />
       </div>
     </div>
     </>

@@ -70,3 +70,6 @@ input[type=radio]{
 .star {
     cursor: pointer;
 }
+.ratingComponent {
+    padding: 2.5%;
+}
