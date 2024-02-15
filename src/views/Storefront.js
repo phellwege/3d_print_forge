@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
 import './main.css';
 import UploadStl from '../components/UploadStl';
-
+import TodoComponent from '../components/TodoComponent';
+import PrintMarketPlace from '../components/PrintMarketPlace';
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
   return (
@@ -32,6 +33,8 @@ export default function Storefront() {
       </Card>
 
       <UploadStl />
+      <TodoComponent />
+      <PrintMarketPlace />
       {/* add service or item to your store */}
       {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}
       {/* Owner only -> can go to creationhub where they have a todo and list of current jobs */}

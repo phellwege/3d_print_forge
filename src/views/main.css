@@ -17,6 +17,7 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 .card {
     margin: 2%;
@@ -44,6 +45,9 @@ body {
     text-align: center;
     height: 100%;
     width: 80%;
+}
+.marketPlaceCard {
+    width: 85%;
 }
 .uploadPlusSign:hover {
     cursor: pointer;

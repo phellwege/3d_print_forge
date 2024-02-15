@@ -15,46 +15,57 @@ import React from 'react'
 import Table from 'react-bootstrap/Table';
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 import { MdNotes, MdOutlineSpeakerNotes } from "react-icons/md";
+import { Button, Card, Alert} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
+import '../views/main.css'
 export default function PrintMarketPlace() {
   return (
     <>
-        <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>Accept / Decline</th>
-                    <th>STL File(s)</th>
-                    <th>Date Ordered</th>
-                    <th>Price</th>
-                    <th>City / State</th>
-                    <th>Customer Notes</th>
-                    <th>Contact Customer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <AiOutlineCheck /> 
-                        {/* onClick Accepts */}
-                        |
-                        <AiOutlineClose />
-                        {/* onClick Declines */}
-                    </td>
-                    <td>File(s)</td>
-                    <td>Date</td>
-                    <td>$$$</td>
-                    <td>Someplace, Somewhere</td>
-                    <td>
-                        <MdNotes />
-                        {/* onclick opens a modal with notes */}
-                    </td>
-                    <td>
-                        <MdOutlineSpeakerNotes />
-                        {/* onclick opens chat */}
-                    </td>
-                </tr>
-            </tbody>
-        </Table>
+        <Card className='marketPlaceCard'>
+            <Card.Body>
+                <h3>Printing marketplace</h3>
+                <div className='cardInnerDiv'>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>Accept / Decline</th>
+                                <th>STL File(s)</th>
+                                <th>Date Ordered</th>
+                                <th>Price</th>
+                                <th>City / State</th>
+                                <th>Customer Notes</th>
+                                <th>Contact Customer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <AiOutlineCheck /> 
+                                    {/* onClick Accepts */}
+                                    |
+                                    <AiOutlineClose />
+                                    {/* onClick Declines */}
+                                </td>
+                                <td>File(s)</td>
+                                <td>Date</td>
+                                <td>$$$</td>
+                                <td>Someplace, Somewhere</td>
+                                <td>
+                                    <MdNotes />
+                                    {/* onclick opens a modal with notes */}
+                                </td>
+                                <td>
+                                    <MdOutlineSpeakerNotes />
+                                    {/* onclick opens chat */}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </div>
+            </Card.Body>
+        </Card>
+        
     </>
   )
 }
