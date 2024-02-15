@@ -32,7 +32,7 @@ export default function PrintMarketPlace() {
                                 <th>Accept / Decline</th>
                                 <th>STL File(s)</th>
                                 <th>Date Ordered</th>
-                                <th>Price</th>
+                                <th>Payment</th>
                                 <th>City / State</th>
                                 <th>Customer Notes</th>
                                 <th>Contact Customer</th>
@@ -53,11 +53,11 @@ export default function PrintMarketPlace() {
                                 <td>$$$</td>
                                 <td>Someplace, Somewhere</td>
                                 <td>
-                                    <MdNotes size={25} />
+                                    <MdNotes size={25} color={'#E0AC9D'} />
                                     {/* onclick opens a modal with notes */}
                                 </td>
                                 <td>
-                                    <MdOutlineSpeakerNotes size={25} />
+                                    <MdOutlineSpeakerNotes size={25} color={'#E0AC9D'} />
                                     {/* onclick opens chat */}
                                 </td>
                             </tr>
