@@ -41,7 +41,6 @@ export default function Home() {
             </div>
           </Card.Body>
         </Card>
-        <LeaveAReview />
       </div>
     </div>
     </>
