@@ -27,7 +27,11 @@ return (
             {error && <Alert variant='danger' className='alerts' dismissible>{error}</Alert>}
         </div>
         <div className='headerRight'>
-            USER STUFF
+            Avatar
+            <br/>
+            UserName
+            <br/>
+            Login/Logout
         </div>
     </div>
     </>
