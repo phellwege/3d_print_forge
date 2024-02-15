@@ -79,3 +79,11 @@ input[type=radio]{
 #marketplaceTable td {
     padding: 5px;
 }
+#reviewCard {
+    width: 45%;
+}
+#reviewCardInnerDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

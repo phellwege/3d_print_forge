@@ -9,7 +9,7 @@ export default function TodoComponent() {
         {/* for each order */}
         <Card>
           <Card.Body>
-            <h3>Printing Order Status</h3>
+            <h3>Current Print(s) Status</h3>
             <div className='cardInnerDiv'>
               <h4>Order Number</h4>
               <ul>
