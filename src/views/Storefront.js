@@ -7,6 +7,7 @@ import './main.css';
 import UploadStl from '../components/UploadStl';
 import TodoComponent from '../components/TodoComponent';
 import PrintMarketPlace from '../components/PrintMarketPlace';
+import Reviews from '../components/Reviews';
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
   return (
@@ -15,6 +16,7 @@ export default function Storefront() {
     <div className='pageWrap'>
       {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store</h1>
+      <h3>Average Stars</h3>
       {/* TODO store image, with a place to upload new image */}
       <div className='secondaryPageWrapper'>
       <Card>
@@ -31,8 +33,9 @@ export default function Storefront() {
           </div>
         </Card.Body>
       </Card>
-
+      <Reviews />
       <UploadStl />
+      
       <TodoComponent />
       <PrintMarketPlace />
       {/* add service or item to your store */}

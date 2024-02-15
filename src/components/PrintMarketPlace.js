@@ -26,7 +26,7 @@ export default function PrintMarketPlace() {
             <Card.Body>
                 <h3>Printing marketplace</h3>
                 <div className='cardInnerDiv'>
-                    <Table striped bordered hover>
+                    <Table className='striped bordered hover'>
                         <thead>
                             <tr>
                                 <th>Accept / Decline</th>
@@ -43,7 +43,6 @@ export default function PrintMarketPlace() {
                                 <td>
                                     <AiOutlineCheck /> 
                                     {/* onClick Accepts */}
-                                    |
                                     <AiOutlineClose />
                                     {/* onClick Declines */}
                                 </td>

@@ -46,6 +46,15 @@ body {
     height: 100%;
     width: 80%;
 }
+.cardInnerDiv ul {
+    list-style: none;
+    align-items: left;
+    text-align: left;
+}
+.cardInnerDiv ul li {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
 .marketPlaceCard {
     width: 85%;
 }
@@ -54,4 +63,10 @@ body {
 }
 .storeImgPlaceholder {
     max-width:50%;
+}
+input[type=radio]{
+    display: none;
+}
+.star {
+    cursor: pointer;
 }

@@ -9,8 +9,9 @@ export default function TodoComponent() {
         {/* for each order */}
         <Card>
           <Card.Body>
-            <h4>Item Ordered</h4>
+            <h3>Printing Order Status</h3>
             <div className='cardInnerDiv'>
+              <h4>Order Number</h4>
               <ul>
                 {/* once completed click checkbox and it will line through li item */}
                 <li><MdDoneOutline /> Order Recieved - Date Ordered</li>
