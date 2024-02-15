@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
 import './main.css';
 import UploadStl from '../components/UploadStl';
+
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
   return (
