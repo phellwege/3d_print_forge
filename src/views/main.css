@@ -132,6 +132,19 @@ input[type=radio]{
     margin-right: 7.5px;
 }
 .expandButton:hover {
-    color: #E88873;
+    color: #E88873 !important;
     cursor: pointer;
+}
+.todoQuestionMark {
+    color:#E0AC9D ;
+}
+.todoQuestionMark:hover {
+    cursor: pointer;
+    color: #E88873;
+}
+.todoExpandedTable {
+    width:100%;
+}
+.todoCard {
+    width: 40%;
 }

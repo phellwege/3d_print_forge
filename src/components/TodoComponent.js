@@ -12,8 +12,7 @@ export default function TodoComponent() {
   }
   return (
     <>
-        {/* for each order */}
-        <Card>
+        <Card className='todoCard'>
           <Card.Body>
             <h3>Current Print(s) Status</h3>
             <div className='cardInnerDiv'>
@@ -25,6 +24,7 @@ export default function TodoComponent() {
                   </tr>
                 </thead>
                 <tbody>
+                  {/* for each order */}
                   <tr>
                     <td>
                     {expanded ? (
@@ -47,7 +47,7 @@ export default function TodoComponent() {
                   </tr>
                 </tbody>
               </Table>
-              <Table striped bordered hover variant='dark'  style={{ display: expanded ? '' : 'none' }}>
+              <Table striped bordered hover variant='dark'  style={{ display: expanded ? '' : 'none' }} className='todoExpandedTable'>
                 <thead>
                   <tr>
                     <th>Status</th>
@@ -61,37 +61,37 @@ export default function TodoComponent() {
                     <td><MdDoneOutline size={20}/></td>
                     <td>Order Recieved</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20}/></td>
+                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
                     <td><MdDoneOutline size={20} /></td>
                     <td>Order Confirmed</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20}/></td>
+                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
                     <td><MdDoneOutline size={20} /></td>
                     <td>Print Completed</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20}/></td>
+                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
                     <td><MdDoneOutline size={20} /></td>
                     <td>Order Shipped</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20}/></td>
+                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
                     <td><MdDoneOutline size={20} /></td>
                     <td>Payment Completed</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20}/></td>
+                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
                     <td><MdDoneOutline size={20} /></td>
                     <td>Print Reviewed - optional</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20}/></td>
+                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                 </tbody>
               </Table>
