@@ -60,7 +60,6 @@ export default function uploadStl() {
                         <Form.Control
                         as={CurrencyInputField}
                         placeholder='Price'
-                        maxLength='50'
                         className="mobile-textarea"
                         />
                         <br/>

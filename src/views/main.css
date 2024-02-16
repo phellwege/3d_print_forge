@@ -131,3 +131,7 @@ input[type=radio]{
 #searchFilter :first-child{
     margin-right: 7.5px;
 }
+.expandButton:hover {
+    color: #E88873;
+    cursor: pointer;
+}
