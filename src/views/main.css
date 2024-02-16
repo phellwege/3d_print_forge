@@ -2,6 +2,17 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+button.btn.btn-primary {
+    background-color: #A37774;
+    color: black;
+    border-color: #E0AC9D;
+}
+button.btn.btn-primary:hover {
+    background-color: #E88873;
+}
+a:hover {
+    color: #E88873;
+}
 .pageWrap {
     padding-top: 18%;
     padding-bottom: 5%;
@@ -103,6 +114,9 @@ input[type=radio]{
     text-decoration: none;
     font-size: large;
     color: #E0AC9D;
+}
+.reviewImgWindow a:hover {
+    color: #E88873;
 }
 .searchBar {
     display: flex;
