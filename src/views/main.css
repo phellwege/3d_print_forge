@@ -3,7 +3,7 @@ body {
     background-repeat: no-repeat;
 }
 .pageWrap {
-    padding-top: 15%;
+    padding-top: 18%;
     padding-bottom: 5%;
     display: flex;
     justify-content: space-around;
@@ -92,4 +92,27 @@ input[type=radio]{
 }
 #purchaseHistoryTable {
     width: 100%;
+}
+.reviewImgWindow {
+    width: 150px;
+    border: 2px solid #E0AC9D;
+    border-radius: 5%;
+    padding: 5px;
+}
+.reviewImgWindow a {
+    text-decoration: none;
+    font-size: large;
+    color: #E0AC9D;
+}
+.searchBar {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+.searchBar :first-child {
+    display: flex; 
+    align-items: center;
+}
+#searchFilter :first-child{
+    margin-right: 7.5px;
 }

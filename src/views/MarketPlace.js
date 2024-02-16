@@ -9,10 +9,16 @@ export default function MarketPlace() {
     <>
     <Header />
     <div className='pageWrap'>
-      <div>
-        <Button>Search</Button>
-        <p>searchbar | </p>
-        <DropDown /> 
+      <div className='searchBar'>
+        <div id='searchFilter'>
+          <Button>Search</Button>
+          <DropDown /> 
+        </div>
+        <textarea
+        rows={1}
+        cols={80}
+        placeholder='Search'
+        ></textarea>
       </div>
       <div className='secondaryPageWrapper'>
         <p>returns top 50 results on each page</p>

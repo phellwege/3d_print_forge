@@ -12,10 +12,10 @@ export default function Reviews() {
             <h5>Total average stars</h5>
           </div>
             <div className='cardInnerDiv' id='reviewCardInnerDiv'>
-              <div>
+              <div className='reviewImgWindow'>
                 Item purchased
                 <br/>
-                view
+                <Link to='/'>Details</Link>
               </div>
                 <ul>
                     <li>User Who Purchased</li>
