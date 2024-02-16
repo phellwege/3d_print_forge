@@ -74,6 +74,7 @@ a:hover {
 }
 .storeImgPlaceholder {
     max-width:50%;
+    padding-bottom: 3%;
 }
 input[type=radio]{
     display: none;

@@ -23,6 +23,7 @@ export default function Reviews() {
                     <li>Things to say</li>
                 </ul>
             </div>
+            <br/>
             <sub> # / total</sub>
         </Card.Body>
     </Card>
