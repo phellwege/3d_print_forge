@@ -44,7 +44,7 @@ export default function UserProfile() {
           <Card.Body>
             <h3>My Purchases</h3>
             <div className='cardInnerDiv'>
-            <Table className='striped bordered hover' id='purchaseHistoryTable'>
+            <Table striped bordered hover variant='dark' id='purchaseHistoryTable'>
               <thead>
                 <tr>
                   <th>Order Number</th>

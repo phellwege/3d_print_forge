@@ -26,7 +26,7 @@ export default function PrintMarketPlace() {
             <Card.Body>
                 <h3>Printing marketplace</h3>
                 <div className='cardInnerDiv'>
-                    <Table className='striped bordered hover' id='marketplaceTable'>
+                    <Table striped bordered hover variant='dark' id='marketplaceTable'>
                         <thead>
                             <tr>
                                 <th>Accept / Decline</th>
