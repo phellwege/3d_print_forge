@@ -100,7 +100,7 @@ input[type=radio]{
     align-items: center;
 }
 #purchaseHistory{
-    width: 55%;
+    width: 80%;
 }
 #purchaseHistoryTable {
     width: 100%;

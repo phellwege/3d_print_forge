@@ -39,6 +39,15 @@ export default function UserProfile() {
             </div>
           </Card.Body>
         </Card>
+        <Card>
+          <Card.Body>
+            <h3>My Shop</h3>
+            <div className='cardInnerDiv'>
+            {/* ternary if store owner or not */}
+            {storeOwner()}
+            </div>
+          </Card.Body>
+        </Card>
         <Card id='purchaseHistory'>
           <Card.Body>
             <h3>My Purchases</h3>
@@ -51,6 +60,7 @@ export default function UserProfile() {
                   <th>Purchase Price</th>
                   <th>Get it printed</th>
                   <th>Review</th>
+                  <th>Download File</th>
                   <th>Need Help</th>
                 </tr>
               </thead>
@@ -65,20 +75,11 @@ export default function UserProfile() {
                   <td>$$$</td>
                   <td>Yes / No</td>
                   <td>Yes | Already Reviewed</td>
+                  <td>Download</td>
                   <td>Yes / No</td>
                 </tr>
               </tbody>
             </Table>
-
-            </div>
-          </Card.Body>
-        </Card>
-        <Card>
-          <Card.Body>
-            <h3>My Shop</h3>
-            <div className='cardInnerDiv'>
-            {/* ternary if store owner or not */}
-            {storeOwner()}
             </div>
           </Card.Body>
         </Card>
