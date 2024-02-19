@@ -15,7 +15,7 @@ export default function uploadStl() {
             id="input-example"
             name="input-name"
             placeholder="$0.00"
-            allowNegativeValue="false"
+            allowNegativeValue={false}
             // defaultValue={0.00}
             decimalsLimit={2}
             decimalScale={2}
