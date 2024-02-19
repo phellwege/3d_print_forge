@@ -9,6 +9,10 @@ import { Link } from 'react-router-dom';
 import '../views/main.css'
 export default function TodoComponent() {
   const [expanded, setExpanded] = useState(false);
+  
+  function handleExpansion(){
+    setExpanded(!expanded)
+  }
 
   // state management for check boxes so they can be individually checked 
   // TODO move to context file
@@ -19,10 +23,8 @@ export default function TodoComponent() {
   const [paidChecked, setPaidChecked] = useState(false);
   const [reviewedChecked, setReviewedChecked] = useState(false);
   
-  function handleExpansion(){
-    setExpanded(!expanded)
-  }
-
+// functions for managing change of icons
+// TODO move to context
   function handleOrderChecked() {
     setOrderChecked(!orderChecked)
   }
