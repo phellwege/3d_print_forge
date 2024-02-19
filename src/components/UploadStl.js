@@ -16,10 +16,10 @@ export default function uploadStl() {
             name="input-name"
             placeholder="$0.00"
             allowNegativeValue={false}
-            // defaultValue={0.00}
             decimalsLimit={2}
             decimalScale={2}
-            // fixedDecimalLength={2}
+            disableAbbreviations={true}
+            step={1}
             prefix='$'
             groupSeparator=','
             onValueChange={(value, name, values) => console.log(value, name, values)}
