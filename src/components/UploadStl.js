@@ -8,6 +8,7 @@ import CurrencyInput from 'react-currency-input-field';
 import '../views/main.css'
 
 export default function uploadStl() {
+
     function CurrencyInputField() {
       return(
         <>
@@ -27,6 +28,7 @@ export default function uploadStl() {
         </>
       )
     }
+    
   return (
     <>
         <Card>

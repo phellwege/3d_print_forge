@@ -6,6 +6,8 @@ import { BsQuestionCircle } from "react-icons/bs";
 import { Button, Card, Alert, Table, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+import { useStore } from '../context/StoreContext';
+
 import '../views/main.css'
 
 export default function TodoComponent() {
@@ -17,79 +19,31 @@ export default function TodoComponent() {
   const ReviewedTooltip = "Once an item has been reviewed this will be automatically crossed off. The status will also be marked as completed";
 
   const [expanded, setExpanded] = useState(false);
+  const {
+    orderChecked, setOrderChecked,
+    confirmChecked, setConfirmChecked,
+    printedChecked, setPrintedChecked,
+    shippedChecked, setShippedChecked,
+    paidChecked, setPaidChecked,
+    reviewedChecked, setReviewedChecked,
 
+    orderDate, setOrderDate,
+    confirmDate, setConfirmDate,
+    printedDate, setPrintedDate,
+    shippedDate, setShippedDate,
+    paidDate, setPaidDate,
+    reviewedDate, setReviewedDate,
+
+    handleOrderChecked,
+    handleConfirmChecked,
+    handlePrintedChecked,
+    handleShippedChecked,
+    handlePaidChecked,
+    handleReviewedChecked,
+  } = useStore();
   function handleExpansion(){
     setExpanded(!expanded)
   }
-
-  // state management for check boxes so they can be individually checked 
-  // TODO move to context file
-  const [orderChecked, setOrderChecked] = useState(false);
-  const [confirmChecked, setConfirmChecked] = useState(false);
-  const [printedChecked, setPrintedChecked] = useState(false);
-  const [shippedChecked, setShippedChecked] = useState(false);
-  const [paidChecked, setPaidChecked] = useState(false);
-  const [reviewedChecked, setReviewedChecked] = useState(false);
-
-  // manage dates for checkboxes
-  const [orderDate, setOrderDate] = useState(null);
-  const [confirmDate, setConfirmDate] = useState(null);
-  const [printedDate, setPrintedDate] = useState(null);
-  const [shippedDate, setShippedDate] = useState(null);
-  const [paidDate, setPaidDate] = useState(null);
-  const [reviewedDate, setReviewedDate] = useState(null);
-  
-// functions for managing change of icons
-// TODO move to context
-  function handleOrderChecked() {
-    setOrderChecked(!orderChecked)
-    if (!orderChecked) {
-      setOrderDate(new Date().toLocaleDateString());
-    } else {
-      setOrderDate(null);
-    }
-  }
-  function handleConfirmChecked() {
-    setConfirmChecked(!confirmChecked)
-    if (!confirmChecked) {
-      setConfirmDate(new Date().toLocaleDateString());
-    } else {
-      setConfirmDate(null);
-    }
-  }
-  function handlePrintedChecked() {
-    setPrintedChecked(!printedChecked)
-    if (!printedChecked) {
-      setPrintedDate(new Date().toLocaleDateString());
-    } else {
-      setPrintedDate(null);
-    }
-  }
-  function handleShippedChecked() {
-    setShippedChecked(!shippedChecked)
-    if (!shippedChecked) {
-      setShippedDate(new Date().toLocaleDateString());
-    } else {
-      setShippedDate(null);
-    }
-  }
-  function handlePaidChecked() {
-    setPaidChecked(!paidChecked)
-    if (!paidChecked) {
-      setPaidDate(new Date().toLocaleDateString());
-    } else {
-      setPaidDate(null);
-    }
-  }
-  function handleReviewedChecked() {
-    setReviewedChecked(!reviewedChecked)
-    if (!reviewedChecked) {
-      setReviewedDate(new Date().toLocaleDateString());
-    } else {
-      setReviewedDate(null);
-    }
-  }
-
 
   return (
     <>
