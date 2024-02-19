@@ -33,7 +33,7 @@ export default function uploadStl() {
                 <div className='cardInnerDiv'>
                   <Form>
                     <Form.Group>
-                    <BsPlusSquareDotted size={250} color={'#E0AC9D'} className='uploadPlusSign' />
+                    <BsPlusSquareDotted size={200} color={'#E0AC9D'} className='uploadPlusSign' />
                         <Form.Label className="d-flex justify-content-between align-items-center" >
                         <div className="text-center">
                                 File Name<span className="required-indicator">*</span>{" "}

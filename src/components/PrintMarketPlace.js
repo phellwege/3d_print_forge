@@ -53,11 +53,11 @@ export default function PrintMarketPlace() {
                                 <td>$$$</td>
                                 <td>Someplace, Somewhere</td>
                                 <td>
-                                    <MdNotes size={25} color={'#E0AC9D'} />
+                                    <MdNotes size={25} className='marketPlaceIcons' />
                                     {/* onclick opens a modal with notes */}
                                 </td>
                                 <td>
-                                    <MdOutlineSpeakerNotes size={25} color={'#E0AC9D'} />
+                                    <MdOutlineSpeakerNotes size={25} className='marketPlaceIcons' />
                                     {/* onclick opens chat */}
                                 </td>
                             </tr>

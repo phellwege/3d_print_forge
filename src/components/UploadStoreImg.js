@@ -12,7 +12,7 @@ export default function UploadStoreImg() {
             <Card.Body>
                 <h3>Upload Company Logo</h3>
                 <div className='cardInnerDiv'>
-                    <BsPlusSquareDotted size={250} color={'#E0AC9D'} className='uploadPlusSign'/>
+                    <BsPlusSquareDotted size={200} className='uploadPlusSign'/>
                     <h3>Upload File</h3>
                 </div>
                 <br/>
