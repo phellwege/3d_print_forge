@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { BsPlusSquareDotted } from "react-icons/bs";
 
 import '../views/main.css'
+
 export default function UploadStoreImg() {
     
   return (

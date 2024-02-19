@@ -147,6 +147,16 @@ h1 {
     font-style: italic;
     padding: 2.5px;
 }
+.AlertMessageIconDiv {
+    display: block; 
+    position: absolute; 
+    margin: 0 0 1% 5%; 
+    z-index: 999; 
+}
+.AlertMessageIconDiv:hover {
+    cursor: pointer;
+    color: #E88873;
+}
 @media only screen and (max-width: 850px) {
     .head_wrap {
         display: none;

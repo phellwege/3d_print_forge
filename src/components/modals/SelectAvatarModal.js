@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {Button, Card} from 'react-bootstrap';
-import {useAuth} from '../../context/authContext'
+// import {useAuth} from '../../context/authContext'
 import { MdClose } from "react-icons/md";
 
 import './modals.css';
