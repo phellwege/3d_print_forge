@@ -148,3 +148,11 @@ input[type=radio]{
 .todoCard {
     width: 40%;
 }
+.checkBox {
+    size: 25;
+    color: #E0AC9D;
+}
+.checkBox:hover {
+    color: #E88873;
+    cursor: pointer;
+}

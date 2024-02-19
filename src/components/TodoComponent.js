@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
 import { MdDoneOutline, MdOutlineExpandCircleDown, MdExpandLess } from "react-icons/md";
+import { FaRegSquare, FaRegCheckSquare } from "react-icons/fa";
+
 import { BsQuestionCircle } from "react-icons/bs";
 import { Button, Card, Alert, Table} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import '../views/main.css'
 export default function TodoComponent() {
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
+  const [checked, setChecked] = useState(null);
   function handleExpansion(){
     setExpanded(!expanded)
   }
@@ -58,37 +61,37 @@ export default function TodoComponent() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td><MdDoneOutline size={20}/></td>
+                    <td><FaRegSquare className='checkBox' /></td>
                     <td>Order Recieved</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><MdDoneOutline size={20} /></td>
+                    <td><FaRegSquare className='checkBox' /></td>
                     <td>Order Confirmed</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><MdDoneOutline size={20} /></td>
+                    <td><FaRegSquare className='checkBox' /></td>
                     <td>Print Completed</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><MdDoneOutline size={20} /></td>
+                    <td><FaRegSquare className='checkBox' /></td>
                     <td>Order Shipped</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><MdDoneOutline size={20} /></td>
+                    <td><FaRegSquare className='checkBox' /></td>
                     <td>Payment Completed</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><MdDoneOutline size={20} /></td>
+                    <td><FaRegSquare className='checkBox' /></td>
                     <td>Print Reviewed - optional</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
