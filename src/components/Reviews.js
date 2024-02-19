@@ -14,6 +14,7 @@ export default function Reviews() {
             <div className='cardInnerDiv' id='reviewCardInnerDiv'>
               <div className='reviewImgWindow'>
                 Item purchased
+                {/* images here swiper probably */}
                 <br/>
                 <Link to='/'>Details</Link>
               </div>

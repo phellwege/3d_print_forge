@@ -4,7 +4,7 @@
 // ADDRESS, 
 // - Address will be used for shipping calculations as well as cost
 // ABOUT MY SHOP,
-// SHOPLOGO,
+// SHOPLOGO, -- use NSFWJS to see if they're dirty (if they are throw error and do not allow upload)
 // STL FILES FOR SALE,
 // SERVICES OFFERED, 
 // SCHEDULE, 

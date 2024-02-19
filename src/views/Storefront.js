@@ -18,7 +18,7 @@ export default function Storefront() {
       {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store</h1>
       <h3>Average Stars</h3>
-      {/* TODO store image, with a place to upload new image */}
+      {/* TODO store image, with a place to upload new image, use nsfwjs to keep bad images from being used */}
       <div className='secondaryPageWrapper'>
       <Card>
         <Card.Body>

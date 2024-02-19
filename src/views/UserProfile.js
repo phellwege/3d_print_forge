@@ -2,7 +2,6 @@ import React from 'react'
 import Header from '../components/Header';
 import { Button, Card, Alert} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
-
 import { Link } from 'react-router-dom';
 import './main.css'
 
