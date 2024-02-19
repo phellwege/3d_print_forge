@@ -30,7 +30,7 @@ return (
         </div>
         <div className='headerRight'>
             <div className='avatarWindow'>
-                <img src={UserAvatar} alt='userAvatar' onClick={handleClickImg}/>
+                <img src={UserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
                 <br/>
                 <Link to='/UserProfile'>UserName</Link>
                 <Link to='/'>Login/Logout</Link>
