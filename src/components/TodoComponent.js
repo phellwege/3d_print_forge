@@ -10,11 +10,11 @@ import '../views/main.css'
 
 export default function TodoComponent() {
   const OrderRecievedTooltip = "Checked automatically when an order is received";
-  const ConfirmedTooltip = "must be confirmed within 2 business days";
-  const PrintedTooltip = "must be printed within 5 bus days";
-  const ShippedTooltip = "must be shipped within 5 bus days";
+  const ConfirmedTooltip = "must be confirmed within 2 business days, this is considered a formal commitment";
+  const PrintedTooltip = "must be printed within 5 business days";
+  const ShippedTooltip = "must be shipped within 5 business days";
   const PaidTooltip = "payment is processed once shipping confirmed";
-  const ReviewedTooltip = "Once an item has been reviewed this will be automatically crossed off";
+  const ReviewedTooltip = "Once an item has been reviewed this will be automatically crossed off. The status will also be marked as completed";
 
   const [expanded, setExpanded] = useState(false);
 
@@ -30,27 +30,66 @@ export default function TodoComponent() {
   const [shippedChecked, setShippedChecked] = useState(false);
   const [paidChecked, setPaidChecked] = useState(false);
   const [reviewedChecked, setReviewedChecked] = useState(false);
+
+  // manage dates for checkboxes
+  const [orderDate, setOrderDate] = useState(null);
+  const [confirmDate, setConfirmDate] = useState(null);
+  const [printedDate, setPrintedDate] = useState(null);
+  const [shippedDate, setShippedDate] = useState(null);
+  const [paidDate, setPaidDate] = useState(null);
+  const [reviewedDate, setReviewedDate] = useState(null);
   
 // functions for managing change of icons
 // TODO move to context
   function handleOrderChecked() {
     setOrderChecked(!orderChecked)
+    if (!orderChecked) {
+      setOrderDate(new Date().toLocaleDateString());
+    } else {
+      setOrderDate(null);
+    }
   }
   function handleConfirmChecked() {
     setConfirmChecked(!confirmChecked)
+    if (!confirmChecked) {
+      setConfirmDate(new Date().toLocaleDateString());
+    } else {
+      setConfirmDate(null);
+    }
   }
   function handlePrintedChecked() {
     setPrintedChecked(!printedChecked)
+    if (!printedChecked) {
+      setPrintedDate(new Date().toLocaleDateString());
+    } else {
+      setPrintedDate(null);
+    }
   }
   function handleShippedChecked() {
     setShippedChecked(!shippedChecked)
+    if (!shippedChecked) {
+      setShippedDate(new Date().toLocaleDateString());
+    } else {
+      setShippedDate(null);
+    }
   }
   function handlePaidChecked() {
     setPaidChecked(!paidChecked)
+    if (!paidChecked) {
+      setPaidDate(new Date().toLocaleDateString());
+    } else {
+      setPaidDate(null);
+    }
   }
   function handleReviewedChecked() {
     setReviewedChecked(!reviewedChecked)
+    if (!reviewedChecked) {
+      setReviewedDate(new Date().toLocaleDateString());
+    } else {
+      setReviewedDate(null);
+    }
   }
+
 
   return (
     <>
@@ -108,7 +147,9 @@ export default function TodoComponent() {
                       )}
                     </td>
                     <td style={{ textDecoration: orderChecked ? 'line-through' : 'none' }}>Order Recieved</td>
-                    <td>Date</td>
+                    <td>
+                      {orderDate ? orderDate : "Date"}
+                    </td>
                     <td>
                       <OverlayTrigger
                         overlay={
@@ -131,7 +172,7 @@ export default function TodoComponent() {
                       )}
                     </td>
                     <td style={{ textDecoration: confirmChecked ? 'line-through' : 'none' }}>Order Confirmed</td>
-                    <td>Date</td>
+                    <td>{confirmDate ? confirmDate : "Date"}</td>
                     <td>
                     <OverlayTrigger
                         overlay={
@@ -154,7 +195,9 @@ export default function TodoComponent() {
                       )}
                     </td>
                     <td style={{ textDecoration: printedChecked ? 'line-through' : 'none' }}>Print Completed</td>
-                    <td>Date</td>
+                    <td>
+                      {printedDate ? printedDate : "Date"}
+                    </td>
                     <td>
                     <OverlayTrigger
                         overlay={
@@ -177,7 +220,7 @@ export default function TodoComponent() {
                       )}
                     </td>
                     <td style={{ textDecoration: shippedChecked ? 'line-through' : 'none' }}>Order Shipped</td>
-                    <td>Date</td>
+                    <td>{shippedDate ? shippedDate : "Date"}</td>
                     <td>
                     <OverlayTrigger
                         overlay={
@@ -200,7 +243,9 @@ export default function TodoComponent() {
                       )}
                     </td>
                     <td style={{ textDecoration: paidChecked ? 'line-through' : 'none' }}>Payment Completed</td>
-                    <td>Date</td>
+                    <td>
+                      {paidDate ? paidDate : "Date"}
+                    </td>
                     <td>
                     <OverlayTrigger
                         overlay={
@@ -223,7 +268,9 @@ export default function TodoComponent() {
                       )}
                     </td>
                     <td style={{ textDecoration: reviewedChecked ? 'line-through' : 'none' }}>Print Reviewed - optional</td>
-                    <td>Date</td>
+                    <td>
+                      {reviewedDate ? reviewedDate : "Date"}
+                    </td>
                     <td>
                     <OverlayTrigger
                         overlay={
@@ -239,21 +286,6 @@ export default function TodoComponent() {
                   </tr>
                 </tbody>
               </Table>
-              {/* <ul style={{ display: expanded ? 'block' : 'none' }}>
-                once completed click checkbox and it will line through li item 
-                <li><MdDoneOutline size={20}/> Order Recieved - Date Ordered</li>
-                this is automatic 
-                <li><MdDoneOutline size={20} /> Order Confirmed - Confirmed? (must be confirmed within 2 bus days) Date</li>
-                this is manual or automatic depending on how the user checks the order, if it isn't checked within the time frame then the order is cancelled 
-                <li><MdDoneOutline size={20} /> Print Completed - must be printed within 5 bus days - Date</li>
-                 this is manual 
-                <li><MdDoneOutline size={20} /> Print Shipped - must be shipped within 5 bus days - Date</li>
-                 this is automatic once shipping information entered 
-                <li><MdDoneOutline size={20} /> Payment Completed - paid once shipping confirmed - Date</li> 
-                 this is automatic 
-                <li><MdDoneOutline size={20} /> Print Reviewed - optional - Date</li>
-  this is automatic once review is left 
-              </ul> */}
             </div>
           </Card.Body>
         </Card>
