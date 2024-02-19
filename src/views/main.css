@@ -157,5 +157,5 @@ input[type=radio]{
     cursor: pointer;
 }
 .checkedBox {
-    
+    color: green;
 }
