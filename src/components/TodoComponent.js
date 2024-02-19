@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { MdDoneOutline, MdOutlineExpandCircleDown, MdExpandLess } from "react-icons/md";
+import { MdOutlineExpandCircleDown, MdExpandLess } from "react-icons/md";
 import { FaRegSquare, FaRegCheckSquare } from "react-icons/fa";
 
 import { BsQuestionCircle } from "react-icons/bs";
@@ -9,10 +9,39 @@ import { Link } from 'react-router-dom';
 import '../views/main.css'
 export default function TodoComponent() {
   const [expanded, setExpanded] = useState(false);
-  const [checked, setChecked] = useState(null);
+
+  // state management for check boxes so they can be individually checked 
+  // TODO move to context file
+  const [orderChecked, setOrderChecked] = useState(false);
+  const [confirmChecked, setConfirmChecked] = useState(false);
+  const [printedChecked, setPrintedChecked] = useState(false);
+  const [shippedChecked, setShippedChecked] = useState(false);
+  const [paidChecked, setPaidChecked] = useState(false);
+  const [reviewedChecked, setReviewedChecked] = useState(false);
+  
   function handleExpansion(){
     setExpanded(!expanded)
   }
+
+  function handleOrderChecked() {
+    setOrderChecked(!orderChecked)
+  }
+  function handleConfirmChecked() {
+    setConfirmChecked(!confirmChecked)
+  }
+  function handlePrintedChecked() {
+    setPrintedChecked(!printedChecked)
+  }
+  function handleShippedChecked() {
+    setShippedChecked(!shippedChecked)
+  }
+  function handlePaidChecked() {
+    setPaidChecked(!paidChecked)
+  }
+  function handleReviewedChecked() {
+    setReviewedChecked(!reviewedChecked)
+  }
+
   return (
     <>
         <Card className='todoCard'>
@@ -61,37 +90,73 @@ export default function TodoComponent() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td><FaRegSquare className='checkBox' /></td>
+                    <td>
+                      {orderChecked ? (
+                        <FaRegCheckSquare className='checkedBox'/>
+                        ) : (
+                        <FaRegSquare className='checkBox' onClick={() => handleOrderChecked()}/>
+                      )}
+                    </td>
                     <td>Order Recieved</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><FaRegSquare className='checkBox' /></td>
+                    <td>
+                      {confirmChecked ? (
+                        <FaRegCheckSquare className='checkedBox'/>
+                        ) : (
+                        <FaRegSquare className='checkBox' onClick={() => handleConfirmChecked()}/>
+                      )}
+                    </td>
                     <td>Order Confirmed</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><FaRegSquare className='checkBox' /></td>
+                    <td>
+                      {printedChecked ? (
+                        <FaRegCheckSquare className='checkedBox'/>
+                        ) : (
+                        <FaRegSquare className='checkBox' onClick={() => handlePrintedChecked()}/>
+                      )}
+                    </td>
                     <td>Print Completed</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><FaRegSquare className='checkBox' /></td>
+                    <td>
+                      {shippedChecked ? (
+                        <FaRegCheckSquare className='checkedBox'/>
+                        ) : (
+                        <FaRegSquare className='checkBox' onClick={() => handleShippedChecked()}/>
+                      )}
+                    </td>
                     <td>Order Shipped</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><FaRegSquare className='checkBox' /></td>
+                    <td>
+                      {paidChecked ? (
+                        <FaRegCheckSquare className='checkedBox'/>
+                        ) : (
+                        <FaRegSquare className='checkBox' onClick={() => handlePaidChecked()}/>
+                      )}
+                    </td>
                     <td>Payment Completed</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
                   </tr>
                   <tr>
-                    <td><FaRegSquare className='checkBox' /></td>
+                    <td>
+                      {reviewedChecked ? (
+                        <FaRegCheckSquare className='checkedBox'/>
+                        ) : (
+                        <FaRegSquare className='checkBox' onClick={() => handleReviewedChecked()}/>
+                      )}
+                    </td>
                     <td>Print Reviewed - optional</td>
                     <td>Date</td>
                     <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
