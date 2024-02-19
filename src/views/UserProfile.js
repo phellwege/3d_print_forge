@@ -3,6 +3,8 @@ import Header from '../components/Header';
 import { Button, Card, Alert} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
+import { MdOutlineFileDownload } from "react-icons/md";
+
 import './main.css'
 
 // this is where the user can view and edit their profile. see their jobs etc
@@ -59,8 +61,8 @@ export default function UserProfile() {
                   <th>Date Purchased</th>
                   <th>Purchase Price</th>
                   <th>Get it printed</th>
-                  <th>Review</th>
-                  <th>Download File</th>
+                  <th>Leave a Review</th>
+                  <th>Download Files</th>
                   <th>Need Help</th>
                 </tr>
               </thead>
@@ -75,7 +77,7 @@ export default function UserProfile() {
                   <td>$$$</td>
                   <td>Yes / No</td>
                   <td>Yes | Already Reviewed</td>
-                  <td>Download</td>
+                  <td><MdOutlineFileDownload size={25}/></td>
                   <td>Yes / No</td>
                 </tr>
               </tbody>
