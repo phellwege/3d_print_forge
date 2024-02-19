@@ -3,13 +3,21 @@ import { MdOutlineExpandCircleDown, MdExpandLess } from "react-icons/md";
 import { FaRegSquare, FaRegCheckSquare } from "react-icons/fa";
 
 import { BsQuestionCircle } from "react-icons/bs";
-import { Button, Card, Alert, Table} from 'react-bootstrap';
+import { Button, Card, Alert, Table, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import '../views/main.css'
+
 export default function TodoComponent() {
+  const OrderRecievedTooltip = "Checked automatically when an order is received";
+  const ConfirmedTooltip = "must be confirmed within 2 business days";
+  const PrintedTooltip = "must be printed within 5 bus days";
+  const ShippedTooltip = "must be shipped within 5 bus days";
+  const PaidTooltip = "payment is processed once shipping confirmed";
+  const ReviewedTooltip = "Once an item has been reviewed this will be automatically crossed off";
+
   const [expanded, setExpanded] = useState(false);
-  
+
   function handleExpansion(){
     setExpanded(!expanded)
   }
@@ -99,9 +107,20 @@ export default function TodoComponent() {
                         <FaRegSquare className='checkBox' onClick={() => handleOrderChecked()}/>
                       )}
                     </td>
-                    <td>Order Recieved</td>
+                    <td style={{ textDecoration: orderChecked ? 'line-through' : 'none' }}>Order Recieved</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
+                    <td>
+                      <OverlayTrigger
+                        overlay={
+                        <Tooltip id='tooltip'>
+                          {OrderRecievedTooltip}
+                        </Tooltip>
+                        }>
+                        <span className='todoQuestionMark'>
+                          <BsQuestionCircle size={20}/>
+                        </span>
+                      </OverlayTrigger>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -111,9 +130,20 @@ export default function TodoComponent() {
                         <FaRegSquare className='checkBox' onClick={() => handleConfirmChecked()}/>
                       )}
                     </td>
-                    <td>Order Confirmed</td>
+                    <td style={{ textDecoration: confirmChecked ? 'line-through' : 'none' }}>Order Confirmed</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
+                    <td>
+                    <OverlayTrigger
+                        overlay={
+                        <Tooltip id='tooltip'>
+                          {ConfirmedTooltip}
+                        </Tooltip>
+                        }>
+                        <span className='todoQuestionMark'>
+                          <BsQuestionCircle size={20}/>
+                        </span>
+                      </OverlayTrigger>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -123,9 +153,20 @@ export default function TodoComponent() {
                         <FaRegSquare className='checkBox' onClick={() => handlePrintedChecked()}/>
                       )}
                     </td>
-                    <td>Print Completed</td>
+                    <td style={{ textDecoration: printedChecked ? 'line-through' : 'none' }}>Print Completed</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
+                    <td>
+                    <OverlayTrigger
+                        overlay={
+                        <Tooltip id='tooltip'>
+                          {PrintedTooltip}
+                        </Tooltip>
+                        }>
+                        <span className='todoQuestionMark'>
+                          <BsQuestionCircle size={20}/>
+                        </span>
+                      </OverlayTrigger>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -135,9 +176,20 @@ export default function TodoComponent() {
                         <FaRegSquare className='checkBox' onClick={() => handleShippedChecked()}/>
                       )}
                     </td>
-                    <td>Order Shipped</td>
+                    <td style={{ textDecoration: shippedChecked ? 'line-through' : 'none' }}>Order Shipped</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
+                    <td>
+                    <OverlayTrigger
+                        overlay={
+                        <Tooltip id='tooltip'>
+                          {ShippedTooltip}
+                        </Tooltip>
+                        }>
+                        <span className='todoQuestionMark'>
+                          <BsQuestionCircle size={20}/>
+                        </span>
+                      </OverlayTrigger>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -147,9 +199,20 @@ export default function TodoComponent() {
                         <FaRegSquare className='checkBox' onClick={() => handlePaidChecked()}/>
                       )}
                     </td>
-                    <td>Payment Completed</td>
+                    <td style={{ textDecoration: paidChecked ? 'line-through' : 'none' }}>Payment Completed</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
+                    <td>
+                    <OverlayTrigger
+                        overlay={
+                        <Tooltip id='tooltip'>
+                          {PaidTooltip}
+                        </Tooltip>
+                        }>
+                        <span className='todoQuestionMark'>
+                          <BsQuestionCircle size={20}/>
+                        </span>
+                      </OverlayTrigger>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -159,9 +222,20 @@ export default function TodoComponent() {
                         <FaRegSquare className='checkBox' onClick={() => handleReviewedChecked()}/>
                       )}
                     </td>
-                    <td>Print Reviewed - optional</td>
+                    <td style={{ textDecoration: reviewedChecked ? 'line-through' : 'none' }}>Print Reviewed - optional</td>
                     <td>Date</td>
-                    <td><BsQuestionCircle size={20} className='todoQuestionMark'/></td>
+                    <td>
+                    <OverlayTrigger
+                        overlay={
+                        <Tooltip id='tooltip'>
+                          {ReviewedTooltip}
+                        </Tooltip>
+                        }>
+                        <span className='todoQuestionMark'>
+                          <BsQuestionCircle size={20}/>
+                        </span>
+                      </OverlayTrigger>
+                    </td>
                   </tr>
                 </tbody>
               </Table>
