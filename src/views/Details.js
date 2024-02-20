@@ -4,10 +4,19 @@ import {StlViewer} from "react-stl-viewer";
 import {Card, Button} from 'react-bootstrap';
 import './main.css';
 
-export default function Details() {
 
+import preview from '../static/UserAvatars/coffeeBro1.png'
+import preview2 from '../static/UserAvatars/Dwarf.png'
+import preview3 from '../static/UserAvatars/elf1.png'
+import preview4 from '../static/UserAvatars/elf2.png'
+import preview5 from '../static/UserAvatars/fox.png'
+
+
+export default function Details() {
+// this url as well as the other previews will be loaded via state from the server
     const url = "https://storage.googleapis.com/ucloud-v3/ccab50f18fb14c91ccca300a.stl"
 
+    
     return (
         <>
         <Header />
@@ -25,7 +34,11 @@ export default function Details() {
                             />
                             <h6>Image Preview</h6>
                             <div className='detailsImagePreview'>
-                                
+                                <img src={preview}/>
+                                <img src={preview2}/>
+                                <img src={preview3}/>
+                                <img src={preview4}/>
+                                <img src={preview5}/>
                             </div>
                             </div>
                         </Card.Body>
