@@ -9,6 +9,16 @@ export default function Reviews() {
   const {
     ShopReviewsSwiper
   } = useStore();
+
+  const showDetailModal = () => {
+    const x = document.getElementsByClassName('showDetailModal')[0];
+    if(x.style.display == 'block') {
+        x.style.display = 'none';
+    }
+    else {
+        x.style.display = 'block';
+    }
+  }
   return (
     <>
     <Card id='reviewCard'>
@@ -23,7 +33,7 @@ export default function Reviews() {
                 {ShopReviewsSwiper()}
                 {/* images here swiper probably */}
                 <br/>
-                <Link to='/'>Details</Link>
+                <div onClick={showDetailModal()}>Details</div>
               </div>
                 <ul>
                     <li>User Who Purchased</li>
@@ -31,8 +41,7 @@ export default function Reviews() {
                     <li>Things to say</li>
                 </ul>
             </div>
-            <br/>
-            <sub> # / total</sub>
+            <h6> # / total</h6>
         </Card.Body>
     </Card>
     </>

@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
 import './main.css';
 import UploadStl from '../components/UploadStl';
@@ -9,11 +10,15 @@ import TodoComponent from '../components/TodoComponent';
 import PrintMarketPlace from '../components/PrintMarketPlace';
 import Reviews from '../components/Reviews';
 
+// modals visible on this page
+import DetailModal from '../components/modals/DetailModal';
+
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
   return (
     <>
     <Header />
+    <DetailModal />
     <div className='pageWrap'>
       {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store</h1>
@@ -42,7 +47,6 @@ export default function Storefront() {
       {/* add service or item to your store */}
       {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}
       {/* Owner only -> can go to creationhub where they have a todo and list of current jobs */}
-
       </div>
     </div>
     </>
