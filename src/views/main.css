@@ -20,7 +20,15 @@ a:hover {
     cursor: pointer;
     color:#E88873;
 }
-
+.marketplaceYesNoIcons:hover {
+    cursor: pointer;
+    
+}
+.marketplaceIconsSpacingDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .pageWrap {
     padding-top: 18%;
     padding-bottom: 5%;
@@ -173,4 +181,11 @@ input[type=radio]{
 }
 .checkedBox {
     color: green;
+}
+.purchasesIcon {
+    color: #E0AC9D;
+}
+.purchasesIcon:hover {
+    color: #E88873;
+    cursor: pointer;
 }

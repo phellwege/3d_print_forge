@@ -41,11 +41,12 @@ export default function PrintMarketPlace() {
                         <tbody>
                             <tr>
                                 <td>
-                                    <FaRegCircleCheck size={25} color={'#34b233'} /> 
-                                    {/* onClick Accepts */}
-                                    {' '}
-                                    <FaRegCircleXmark size={25} color={'#e50000'} />
-                                    {/* onClick Declines */}
+                                    <div className='marketplaceIconsSpacingDiv'>
+                                        <FaRegCircleCheck size={25} color={'#34b233'} className='marketplaceYesNoIcons'/> 
+                                        {/* onClick Accepts */}
+                                        <FaRegCircleXmark size={25} color={'#e50000'} className='marketplaceYesNoIcons' />
+                                        {/* onClick Declines */}
+                                    </div>
                                 </td>
                                 <td>File(s)</td>
                                 {/* files will be in a swiper and can be viewed in detail */}

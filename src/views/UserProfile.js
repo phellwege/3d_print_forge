@@ -77,7 +77,7 @@ export default function UserProfile() {
                   <td>$$$</td>
                   <td>Yes / No</td>
                   <td>Yes | Already Reviewed</td>
-                  <td><MdOutlineFileDownload size={25}/></td>
+                  <td><MdOutlineFileDownload size={25} className='purchasesIcon'/></td>
                   <td>Yes / No</td>
                 </tr>
               </tbody>

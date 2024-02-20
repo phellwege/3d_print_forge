@@ -8,7 +8,7 @@ export default function Analytics() {
     <>
     <Header />
     <div>
-
+      
     </div>
     </>
   )
