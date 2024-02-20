@@ -98,6 +98,9 @@ tr .userSwiperWrap {
 .UserSwiper img {
     width: 90%;
 }
+.itemsListedCard {
+    width: 50%;
+}
 .ShopReviewsSwiper img {
     width: 90%;
 }

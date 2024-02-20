@@ -9,7 +9,7 @@ import UploadStl from '../components/UploadStl';
 import TodoComponent from '../components/TodoComponent';
 import PrintMarketPlace from '../components/PrintMarketPlace';
 import Reviews from '../components/Reviews';
-
+import CurrentItemsForSale from '../components/CurrentItemsForSale';
 // modals visible on this page
 
 
@@ -40,7 +40,7 @@ export default function Storefront() {
       </Card>
       <Reviews />
       <UploadStl />
-      
+      <CurrentItemsForSale />
       <TodoComponent />
       <PrintMarketPlace />
       {/* add service or item to your store */}

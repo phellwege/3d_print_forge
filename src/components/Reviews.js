@@ -22,14 +22,16 @@ export default function Reviews() {
               <div className='reviewImgWindow'>
                 <h5>Item Name</h5>
                 {ShopReviewsSwiper()}
-                {/* images here swiper probably */}
-                <br/>
                 <Link to='/Details'>Details</Link>
               </div>
                 <ul>
-                    <li>User Who Purchased</li>
+                    <li>
+                      <h6>User Who Purchased</h6>
+                    </li>
                     <li>stars 0 - 5</li>
-                    <li>Things to say</li>
+                    <li>
+                      <p>Things they said</p>
+                    </li>
                 </ul>
             </div>
             <h6> # / total</h6>
