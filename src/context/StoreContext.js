@@ -98,6 +98,52 @@ export function StoreProvider({ children }) {
         )
     }
 
+    function ShopReviewsSwiper(){
+        return (
+            <>
+                <Swiper
+                    pagination={{
+                    dynamicBullets: true,
+                    }}
+                    modules={[Pagination, Autoplay]}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
+                    className="ShopReviewsSwiper"
+                >
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <img src={placeholder} alt='Most Purchased Item 1st'/>
+                            <br/>
+                            <br/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <img src={placeholder2} alt='Most Purchased Item 2nd'/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <img src={placeholder3} alt='Most Purchased Item 3rd'/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <img src={placeholder4} alt='Recently Added'/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <img src={placeholder5} alt='Sponsered Shop'/>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+            </>
+        )
+    }
+
   // state management for check boxes so they can be individually checked 
     const [orderChecked, setOrderChecked] = useState(false);
     const [confirmChecked, setConfirmChecked] = useState(false);
@@ -188,6 +234,8 @@ export function StoreProvider({ children }) {
         handleReviewedChecked,
 
         Featured,
+        ShopReviewsSwiper,
+
     }
 
     return (

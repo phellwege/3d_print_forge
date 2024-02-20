@@ -1,8 +1,14 @@
 import React from 'react'
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../views/main.css'
+import { useStore } from '../context/StoreContext';
+
+import '../views/main.css';
+
 export default function Reviews() {
+  const {
+    ShopReviewsSwiper
+  } = useStore();
   return (
     <>
     <Card id='reviewCard'>
@@ -13,7 +19,8 @@ export default function Reviews() {
           </div>
             <div className='cardInnerDiv' id='reviewCardInnerDiv'>
               <div className='reviewImgWindow'>
-                Item purchased
+                <h5>Item Name</h5>
+                {ShopReviewsSwiper()}
                 {/* images here swiper probably */}
                 <br/>
                 <Link to='/'>Details</Link>
