@@ -9,12 +9,14 @@ import Storefront from './views/Storefront';
 
 import {ThemeProvider} from 'styled-components';
 import './App.css';
+import { UserProvider } from './context/UserContext';
 
 function App() {
   const [theme, setTheme] = useState({mode: 'light'})
   return (
     <BrowserRouter>
       <StoreProvider>
+      <UserProvider>
         <ThemeProvider theme={theme}>
         <React.Fragment>
           <Routes>
@@ -26,6 +28,7 @@ function App() {
           </Routes>
         </React.Fragment>
         </ThemeProvider>
+      </UserProvider>
       </StoreProvider>
     </BrowserRouter>
   );

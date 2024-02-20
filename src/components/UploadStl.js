@@ -13,8 +13,8 @@ export default function uploadStl() {
       return(
         <>
           <CurrencyInput
-            id="input-example"
-            name="input-name"
+            id="currencyInput"
+            name="UploadSTLCurrencyInput"
             placeholder="$0.00"
             allowNegativeValue={false}
             decimalsLimit={2}
@@ -28,7 +28,7 @@ export default function uploadStl() {
         </>
       )
     }
-    
+
   return (
     <>
         <Card>
