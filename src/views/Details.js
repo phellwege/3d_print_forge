@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import {StlViewer} from "react-stl-viewer";
 import {Card, Button} from 'react-bootstrap';
+import BackButton from '../components/BackButton';
 import './main.css';
 
 
@@ -12,6 +13,7 @@ import preview4 from '../static/UserAvatars/elf2.png'
 import preview5 from '../static/UserAvatars/fox.png'
 
 
+
 export default function Details() {
 // this url as well as the other previews will be loaded via state from the server
     const url = "https://storage.googleapis.com/ucloud-v3/ccab50f18fb14c91ccca300a.stl"
@@ -20,6 +22,7 @@ export default function Details() {
     return (
         <>
         <Header />
+        <BackButton />
             <div className='pageWrap'>
                 <div className='secondaryPageWrapper'>
                     <Card className='detailsCard'>
@@ -34,6 +37,7 @@ export default function Details() {
                             />
                             <h6>Image Preview</h6>
                             <div className='detailsImagePreview'>
+                                {/* onclick any of these will change the url state to be the selected one */}
                                 <img src={preview}/>
                                 <img src={preview2}/>
                                 <img src={preview3}/>
