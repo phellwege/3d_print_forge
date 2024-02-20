@@ -207,11 +207,13 @@ input[type=radio]{
 }
 .detailsImagePreview img {
     width: 18%;
-    /* margin: 2%; */
-    border: 2px solid #E0AC9D;
+    border: 3px solid #E0AC9D;
     border-radius: .5em;
 }
-
+.detailsImagePreview img:hover {
+    cursor: pointer;
+    border: 3px solid #E88873;
+}
 .stlViewerComponent:hover {
     cursor: pointer;
 }
