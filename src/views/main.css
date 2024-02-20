@@ -10,6 +10,7 @@ button.btn.btn-primary {
 button.btn.btn-primary:hover {
     background-color: #E88873;
 }
+
 a:hover {
     color: #E88873;
 }
@@ -88,6 +89,13 @@ a:hover {
 }
 
 .featuredSwiper img {
+    width: 90%;
+}
+tr .userSwiperWrap {
+    width: 150px;
+    overflow: hidden;
+}
+.UserSwiper img {
     width: 90%;
 }
 .ShopReviewsSwiper img {

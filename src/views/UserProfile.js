@@ -4,12 +4,18 @@ import { Button, Card, Alert} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import { MdOutlineFileDownload } from "react-icons/md";
-
-import './main.css'
+import { useUser } from '../context/UserContext';
+import BackButton from '../components/BackButton';
+import './main.css';
 
 // this is where the user can view and edit their profile. see their jobs etc
 
 export default function UserProfile() {
+
+  const {
+    UserSwiper
+  } = useUser();
+
   // edit function to operate properly if user has registered a store
   function storeOwner() {
       return (
@@ -69,9 +75,10 @@ export default function UserProfile() {
               <tbody>
                 <tr>
                   <td>
-                    img
-                    <br/>
-                    Order
+                    <div className='userSwiperWrap'>
+                      {UserSwiper()}
+                    </div>
+                    <Link to='/Details'>Order #</Link>
                   </td>
                   <td>Date</td>
                   <td>$$$</td>
