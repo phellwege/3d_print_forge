@@ -17,6 +17,9 @@ function Header(props) {
     const handleClickImg = () => {
         history('/UserProfile')
     }
+    const handleNavHome = () => {
+        history('/')
+    }
 
     const AlertNotificationMessage = "Notification";
     function AlertMessage(){
@@ -47,7 +50,7 @@ return (
         </div>
         <div className="headerMid">
             <div className='logobkg'>
-                <img src={logo} alt="Logo" id="LogoSmall2"/>
+                <img src={logo} alt="Logo" id="LogoSmall2" onClick={handleNavHome}/>
             </div>
             <h1>
                 3D Forge <span className='betaTag'>Beta</span>
