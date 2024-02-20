@@ -18,13 +18,82 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
+// swiper imports
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css/bundle";
+import { Pagination, Autoplay } from "swiper/modules";
+import placeholder from '../static/UserAvatars/astro1.png'
+import placeholder2 from '../static/UserAvatars/astro2.png'
+import placeholder3 from '../static/UserAvatars/astro3.png'
+import placeholder4 from '../static/UserAvatars/astro4.png'
+import placeholder5 from '../static/UserAvatars/Chimp.png'
+
 const StoreContext = React.createContext()
+
 export function useStore(){
     return useContext(StoreContext)
 }
 
 export function StoreProvider({ children }) {
 
+    // feature for homepage swiper. 
+    function Featured(){
+        return (
+            <>
+                <Swiper
+                    pagination={{
+                    dynamicBullets: true,
+                    }}
+                    modules={[Pagination, Autoplay]}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
+                    className="featuredSwiper"
+                >
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <h4>Most Purchased Item</h4>
+                            <img src={placeholder} alt='Most Purchased Item 1st'/>
+                            <br/>
+                            <sub>1st Place</sub>
+                            <br/>
+                            <br/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <h4>Most Purchased Item</h4>
+                            <img src={placeholder2} alt='Most Purchased Item 2nd'/>
+                            <br/>
+                            <sub>2nd Place</sub>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <h4>Most Purchased Item</h4>
+                            <img src={placeholder3} alt='Most Purchased Item 3rd'/>
+                            <br/>
+                            <sub>3rd Place</sub>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <h4>Recently Added</h4>
+                            <img src={placeholder4} alt='Recently Added'/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <h4>Sponsered Shop</h4>
+                            <img src={placeholder5} alt='Sponsered Shop'/>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+            </>
+        )
+    }
 
   // state management for check boxes so they can be individually checked 
     const [orderChecked, setOrderChecked] = useState(false);
@@ -114,6 +183,8 @@ export function StoreProvider({ children }) {
         handleShippedChecked,
         handlePaidChecked,
         handleReviewedChecked,
+
+        Featured,
     }
 
     return (

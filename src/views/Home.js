@@ -4,8 +4,14 @@ import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LeaveAReview from '../components/LeaveAReview';
 import './main.css'
+import { useStore } from '../context/StoreContext';
 
 export default function Home() {
+
+const {
+  Featured
+} = useStore();
+
   return (
     <>
     <Header />
@@ -16,9 +22,7 @@ export default function Home() {
           <Card.Body>
             <h3>Featured</h3>
             <div className='cardInnerDiv'>
-              things
-              <br/>
-              probably swiper
+              {Featured()}
             </div>
           </Card.Body>
         </Card>

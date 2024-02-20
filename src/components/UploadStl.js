@@ -100,11 +100,11 @@ export default function UploadStl() {
                         className="mobile-textarea"
                         />
                       </Form.Group>
+                      
                     </Form>
                 </div>
                 <br/>
                 <Button>Save</Button>
-                <br/>
             </Card.Body>
         </Card>
         
