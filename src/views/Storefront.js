@@ -11,14 +11,13 @@ import PrintMarketPlace from '../components/PrintMarketPlace';
 import Reviews from '../components/Reviews';
 
 // modals visible on this page
-import DetailModal from '../components/modals/DetailModal';
+
 
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
   return (
     <>
     <Header />
-    <DetailModal />
     <div className='pageWrap'>
       {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store</h1>
