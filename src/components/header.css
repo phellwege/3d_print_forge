@@ -154,8 +154,9 @@ h1 {
 .AlertMessageIconDiv {
     display: block; 
     position: absolute; 
-    margin: 0 0 1% 5%; 
+    margin: 0 0 -1% 5%; 
     z-index: 999; 
+    color: orangered;
 }
 .AlertMessageIconDiv:hover {
     cursor: pointer;

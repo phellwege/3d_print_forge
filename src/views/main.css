@@ -55,6 +55,10 @@ a:hover {
 .homeCard {
     width: 40%;
 }
+.homeSearchWrap {
+    width: 50%;
+    margin: 2%;
+}
 .card-body {
     display: flex;
     flex-direction: column;
