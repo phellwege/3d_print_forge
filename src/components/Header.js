@@ -58,7 +58,6 @@ return (
             <div className='avatarWindow'>
                 {/* {AlertMessage()} */}
                 <img src={UserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
-                <br/>
                 <Link to='/UserProfile'>UserName</Link>
                 <Link to='/'>Login/Logout</Link>
             </div>

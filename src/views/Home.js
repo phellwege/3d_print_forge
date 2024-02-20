@@ -22,6 +22,7 @@ const {
           <Card.Body>
             <h3>Featured</h3>
             <div className='cardInnerDiv'>
+              {/* add searchbar which will add criteria into marketplace and redirect user there with results */}
               {Featured()}
             </div>
           </Card.Body>

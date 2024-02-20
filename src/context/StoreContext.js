@@ -23,11 +23,14 @@ import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css/bundle";
 import { Pagination, Autoplay } from "swiper/modules";
+// need logic to find these piece of information from db and return a section with each and put it into the swiper
 import placeholder from '../static/UserAvatars/astro1.png'
 import placeholder2 from '../static/UserAvatars/astro2.png'
 import placeholder3 from '../static/UserAvatars/astro3.png'
 import placeholder4 from '../static/UserAvatars/astro4.png'
 import placeholder5 from '../static/UserAvatars/Chimp.png'
+
+
 
 const StoreContext = React.createContext()
 
