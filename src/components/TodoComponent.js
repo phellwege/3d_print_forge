@@ -19,20 +19,21 @@ export default function TodoComponent() {
   const ReviewedTooltip = "Once an item has been reviewed this will be automatically crossed off. The status will also be marked as completed";
 
   const [expanded, setExpanded] = useState(false);
-  const {
-    orderChecked, setOrderChecked,
-    confirmChecked, setConfirmChecked,
-    printedChecked, setPrintedChecked,
-    shippedChecked, setShippedChecked,
-    paidChecked, setPaidChecked,
-    reviewedChecked, setReviewedChecked,
 
-    orderDate, setOrderDate,
-    confirmDate, setConfirmDate,
-    printedDate, setPrintedDate,
-    shippedDate, setShippedDate,
-    paidDate, setPaidDate,
-    reviewedDate, setReviewedDate,
+  const {
+    orderChecked,
+    confirmChecked,
+    printedChecked,
+    shippedChecked,
+    paidChecked,
+    reviewedChecked,
+
+    orderDate,
+    confirmDate,
+    printedDate,
+    shippedDate,
+    paidDate,
+    reviewedDate,
 
     handleOrderChecked,
     handleConfirmChecked,
@@ -41,6 +42,7 @@ export default function TodoComponent() {
     handlePaidChecked,
     handleReviewedChecked,
   } = useStore();
+
   function handleExpansion(){
     setExpanded(!expanded)
   }

@@ -8,7 +8,7 @@
 // STL FILES FOR SALE,
 // SERVICES OFFERED, 
 // SCHEDULE, 
-// TODOs, 
+// TODOs --- these are now contexts but not serverside yet, 
 // SALES HISTORY, 
 // COMPLETED PRINTS IF ANY, 
 // REVIEWS
