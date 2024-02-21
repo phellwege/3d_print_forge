@@ -15,8 +15,8 @@ export default function StarForDisplayComponent() {
                     return (
                         <label key={index}>
                             <FaStar 
-                            className='star' size={20} 
-                            color={currentRating <= (rating) ? '#ffc107' : '#e4e5e9'}
+                                size={20} 
+                                color={currentRating <= (rating) ? '#ffc107' : '#e4e5e9'}
                             />
                         </label>
                     )
