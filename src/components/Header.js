@@ -78,7 +78,7 @@ return (
         </div>
         <div className='headerRight'>
             <div className='avatarWindow'>
-                {AlertMessage()}
+                {/* {AlertMessage()} */}
                 {shoppingCart()}
                 <img src={UserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
                 <Link to='/UserProfile'>UserName</Link>

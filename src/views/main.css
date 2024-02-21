@@ -137,6 +137,16 @@ input[type=radio]{
 .ratingComponent {
     padding: 2.5%;
 }
+#cartCard {
+    width: 80%;
+}
+.cartRemoveItemIcon {
+    color: #E0AC9D;
+}
+.cartRemoveItemIcon:hover {
+    color:red;
+    cursor: pointer;
+}
 #marketplaceTable {
     width: 100%;
 }

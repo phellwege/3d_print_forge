@@ -10,6 +10,7 @@ import Details from './views/Details';
 import {ThemeProvider} from 'styled-components';
 import './App.css';
 import { UserProvider } from './context/UserContext';
+import Cart from './views/Cart';
 
 function App() {
   const [theme, setTheme] = useState({mode: 'light'})
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/CreateStore" element={<CreateStore />} />
             <Route exact path="/MarketPlace" element={<MarketPlace />} />
             <Route exact path="/Storefront" element={<Storefront />} />
+            <Route exact path="/Cart" element={<Cart />} />
             <Route exact path="/Details" element={<Details />} />
             <Route exact path="/" element={<Home />} />
           </Routes>

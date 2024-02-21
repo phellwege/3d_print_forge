@@ -74,6 +74,11 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li>
+                                <Link to='/Cart' onClick={() => closeMenu()}>
+                                    My Cart
+                                </Link>
+                            </li>
+                            <li>
                                 <Link to='/MarketPlace' onClick={() => closeMenu()}>
                                     Marketplace
                                 </Link>
