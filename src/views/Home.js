@@ -4,7 +4,7 @@ import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LeaveAReview from '../components/LeaveAReview';
 import SearchBar from '../components/SearchBar';
-
+import { FaHome } from "react-icons/fa";
 import './main.css'
 import { useStore } from '../context/StoreContext';
 
@@ -18,7 +18,7 @@ const {
     <>
     <Header />
     <div className='pageWrap'>
-      <h1>Welcome</h1>
+      <h1>Welcome <FaHome /></h1>
       <div className='homeSearchWrap'>
         <SearchBar />
       </div>

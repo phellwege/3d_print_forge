@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineFileDownload } from "react-icons/md";
 import { useUser } from '../context/UserContext';
 import BackButton from '../components/BackButton';
-
+import { CgProfile } from "react-icons/cg";
 import SelectAvatar from '../components/modals/SelectAvatarModal';
 
 import './main.css';
@@ -46,6 +46,7 @@ export default function UserProfile() {
     <Header />
     <SelectAvatar />
     <div className='pageWrap'>
+      <h1>My Profile <CgProfile /></h1>
       <div className='secondaryPageWrapper'>
         <Card>
           <Card.Body>

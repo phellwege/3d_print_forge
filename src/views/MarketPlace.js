@@ -12,7 +12,9 @@ export default function MarketPlace() {
     <Header />
     <div className='pageWrap'>
       <h1>Marketplace <IoStorefrontOutline/> </h1>
-      <SearchBar />
+      <div className='homeSearchWrap'>
+        <SearchBar />
+      </div>
       <div className='secondaryPageWrapper'>
         <p>returns top 50 results on each page</p>
         <p>keeps going</p>

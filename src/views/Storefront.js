@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaShop } from "react-icons/fa6";
 
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
 import './main.css';
@@ -11,8 +12,6 @@ import PrintMarketPlace from '../components/PrintMarketPlace';
 import Reviews from '../components/Reviews';
 import CurrentItemsForSale from '../components/CurrentItemsForSale';
 
-// modals visible on this page
-
 
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
@@ -21,7 +20,7 @@ export default function Storefront() {
     <Header />
     <div className='pageWrap'>
       {/* TODO this will be renamed if the customer has a store */}
-      <h1>My Store</h1>
+      <h1>My Store <FaShop /></h1>
       <h3>Average Stars</h3>
       {/* TODO store image, with a place to upload new image, use nsfwjs to keep bad images from being used */}
       <div className='secondaryPageWrapper'>
