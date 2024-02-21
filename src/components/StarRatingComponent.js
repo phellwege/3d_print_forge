@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import { FaStar } from "react-icons/fa";
+import { useUser } from '../context/UserContext';
 // this component allows you to save a star rating in state
 import '../views/main.css'
 export default function StarRatingComponent() {
-    const [rating, setRating] = useState(null)
+    const {rating, setRating} = useUser();
     const [hover, setHover] = useState(null)
 
     return (

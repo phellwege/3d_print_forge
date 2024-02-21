@@ -7,12 +7,13 @@ import StarRatingComponent from '../StarRatingComponent';
 
 import './modals.css';
 
-
 export default function RateModal(props) {
-
+    const {
+        setReviewed
+    } = useUser()
 
     let rateRef = useRef();
-
+    
     const openRateWindow = () => {
         const x = document.getElementsByClassName('openRateWindow')[0];
         if(x.style.display == 'block') {
@@ -58,8 +59,10 @@ export default function RateModal(props) {
                         <Form.Group>
                             <Form.Label>
                             <div>
-                                <h5>Reason For This Rating<span className="required-indicator">{" "}*</span></h5>
-                                
+                                <h5>
+                                    Reason For This Rating
+                                    <span className="required-indicator">{" "}*</span>
+                                </h5>
                                 </div>
                             </Form.Label>
                             <Form.Control 
@@ -72,7 +75,7 @@ export default function RateModal(props) {
                         </Form.Group>
                     </Form>
                     <br/>
-                    <Button onClick={()=> openRateWindow()}>Submit</Button>
+                    <Button onClick={()=> {openRateWindow(); setReviewed(true)}}>Submit</Button>
                 </div>
                 
             </div>

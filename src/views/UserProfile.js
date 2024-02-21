@@ -9,8 +9,11 @@ import { useUser } from '../context/UserContext';
 import BackButton from '../components/BackButton';
 
 import { CgProfile } from "react-icons/cg";
+
 import SelectAvatar from '../components/modals/SelectAvatarModal';
 import RateModal from '../components/modals/RateModal';
+
+import StarForDisplayComponent from '../components/StarForDisplayComponent';
 
 import './main.css';
 
@@ -41,13 +44,14 @@ export default function UserProfile() {
     if(reviewed){
         return(
             <>
-                Already Left A Review
+              Already Left A Review
+              {StarForDisplayComponent()}
             </>
         )
     } else {
         return(
             <>
-                <Button onClick={() => openRateWindow()}>OK</Button>
+              <Button onClick={() => openRateWindow()}>OK</Button>
             </>
         )
     }

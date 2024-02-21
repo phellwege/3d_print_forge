@@ -38,6 +38,7 @@ export function UserProvider({ children }) {
 
     // has been reviewed?
     const [reviewed, setReviewed] = useState(false)
+    const [rating, setRating] = useState(null)
 
 
 
@@ -67,4 +68,41 @@ export function UserProvider({ children }) {
                     <SwiperSlide>
                         <div className='swiperSlideDiv'>
                             <img src={placeholder3} alt='Most Purchased Item 3rd'/>
-                  
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <img src={placeholder4} alt='Recently Added'/>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='swiperSlideDiv'>
+                            <img src={placeholder5} alt='Sponsered Shop'/>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+            </>
+        )
+    }
+
+
+
+    const value = {
+        UserSwiper,
+
+        reviewed, setReviewed,
+        rating, setRating,
+
+
+        defaultUserAvatar,
+        userAvatars,
+        setUserPic
+
+    }
+
+    return (
+        <UserContext.Provider value={value}>
+            {children}
+        </UserContext.Provider>
+    )
+}
