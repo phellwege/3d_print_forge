@@ -1,11 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {Button, Card} from 'react-bootstrap';
-// import {useAuth} from '../../context/authContext'
 import { MdClose } from "react-icons/md";
+
+import { useUser } from '../../context/UserContext';
 
 import './modals.css';
 
-export default function selectAvatar(props) {
+
+export default function SelectAvatar(props) {
+  const {
+    userAvatars,
+    setUserPic,
+  } = useUser();
+
+  let avatarRef = useRef();
+
   const openAvatarWindow = () => {
     const x = document.getElementsByClassName('openAvatarWindow')[0];
     if(x.style.display == 'block') {
@@ -14,79 +23,50 @@ export default function selectAvatar(props) {
     else {
         x.style.display = 'block';
     }
-}
-    let avatarRef = useRef();
-    useEffect(() => {
-        let handler = (event) => {
-            if(!avatarRef.current.contains(event.target)){
-                if (document.getElementsByClassName('openAvatarWindow')[0].style.display == 'block') openAvatarWindow();
-            }
+  }
+
+  useEffect(() => {
+    let handler = (event) => {
+        if(!avatarRef.current.contains(event.target)){
+            if (document.getElementsByClassName('openAvatarWindow')[0].style.display == 'block') openAvatarWindow();
         }
-        document.addEventListener('mousedown', handler)
-        return () => {
-            document.removeEventListener('mousedown', handler);
-        }
-    })
-    // const {
-    //     profilePic,
-    //     setUserPic,
-    //     profilePicBkgClr,
-    //     avatarbkgClr,
-    // } = useAuth();
+    }
+    document.addEventListener('mousedown', handler)
+    return () => {
+        document.removeEventListener('mousedown', handler);
+    }
+}, [])
 
   return (
     <div className="openAvatarWindow">
       <div 
-      className="lightboxWrap" 
+      className="modalWrap" 
       ref={avatarRef}
-      style={{backgroundColor: profilePicBkgClr}}
       loading='lazy'
       >
         <button 
         aria-label='change avatar window button'
         onClick={openAvatarWindow} 
-        className='lightboxCloseButton'
+        className='modalCloseButton'
         >
         <MdClose style={{ color: "#E4FDE1", width: "40px", height: "40px" }} />
         </button>
-        {profilePic.key.map((pic, picIndex) => (
-            <div key={picIndex} className='lightBoxAvatar'>
-                <div  className='lightBoxAvatarImg'>
+          {userAvatars.map((pic, picIndex) => (
+            <div key={picIndex} className='modalAvatar'>
+                <div  className='modalAvatarImg'>
                     <img src={pic} alt='avatarPicture' loading='lazy'/>
                 </div>
                     <Button 
-                    aria-label='select avatar button'
-                    onClick={(e) => {
+                      aria-label='select avatar button'
+                      onClick={(e) => {
                         setUserPic(picIndex);
                         openAvatarWindow();
                     }}>
                         Select
                     </Button>
             </div>
-        ))}
+          ))}
       </div>
-      <Card>
-        <Card.Body>
-          <div className='cardInnerDiv'>
-            <h5>Select Background</h5>
-            <div className='selectBkgClrButtons'>
-              {profilePicBkg.key.map((color, bkgIndex) => (    
-              <Button 
-              aria-label='select Avatar'
-              key={bkgIndex}
-              style={{backgroundColor: color}} 
-              className='selectBkgClrButton'
-                  onClick={async (e) => {
-                      await avatarbkgClr(bkgIndex)
-                  }}
-              >
-                  Select
-              </Button>
-              ))}
-            </div>
-          </div>
-        </Card.Body>
-      </Card>
     </div>
   )
 }

@@ -103,11 +103,13 @@ ul li a {
         props.theme.mode === 'dark' ? '' : 'yellow'};
 }
 
-.lightboxWrap {
+.modalWrap {
     border: ${props =>
-        props.theme.mode === 'dark' ? '5px solid #114B5F' : '5px solid #456990'};
+        props.theme.mode === 'dark' ? '3px solid #E0AC9D' : '5px solid #456990'};
+    background-color: ${props =>
+        props.theme.mode === 'dark' ? '#525c5c' : 'blue'};
 }
-.lightboxCloseButton {
+.modalCloseButton {
     color: ${props =>
         props.theme.mode === 'dark' ? '#E4FDE1' : 'black'};
 }

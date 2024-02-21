@@ -6,20 +6,31 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineFileDownload } from "react-icons/md";
 import { useUser } from '../context/UserContext';
 import BackButton from '../components/BackButton';
+
+import SelectAvatar from '../components/modals/SelectAvatarModal';
+
 import './main.css';
 
-// this is where the user can view and edit their profile. see their jobs etc
-
+// this is where the user can view and edit their profile. see the progress on their prints etc
 export default function UserProfile() {
 
   const {
     UserSwiper
   } = useUser();
+
   const history = useNavigate();
   function handleNavCreateStore(){
     history('/CreateStore')
   }
-  
+  const OpenAvatarWindow = () => {
+    const x = document.getElementsByClassName('openAvatarWindow')[0];
+    if(x.style.display == 'block') {
+        x.style.display = 'none';
+    }
+    else {
+        x.style.display = 'block';
+    }
+  }
   // edit function to operate properly if user has registered a store
   function storeOwner() {
       return (
@@ -32,6 +43,7 @@ export default function UserProfile() {
   return (
     <>
     <Header />
+    <SelectAvatar />
     <div className='pageWrap'>
       <div className='secondaryPageWrapper'>
         <Card>
@@ -40,7 +52,7 @@ export default function UserProfile() {
             <div className='cardInnerDiv'>
               <div>
                 <h5>Choose Avatar</h5>
-                <Button>Select</Button>
+                <Button onClick={()=> OpenAvatarWindow()}>Select</Button>
               </div>
               <div>
                 <h5>Bio</h5>

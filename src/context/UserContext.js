@@ -19,6 +19,19 @@ export function useUser(){
 }
 
 export function UserProvider({ children }) {
+    // user avatar selection stuff
+    const userAvatarKeys = [
+        'astro1', 'astro2', 'astro3', 'astro4', 'CatMan', 
+        'Chimp', 'coffeeBro1', 'Dwarf', 'elf1', 'elf2', 
+        'fox', 'Ninja', 'Ninja2', 'Ninja3', 'samurai', 
+        'spaceMan', 'viking', 'werewolf', 'wizard1',
+        'wizard2', 'wizard3', 'wolf', 'Zebra'
+    ];
+    const userAvatars = userAvatarKeys.map(key => require(`../static/UserAvatars/${key}.png`));
+    const [defaultUserAvatar, setDefaultUserAvatar] = useState(userAvatars[0]);
+    function setUserPic(picIndex) {
+        setDefaultUserAvatar(userAvatars[picIndex]);
+    }
 
     function UserSwiper(){
         return (
@@ -65,7 +78,10 @@ export function UserProvider({ children }) {
 
 
     const value = {
-        UserSwiper
+        UserSwiper,
+
+        userAvatars,
+        setUserPic
     }
 
     return (
