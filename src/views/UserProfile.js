@@ -10,6 +10,7 @@ import BackButton from '../components/BackButton';
 
 import { CgProfile } from "react-icons/cg";
 import SelectAvatar from '../components/modals/SelectAvatarModal';
+import RateModal from '../components/modals/RateModal';
 
 import './main.css';
 
@@ -19,7 +20,7 @@ export default function UserProfile() {
   const {
     UserSwiper,
     defaultUserAvatar,
-    hasBeenReviewed
+    reviewed,
   } = useUser();
 
   const history = useNavigate();
@@ -35,6 +36,33 @@ export default function UserProfile() {
         x.style.display = 'block';
     }
   }
+
+  function hasBeenReviewed(){
+    if(reviewed){
+        return(
+            <>
+                Already Left A Review
+            </>
+        )
+    } else {
+        return(
+            <>
+                <Button onClick={() => openRateWindow()}>OK</Button>
+            </>
+        )
+    }
+}
+  const openRateWindow = (clickedToReview) => {
+    const x = document.getElementsByClassName('openRateWindow')[0];
+    if(x.style.display == 'block') {
+        x.style.display = 'none';
+    }
+    else {
+        x.style.display = 'block';
+    }
+  }
+
+
   // edit function to operate properly if user has registered a store
   function storeOwner() {
       return (
@@ -48,6 +76,7 @@ export default function UserProfile() {
     <>
     <Header />
     <SelectAvatar />
+    <RateModal />
     <div className='pageWrap'>
       <h1>My Profile <CgProfile /></h1>
       <div className='secondaryPageWrapper'>
