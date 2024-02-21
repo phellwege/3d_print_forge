@@ -44,7 +44,7 @@ export default function UserProfile() {
     if(reviewed){
         return(
             <>
-              Already Left A Review
+              Already Reviewed
               {StarForDisplayComponent()}
             </>
         )
