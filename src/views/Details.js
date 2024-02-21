@@ -29,22 +29,27 @@ export default function Details() {
                         <Card.Body>
                             <h3>Preview</h3>
                             <div className='cardInnerDiv'>
-                            <StlViewer
-                                orbitControls
-                                shadows
-                                url={url}
-                                className='stlViewerComponent'
-                            />
-                            <h6>Image Preview</h6>
-                            <div className='detailsImagePreview'>
-                                {/* onclick any of these will change the url state to be the selected one */}
-                                <img src={preview}/>
-                                <img src={preview2}/>
-                                <img src={preview3}/>
-                                <img src={preview4}/>
-                                <img src={preview5}/>
+                                <StlViewer
+                                    orbitControls
+                                    shadows
+                                    url={url}
+                                    className='stlViewerComponent'
+                                />
+                                <h6>Image Preview</h6>
+                                <div className='detailsImagePreview'>
+                                    {/* onclick any of these will change the url state to be the selected one */}
+                                    <img src={preview}/>
+                                    <img src={preview2}/>
+                                    <img src={preview3}/>
+                                    <img src={preview4}/>
+                                    <img src={preview5}/>
+                                </div>
                             </div>
+                            <div className='cartAndCheckoutButtonGroup'>
+                                <Button>Add To Cart</Button> 
+                                <Button>Buy Now</Button>
                             </div>
+                            
                         </Card.Body>
                     </Card>
                 </div>

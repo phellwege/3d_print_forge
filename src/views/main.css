@@ -265,3 +265,10 @@ input[type=radio]{
     display: flex;
     justify-content: space-between;
 }
+.cartAndCheckoutButtonGroup {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+}
