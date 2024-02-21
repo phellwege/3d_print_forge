@@ -257,3 +257,11 @@ input[type=radio]{
     color: #E88873;
     cursor: pointer;
 }
+.required-indicator {
+    color: red;
+}
+.text-center {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -15,14 +15,17 @@ export default function UserProfile() {
   const {
     UserSwiper
   } = useUser();
-  const history = useNavigate()
+  const history = useNavigate();
+  function handleNavCreateStore(){
+    history('/CreateStore')
+  }
   
   // edit function to operate properly if user has registered a store
   function storeOwner() {
       return (
         <div>
           <p>You don't currently have a storefront</p>
-          <Button onClick={history('/CreateStore')}>Open Shop</Button>
+          <Button onClick={handleNavCreateStore}>Open Shop</Button>
         </div>
       )
   }

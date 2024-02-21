@@ -10,6 +10,7 @@ import TodoComponent from '../components/TodoComponent';
 import PrintMarketPlace from '../components/PrintMarketPlace';
 import Reviews from '../components/Reviews';
 import CurrentItemsForSale from '../components/CurrentItemsForSale';
+
 // modals visible on this page
 
 
@@ -41,11 +42,15 @@ export default function Storefront() {
       <Reviews />
       <UploadStl />
       <CurrentItemsForSale />
-      <TodoComponent />
-      <PrintMarketPlace />
       {/* add service or item to your store */}
       {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}
       {/* Owner only -> can go to creationhub where they have a todo and list of current jobs */}
+      </div>
+
+      <h1>3D Printing Section</h1>
+      <div className='secondaryPageWrapper'>
+        <TodoComponent />
+        <PrintMarketPlace />
       </div>
     </div>
     </>
