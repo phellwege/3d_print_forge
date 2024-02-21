@@ -7,6 +7,12 @@ import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import GlobalStyle from '../globalStyle';
 
+import { FaHome } from "react-icons/fa";
+import { IoStorefrontSharp } from "react-icons/io5";
+import { FaCartShopping } from "react-icons/fa6";
+import { FaShop } from "react-icons/fa6";
+import { CgProfile } from "react-icons/cg";
+
 import "./NavBar.css";
 
 
@@ -70,27 +76,27 @@ const NavBar = () => {
                         <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
                             <li>
                                 <Link to='/' onClick={() => closeMenu()}>
-                                    Home
+                                    <FaHome className='navIcons'/> Home
                                 </Link>
                             </li>
                             <li>
                                 <Link to='/MarketPlace' onClick={() => closeMenu()}>
-                                    Marketplace
+                                    <IoStorefrontSharp className='navIcons'/> Marketplace
                                 </Link>
                             </li>
                             <li>
                                 <Link to='/Cart' onClick={() => closeMenu()}>
-                                    My Cart
+                                    <FaCartShopping className='navIcons'/> My Cart
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/Storefront" onClick={() => closeMenu()}>
-                                    My Shop
+                                    <FaShop className='navIcons'/> My Shop
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/UserProfile" onClick={() => closeMenu()}>
-                                    Profile
+                                    <CgProfile className='navIcons'/> Profile
                                 </Link>
                             </li>
                             <li>
