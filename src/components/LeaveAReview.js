@@ -3,9 +3,16 @@ import StarRatingComponent from './StarRatingComponent';
 import { BsEmojiAngryFill } from "react-icons/bs";
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useUser } from '../context/UserContext';
 
 // leave a review for something you've purchased option only available after item has arrived or 1 day after purchasing STL
 export default function LeaveAReview() {
+
+    const {
+        reviewDescription, 
+        setReviewDescription
+    } = useUser()
+
   return (
     <>
         <Card>
@@ -15,7 +22,10 @@ export default function LeaveAReview() {
                     <StarRatingComponent/>
                     <div>
                         <h6>Tell us Why</h6>
-                        <textarea />
+                        <textarea 
+                        value={reviewDescription}
+                        onChange={setReviewDescription(reviewDescription)}
+                        />
                     </div>
                     <Button>Submit</Button>
                     <br/>

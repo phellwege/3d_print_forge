@@ -39,7 +39,7 @@ export function UserProvider({ children }) {
     // has been reviewed?
     const [reviewed, setReviewed] = useState(false)
     const [rating, setRating] = useState(null)
-
+    const [reviewDescription, setReviewDescription] = useState('')
 
 
 
@@ -92,7 +92,7 @@ export function UserProvider({ children }) {
 
         reviewed, setReviewed,
         rating, setRating,
-
+        reviewDescription, setReviewDescription,
 
         defaultUserAvatar,
         userAvatars,

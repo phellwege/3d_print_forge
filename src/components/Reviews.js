@@ -1,18 +1,20 @@
 import React from 'react'
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useStore } from '../context/StoreContext';
 
+import { useStore } from '../context/StoreContext';
+import { useUser } from '../context/UserContext';
 import StarForDisplayComponent from './StarForDisplayComponent';
 
 import '../views/main.css';
-import { useUser } from '../context/UserContext';
 
 export default function Reviews() {
   const {
-    ShopReviewsSwiper
+    ShopReviewsSwiper,
   } = useStore();
-
+  const {
+    reviewDescription
+  } = useUser();
 
   return (
     <>
@@ -34,7 +36,7 @@ export default function Reviews() {
                     </li>
                     <li><StarForDisplayComponent /></li>
                     <li>
-                      <p>Things they said</p>
+                      <p>{reviewDescription}</p>
                     </li>
                 </ul>
             </div>

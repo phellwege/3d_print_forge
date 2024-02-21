@@ -13,8 +13,10 @@ import Reviews from '../components/Reviews';
 import CurrentItemsForSale from '../components/CurrentItemsForSale';
 
 
+
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
+
   return (
     <>
     <Header />

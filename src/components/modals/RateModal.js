@@ -9,7 +9,9 @@ import './modals.css';
 
 export default function RateModal(props) {
     const {
-        setReviewed
+        setReviewed,
+        reviewDescription, 
+        setReviewDescription
     } = useUser()
 
     let rateRef = useRef();
@@ -63,12 +65,14 @@ export default function RateModal(props) {
                                     Reason For This Rating
                                     <span className="required-indicator">{" "}*</span>
                                 </h5>
-                                </div>
+                            </div>
                             </Form.Label>
                             <Form.Control 
                             as="textarea" 
                             rows={5} 
                             placeholder='Tell us More'
+                            value={reviewDescription}
+                            onChange={(e)=> setReviewDescription(e.target.value)}
                             maxLength='300'
                             className="mobile-textarea"
                             />
@@ -77,7 +81,6 @@ export default function RateModal(props) {
                     <br/>
                     <Button onClick={()=> {openRateWindow(); setReviewed(true)}}>Submit</Button>
                 </div>
-                
             </div>
         </div>
     )

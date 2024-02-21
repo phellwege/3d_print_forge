@@ -24,6 +24,8 @@ export default function UserProfile() {
     UserSwiper,
     defaultUserAvatar,
     reviewed,
+    reviewDescription, 
+    setReviewDescription
   } = useUser();
 
   const history = useNavigate();
