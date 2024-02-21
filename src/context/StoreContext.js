@@ -40,6 +40,11 @@ export function useStore(){
 
 export function StoreProvider({ children }) {
 
+    // add a function to accept or decline creating prints at the printing marketplace
+    // add logic for todo when user accepts print
+    // add logic for when user accepts custom print
+    // add shop creation logic
+
     // feature for homepage swiper. 
     function Featured(){
         return (

@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../components/Header';
 import { Button, Card, Alert} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineFileDownload } from "react-icons/md";
 import { useUser } from '../context/UserContext';
 import BackButton from '../components/BackButton';
@@ -15,13 +15,14 @@ export default function UserProfile() {
   const {
     UserSwiper
   } = useUser();
-
+  const history = useNavigate()
+  
   // edit function to operate properly if user has registered a store
   function storeOwner() {
       return (
         <div>
           <p>You don't currently have a storefront</p>
-          <Button>Open Shop</Button>
+          <Button onClick={history('/CreateStore')}>Open Shop</Button>
         </div>
       )
   }

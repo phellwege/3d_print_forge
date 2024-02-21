@@ -10,7 +10,10 @@ button.btn.btn-primary {
 button.btn.btn-primary:hover {
     background-color: #E88873;
 }
-
+body a {
+    text-decoration: none;
+    color: #E0AC9D;
+}
 a:hover {
     color: #E88873;
 }
