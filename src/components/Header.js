@@ -4,6 +4,7 @@ import { Button, Alert, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import NavBar from './NavBar/NavBar';
 
 import { FiAlertCircle } from "react-icons/fi";
+import { FaCartShopping } from "react-icons/fa6";
 
 import "./header.css";
 import logo from '../static/logos/DwarvenForgeLogo3.PNG';
@@ -22,6 +23,7 @@ function Header(props) {
     }
 
     const AlertNotificationMessage = "Notification";
+    const ShoppingCartMessage = "Cart"
     function AlertMessage(){
         // logic if a user has alerts
         return (
@@ -36,6 +38,23 @@ function Header(props) {
                         <FiAlertCircle size={25}/>
                     </span>
                     
+                </OverlayTrigger>
+            </>
+        )
+    }
+    function shoppingCart(){
+        // logic for when there are items in cart
+        return (
+            <>
+                <OverlayTrigger
+                    overlay={
+                    <Tooltip id='tooltip'>
+                        {ShoppingCartMessage}
+                    </Tooltip>
+                }>
+                    <span className='ShoppingCartIconDiv'>
+                        <FaCartShopping size={25} />
+                    </span>
                 </OverlayTrigger>
             </>
         )
@@ -59,7 +78,8 @@ return (
         </div>
         <div className='headerRight'>
             <div className='avatarWindow'>
-                {/* {AlertMessage()} */}
+                {AlertMessage()}
+                {shoppingCart()}
                 <img src={UserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
                 <Link to='/UserProfile'>UserName</Link>
                 <Link to='/'>Login/Logout</Link>
