@@ -57,7 +57,10 @@ export default function UploadStl() {
                       <Form.Group>
                         <Form.Label className="d-flex justify-content-between align-items-center" >
                         <div className="text-center">
-                                File Name<span className="required-indicator">*</span>{" "}
+                          <div>
+                            File Name
+                            <span className="required-indicator">{" "}*</span>
+                          </div>
                                 <span className="question-icon">
                                     <BsQuestionCircle />
                                 </span>
@@ -72,7 +75,10 @@ export default function UploadStl() {
                         <br/>
                         <Form.Label className="d-flex justify-content-between align-items-center" >
                         <div className="text-center">
-                                Price<span className="required-indicator">*</span>{" "}
+                          <div>
+                            Price
+                            <span className="required-indicator">{" "}*</span>
+                          </div>
                                 <span className="question-icon">
                                     <BsQuestionCircle />
                                 </span>
@@ -86,7 +92,10 @@ export default function UploadStl() {
                         <br/>
                         <Form.Label className="d-flex justify-content-between align-items-center" >
                         <div className="text-center">
-                                Description<span className="required-indicator">*</span>{" "}
+                                <div>
+                                Description
+                                <span className="required-indicator">{" "}*</span>
+                                </div>
                                 <span className="question-icon">
                                     <BsQuestionCircle />
                                 </span>

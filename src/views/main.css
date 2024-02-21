@@ -239,6 +239,13 @@ input[type=radio]{
     border-radius: .5em;
     background-color: whitesmoke;
 }
+.cartAndCheckoutButtonGroup {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+}
 .checkBox {
     size: 25;
     color: #E0AC9D;
@@ -264,11 +271,4 @@ input[type=radio]{
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-.cartAndCheckoutButtonGroup {
-    width: 25%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1%;
 }
