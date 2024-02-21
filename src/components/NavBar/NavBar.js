@@ -74,13 +74,13 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to='/Cart' onClick={() => closeMenu()}>
-                                    My Cart
+                                <Link to='/MarketPlace' onClick={() => closeMenu()}>
+                                    Marketplace
                                 </Link>
                             </li>
                             <li>
-                                <Link to='/MarketPlace' onClick={() => closeMenu()}>
-                                    Marketplace
+                                <Link to='/Cart' onClick={() => closeMenu()}>
+                                    My Cart
                                 </Link>
                             </li>
                             <li>

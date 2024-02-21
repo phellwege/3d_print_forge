@@ -33,8 +33,8 @@ const {UserSwiper} = useUser();
                                         <td>
                                             <div className='userSwiperWrap'>
                                             {UserSwiper()}
-                                            </div>
                                             <Link to='/Details'>Details</Link>
+                                            </div>
                                         </td>
                                         <td>Item Description</td>
                                         <td>$$$</td>
