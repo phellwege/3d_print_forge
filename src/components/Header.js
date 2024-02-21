@@ -21,6 +21,9 @@ function Header(props) {
     const handleNavHome = () => {
         history('/')
     }
+    const handleNavCart = () => {
+        history('/Cart')
+    }
 
     const AlertNotificationMessage = "Notification";
     const ShoppingCartMessage = "Cart"
@@ -52,7 +55,7 @@ function Header(props) {
                         {ShoppingCartMessage}
                     </Tooltip>
                 }>
-                    <span className='ShoppingCartIconDiv'>
+                    <span className='ShoppingCartIconDiv' onClick={()=>handleNavCart()}>
                         <FaCartShopping size={25} />
                     </span>
                 </OverlayTrigger>
