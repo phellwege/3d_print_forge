@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../components/Header'
-import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Button, Card, Alert} from 'react-bootstrap';
 import { FaShop } from "react-icons/fa6";
 
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
 import './main.css';
+import Header from '../components/Header';
 import UploadStl from '../components/UploadStl';
 import TodoComponent from '../components/TodoComponent';
 import PrintMarketPlace from '../components/PrintMarketPlace';

@@ -5,7 +5,9 @@ import Table from 'react-bootstrap/Table';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineFileDownload } from "react-icons/md";
 import { useUser } from '../context/UserContext';
+
 import BackButton from '../components/BackButton';
+
 import { CgProfile } from "react-icons/cg";
 import SelectAvatar from '../components/modals/SelectAvatarModal';
 
@@ -16,7 +18,8 @@ export default function UserProfile() {
 
   const {
     UserSwiper,
-    defaultUserAvatar
+    defaultUserAvatar,
+    hasBeenReviewed
   } = useUser();
 
   const history = useNavigate();
@@ -102,7 +105,7 @@ export default function UserProfile() {
                   <td>Date</td>
                   <td>$$$</td>
                   <td>Yes / No</td>
-                  <td>Yes | Already Reviewed</td>
+                  <td>{hasBeenReviewed()}</td>
                   <td><MdOutlineFileDownload size={25} className='purchasesIcon'/></td>
                   <td>Yes / No</td>
                 </tr>

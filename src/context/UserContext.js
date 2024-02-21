@@ -1,17 +1,20 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
+
 
 // swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css/bundle";
 import { Pagination, Autoplay } from "swiper/modules";
+
 // need logic to find these piece of information from db and return a section with each and put it into the swiper
 import placeholder from '../static/UserAvatars/Ninja.png'
 import placeholder2 from '../static/UserAvatars/Ninja2.png'
 import placeholder3 from '../static/UserAvatars/Ninja3.png'
 import placeholder4 from '../static/UserAvatars/samurai.png'
 import placeholder5 from '../static/UserAvatars/spaceMan.png'
-
 
 const UserContext = React.createContext()
 export function useUser(){
@@ -32,6 +35,25 @@ export function UserProvider({ children }) {
     function setUserPic(picIndex) {
         setDefaultUserAvatar(userAvatars[picIndex]);
     }
+
+    // has been reviewed?
+    const [reviewed, setReviewed] = useState(false)
+    function hasBeenReviewed(){
+        if(reviewed){
+            return(
+                <>
+                    Already Left A Review
+                </>
+            )
+        } else {
+            return(
+                <>
+                    <Button>OK</Button>
+                </>
+            )
+        }
+    }
+
 
     function UserSwiper(){
         return (
@@ -80,9 +102,12 @@ export function UserProvider({ children }) {
     const value = {
         UserSwiper,
 
+        hasBeenReviewed,
+
         defaultUserAvatar,
         userAvatars,
         setUserPic
+
     }
 
     return (
