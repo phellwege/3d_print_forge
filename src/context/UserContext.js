@@ -80,6 +80,7 @@ export function UserProvider({ children }) {
     const value = {
         UserSwiper,
 
+        defaultUserAvatar,
         userAvatars,
         setUserPic
     }

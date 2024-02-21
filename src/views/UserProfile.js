@@ -15,7 +15,8 @@ import './main.css';
 export default function UserProfile() {
 
   const {
-    UserSwiper
+    UserSwiper,
+    defaultUserAvatar
   } = useUser();
 
   const history = useNavigate();
@@ -51,6 +52,7 @@ export default function UserProfile() {
             <h3>Profile</h3>
             <div className='cardInnerDiv'>
               <div>
+                <img src={defaultUserAvatar} className='userProfileAvatarImg'/>
                 <h5>Choose Avatar</h5>
                 <Button onClick={()=> OpenAvatarWindow()}>Select</Button>
               </div>

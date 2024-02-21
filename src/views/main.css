@@ -101,6 +101,10 @@ tr .userSwiperWrap {
 .UserSwiper img {
     width: 90%;
 }
+.userProfileAvatarImg {
+    width: 55%;
+    border-radius: 50%;
+}
 .itemsListedCard {
     width: 50%;
 }
