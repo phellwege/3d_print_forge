@@ -6,8 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineFileDownload } from "react-icons/md";
 import { useUser } from '../context/UserContext';
 
-import BackButton from '../components/BackButton';
-
 import { CgProfile } from "react-icons/cg";
 
 import SelectAvatar from '../components/modals/SelectAvatarModal';
@@ -23,9 +21,7 @@ export default function UserProfile() {
   const {
     UserSwiper,
     defaultUserAvatar,
-    reviewed,
-    reviewDescription, 
-    setReviewDescription
+    reviewed
   } = useUser();
 
   const history = useNavigate();
@@ -34,7 +30,7 @@ export default function UserProfile() {
   }
   const OpenAvatarWindow = () => {
     const x = document.getElementsByClassName('openAvatarWindow')[0];
-    if(x.style.display == 'block') {
+    if(x.style.display === 'block') {
         x.style.display = 'none';
     }
     else {
@@ -60,7 +56,7 @@ export default function UserProfile() {
 }
   const openRateWindow = (clickedToReview) => {
     const x = document.getElementsByClassName('openRateWindow')[0];
-    if(x.style.display == 'block') {
+    if(x.style.display === 'block') {
         x.style.display = 'none';
     }
     else {
