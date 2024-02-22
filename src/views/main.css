@@ -289,6 +289,6 @@ input[type=radio]{
 .addressForm {
     text-wrap: nowrap;
 }
-.addressForm.form-label {
-    margin-right: 25px;
+.col-form-label {
+    margin-right: 10%;
 }

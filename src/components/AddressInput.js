@@ -7,8 +7,8 @@ export default function AddressInput({onChange}) {
     return (
         <Form className='addressForm'>
             <Form.Group as={Row} controlId="addressStreet">
-            <Form.Label column sm="2">Street</Form.Label>
-            <Col sm="10">
+            <Form.Label column sm="2">Street:</Form.Label>
+            <Col sm="15">
                 <Form.Control 
                 type="text" 
                 placeholder="Street Address" 
