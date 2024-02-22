@@ -11,8 +11,8 @@ import AddressInput from '../components/AddressInput';
 export default function CreateStore() {
 
     // handling checking if they have resin/filament printers and displaying appropriately
-    const [resin, setResin] = useState(false);
-    const [filament, setFilament] = useState(false);
+    const [resin, setResin] = useState(null);
+    const [filament, setFilament] = useState(null);
 
     const shopNameTooltip = "Enter a Shop Name";
     const businessAdressTooltip = "Enter a Business Address for your shop";
