@@ -111,6 +111,9 @@ tr .userSwiperWrap {
 .ShopReviewsSwiper img {
     width: 90%;
 }
+#setupShopCard {
+    width: 80%;
+}
 .swiper-pagination-bullet {
     background-color: #E88873;
 }

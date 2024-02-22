@@ -30,7 +30,7 @@ export default function CreateStore() {
         <div className='pageWrap'>
             <h1>Setup Shop</h1>
             <div className='secondaryPageWrapper'>
-                <Card>
+                <Card id='setupShopCard'>
                     <Card.Body>
                         <div className='cardInnerDiv'>
                             <Form>
@@ -93,13 +93,6 @@ export default function CreateStore() {
                                     />
                                 </Form.Group>
                             </Form>
-                        </div>
-                    </Card.Body>
-                </Card>
-                <Card>
-                    <Card.Body>
-                        <h3>Questionaire</h3>
-                        <div className='cardInnerDiv'>
                             <Form>
                                 <Form.Group>
                                     <Form.Label>Do you want to print things</Form.Label>
@@ -116,9 +109,10 @@ export default function CreateStore() {
                                 </Form.Group>
                             </Form>
                         </div>
+                        <br/>
+                        <Button>Submit</Button>
                     </Card.Body>
                 </Card>
-                <Button>Submit</Button>
                 {/* after submission create entity and redirect to mystore page */}
             </div>
         </div>
