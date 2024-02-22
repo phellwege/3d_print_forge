@@ -1,17 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from '../components/Header'
 
-import { Button, Card, Alert, Form, OverlayTrigger, Tooltip, FormGroup, FormLabel, FormControl} from 'react-bootstrap';
+import { Button, Card, Alert, Form, OverlayTrigger, Tooltip, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BsQuestionCircle } from "react-icons/bs";
 
 import '../views/main.css';
+import AddressInput from '../components/AddressInput';
 
 export default function CreateStore() {
 
     const shopNameTooltip = "Enter a Shop Name";
     const businessAdressTooltip = "Enter a Business Address for your shop";
     const aboutMyShopTooltip ="Tell us about your shop";
+
+
+    // address input
+    const [address, setAddress] = useState({});
+    const handleAddressChange = newAddress => {
+        setAddress(prevAddress => ({
+            ...prevAddress,
+            ...newAddress
+        }));
+    };
 
     return (
         <>
@@ -27,7 +38,6 @@ export default function CreateStore() {
                                 <Form.Label>Upload Shop Logo</Form.Label>
                                 <Form.Control type="file" />
                             </Form.Group>
-
                                 <Form.Group>
                                     <Form.Label className="d-flex justify-content-between align-items-center" >
                                         <div className="text-center">
@@ -55,30 +65,7 @@ export default function CreateStore() {
                                     className="mobile-textarea"
                                     />
                                     <br/>
-                                    <Form.Label className="d-flex justify-content-between align-items-center" >
-                                        <div className="text-center">
-                                            <div>
-                                                Business Address
-                                                <span className="required-indicator">{" "}*</span>
-                                            </div>
-                                            <OverlayTrigger
-                                            overlay={<Tooltip id="tooltip">{businessAdressTooltip}</Tooltip>}
-                                            >
-                                                <span className="question-icon">
-                                                    <BsQuestionCircle />
-                                                </span>
-                                            </OverlayTrigger>
-                                        </div>
-                                            {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
-                                    </Form.Label>
-                                    <Form.Control 
-                                    type='text' 
-                                    placeholder='Address'
-                                    // value={defaultResume.firstName}
-                                    // onChange={(e) => handleChange('firstName', e.target.value)}
-                                    maxLength='75'
-                                    className="mobile-textarea"
-                                    />
+                                    <AddressInput onChange={handleAddressChange}/>
                                     <br/>
                                     <Form.Label className="d-flex justify-content-between align-items-center" >
                                         <div className="text-center">
@@ -114,19 +101,19 @@ export default function CreateStore() {
                         <h3>Questionaire</h3>
                         <div className='cardInnerDiv'>
                             <Form>
-                                <FormGroup>
-                                    <FormLabel>Do you want to print things</FormLabel>
-                                    <FormControl/>
+                                <Form.Group>
+                                    <Form.Label>Do you want to print things</Form.Label>
+                                    <Form.Control/>
                                     <br/>
-                                    <FormLabel>How many 3d printers do you have?</FormLabel>
-                                    <FormControl/>
+                                    <Form.Label>How many 3d printers do you have?</Form.Label>
+                                    <Form.Control/>
                                     <br/>
-                                    <FormLabel>How about custom prints?</FormLabel>
-                                    <FormControl/>
+                                    <Form.Label>How about custom prints?</Form.Label>
+                                    <Form.Control/>
                                     <br/>
-                                    <FormLabel></FormLabel>
-                                    <FormControl/>
-                                </FormGroup>
+                                    <Form.Label></Form.Label>
+                                    <Form.Control/>
+                                </Form.Group>
                             </Form>
                         </div>
                     </Card.Body>

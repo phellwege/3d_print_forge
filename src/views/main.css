@@ -286,3 +286,9 @@ input[type=radio]{
     display: flex;
     justify-content: space-between;
 }
+.addressForm {
+    text-wrap: nowrap;
+}
+.addressForm.form-label {
+    margin-right: 25px;
+}
