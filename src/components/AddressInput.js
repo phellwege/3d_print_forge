@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Row, Col } from 'react-bootstrap';
-
+import usStates from 'states-us';
 import '../views/main.css';
 
 export default function AddressInput({onChange}) {
@@ -26,7 +26,7 @@ export default function AddressInput({onChange}) {
                 />
             </Col>
             </Form.Group>
-            {/* <Form.Group as={Row} controlId="addressState">
+            <Form.Group as={Row} controlId="addressState">
             <Form.Label column sm="2">State</Form.Label>
                 <Col sm="10">
                 <Form.Control as="select" onChange={e => onChange({ state: e.target.value })}>
@@ -35,7 +35,7 @@ export default function AddressInput({onChange}) {
                     ))}
                 </Form.Control>
                 </Col>
-            </Form.Group> */}
+            </Form.Group>
             <Form.Group as={Row} controlId="addressZip">
             <Form.Label column sm="2">ZIP Code</Form.Label>
             <Col sm="5">

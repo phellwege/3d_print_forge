@@ -21,6 +21,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.1",
     "react-stl-viewer": "^2.5.0",
+    "states-us": "^1.0.4",
     "styled-components": "^6.0.7",
     "swiper": "^10.3.0",
     "web-vitals": "^2.1.4"
