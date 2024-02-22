@@ -2,8 +2,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
-
-
 // swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css/bundle";
@@ -17,11 +15,17 @@ import placeholder4 from '../static/UserAvatars/samurai.png'
 import placeholder5 from '../static/UserAvatars/spaceMan.png'
 
 const UserContext = React.createContext()
+
 export function useUser(){
     return useContext(UserContext)
 }
 
 export function UserProvider({ children }) {
+        // has been reviewed?
+    const [reviewed, setReviewed] = useState(false)
+    const [rating, setRating] = useState(null)
+    const [reviewDescription, setReviewDescription] = useState('')
+
     // user avatar selection stuff
     const userAvatarKeys = [
         'astro1', 'astro2', 'astro3', 'astro4', 'CatMan', 
@@ -35,12 +39,6 @@ export function UserProvider({ children }) {
     function setUserPic(picIndex) {
         setDefaultUserAvatar(userAvatars[picIndex]);
     }
-
-    // has been reviewed?
-    const [reviewed, setReviewed] = useState(false)
-    const [rating, setRating] = useState(null)
-    const [reviewDescription, setReviewDescription] = useState('')
-
 
 
     function UserSwiper(){

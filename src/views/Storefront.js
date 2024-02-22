@@ -29,19 +29,24 @@ export default function Storefront() {
     <div className='pageWrap'>
       {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store <FaShop /></h1>
-      <div className='ratingComponent'>
-        {[...Array(5)].map((star, index) => {
-          const currentRating = index + 1;
-          return (
-            <label key={index}>
-              <FaStar 
-                size={20} 
-                color={currentRating <= (rating) ? '#ffc107' : '#e4e5e9'}
-              />
-            </label>
-          )
-        })}
-      </div>
+      {rating && (
+        <>
+          <div className='ratingComponent'>
+            <h3>Average Rating</h3>
+            {[...Array(5)].map((star, index) => {
+              const currentRating = index + 1;
+              return (
+                <label key={index}>
+                  <FaStar 
+                    size={20} 
+                    color={currentRating <= (rating) ? '#ffc107' : '#e4e5e9'}
+                  />
+                </label>
+              )
+            })}
+          </div>
+        </>
+      )}
       {/* TODO store image, with a place to upload new image, use nsfwjs to keep bad images from being used */}
       <div className='secondaryPageWrapper'>
       <Card>
