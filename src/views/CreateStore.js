@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Header from '../components/Header'
 
-import { Button, Card, Alert, Form, OverlayTrigger, Tooltip, Container, Row, Col } from 'react-bootstrap';
+import { Button, Card, Alert, Form, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BsQuestionCircle } from "react-icons/bs";
 
@@ -10,10 +10,46 @@ import AddressInput from '../components/AddressInput';
 
 export default function CreateStore() {
 
+    // handling checking if they have resin/filament printers and displaying appropriately
+    const [resin, setResin] = useState(false);
+    const [filament, setFilament] = useState(false);
+
     const shopNameTooltip = "Enter a Shop Name";
     const businessAdressTooltip = "Enter a Business Address for your shop";
     const aboutMyShopTooltip ="Tell us about your shop";
 
+    function hasResinPrinter(){
+        if(resin){
+            return(
+                <>
+                <Form.Label>How Many SLA (Resin) Printers?</Form.Label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5+</option>
+                    </select>
+                </>
+            )
+        } 
+    }
+    function hasFilamentPrinter(){
+        if(filament){
+            return(
+                <>
+                    <Form.Label>How Many FDM (Filament) Printers?</Form.Label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5+</option>
+                        </select>
+                </>
+            )
+        }
+    }
 
     // address input
     const [address, setAddress] = useState({});
@@ -101,17 +137,51 @@ export default function CreateStore() {
                                     <h3>Questionnaire</h3>
                                 <Form>
                                 <Form.Group>
-                                    <Form.Label>Do you want to print things</Form.Label>
-                                    <Form.Control/>
+                                    <Form.Label>Do you want to sell printing services?</Form.Label>
                                     <br/>
-                                    <Form.Label>How many 3d printers do you have?</Form.Label>
-                                    <Form.Control/>
+                                    <Form.Check
+                                    inline
+                                    label="Yes"
+                                    type={'checkbox'}
+                                    />
+                                    <Form.Check
+                                    inline
+                                    label="No"
+                                    type={'checkbox'}
+                                    />
                                     <br/>
-                                    <Form.Label>How about custom prints?</Form.Label>
-                                    <Form.Control/>
+                                    <Form.Label>Custom Prints too?</Form.Label>
                                     <br/>
-                                    <Form.Label></Form.Label>
-                                    <Form.Control/>
+                                    <Form.Check
+                                    inline
+                                    label="Yes"
+                                    type={'checkbox'}
+                                    />
+                                    <Form.Check
+                                    inline
+                                    label="No"
+                                    type={'checkbox'}
+                                    />
+                                    <br/>
+                                    <Form.Label>What type of printers do you own?</Form.Label>
+                                    <br/>
+                                    <Form.Check
+                                    inline
+                                    label="SLA (Resin)"
+                                    type={'checkbox'}
+                                    onChange={setResin(true)}
+                                    />
+                                    <Form.Check
+                                    inline
+                                    label="FDM (Filament)"
+                                    type={'checkbox'}
+                                    onChange={setFilament(true)}
+                                    />
+                                    <br/>
+                                    {/* these are used to calculate availability of jobs */}
+                                    
+                                    {hasResinPrinter()}
+                                    {hasFilamentPrinter()}
                                 </Form.Group>
                             </Form>
                                 </div>
