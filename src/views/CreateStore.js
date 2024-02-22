@@ -33,67 +33,73 @@ export default function CreateStore() {
                 <Card id='setupShopCard'>
                     <Card.Body>
                         <div className='cardInnerDiv'>
-                            <Form>
-                            <Form.Group controlId="formFile" className="mb-3">
-                                <Form.Label>Upload Shop Logo</Form.Label>
-                                <Form.Control type="file" />
-                            </Form.Group>
-                                <Form.Group>
-                                    <Form.Label className="d-flex justify-content-between align-items-center" >
-                                        <div className="text-center">
-                                            <div>
-                                                Shop Name
-                                                <span className="required-indicator">{" "}*</span>
-                                            </div>
-                                            
-                                            <OverlayTrigger
-                                            overlay={<Tooltip id="tooltip">{shopNameTooltip}</Tooltip>}
-                                            >
-                                                <span className="question-icon">
-                                                    <BsQuestionCircle />
-                                                </span>
-                                            </OverlayTrigger>
-                                        </div>
-                                            {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
-                                    </Form.Label>
-                                    <Form.Control 
-                                    type='text' 
-                                    placeholder='Store Name'
-                                    // value={defaultResume.firstName}
-                                    // onChange={(e) => handleChange('firstName', e.target.value)}
-                                    maxLength='50'
-                                    className="mobile-textarea"
-                                    />
-                                    <br/>
-                                    <AddressInput onChange={handleAddressChange}/>
-                                    <br/>
-                                    <Form.Label className="d-flex justify-content-between align-items-center" >
-                                        <div className="text-center">
-                                            <div>
-                                                About My Shop
-                                                <span className="required-indicator">{" "}*</span>
-                                            </div>
-                                            <OverlayTrigger
-                                            overlay={<Tooltip id="tooltip">{aboutMyShopTooltip}</Tooltip>}
-                                            >
-                                                <span className="question-icon">
-                                                    <BsQuestionCircle />
-                                                </span>
-                                            </OverlayTrigger>
-                                        </div>
-                                            {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
-                                    </Form.Label>
-                                    <Form.Control 
-                                    type='text' 
-                                    placeholder='Store Name'
-                                    // value={defaultResume.firstName}
-                                    // onChange={(e) => handleChange('firstName', e.target.value)}
-                                    maxLength='50'
-                                    className="mobile-textarea"
-                                    />
-                                </Form.Group>
-                            </Form>
-                            <Form>
+                            <div className='cardInnerDivSeparator'>
+                                <div className='cardInnerDivLeft'>
+                                    <h3>Main Setup</h3>
+                                <Form>
+                                    <Form.Group controlId="formFile" className="mb-3">
+                                        <Form.Label>Upload Shop Logo</Form.Label>
+                                        <Form.Control type="file" />
+                                    </Form.Group>
+                                        <Form.Group>
+                                            <Form.Label className="d-flex justify-content-between align-items-center" >
+                                                <div className="text-center">
+                                                    <div>
+                                                        Shop Name
+                                                        <span className="required-indicator">{" "}*</span>
+                                                    </div>
+                                                    
+                                                    <OverlayTrigger
+                                                    overlay={<Tooltip id="tooltip">{shopNameTooltip}</Tooltip>}
+                                                    >
+                                                        <span className="question-icon">
+                                                            <BsQuestionCircle />
+                                                        </span>
+                                                    </OverlayTrigger>
+                                                </div>
+                                                    {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
+                                            </Form.Label>
+                                            <Form.Control 
+                                            type='text' 
+                                            placeholder='Store Name'
+                                            // value={defaultResume.firstName}
+                                            // onChange={(e) => handleChange('firstName', e.target.value)}
+                                            maxLength='50'
+                                            className="mobile-textarea"
+                                            />
+                                            <br/>
+                                            <AddressInput onChange={handleAddressChange}/>
+                                            <br/>
+                                            <Form.Label className="d-flex justify-content-between align-items-center" >
+                                                <div className="text-center">
+                                                    <div>
+                                                        About My Shop
+                                                        <span className="required-indicator">{" "}*</span>
+                                                    </div>
+                                                    <OverlayTrigger
+                                                    overlay={<Tooltip id="tooltip">{aboutMyShopTooltip}</Tooltip>}
+                                                    >
+                                                        <span className="question-icon">
+                                                            <BsQuestionCircle />
+                                                        </span>
+                                                    </OverlayTrigger>
+                                                </div>
+                                                    {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
+                                            </Form.Label>
+                                            <Form.Control 
+                                            type='text' 
+                                            placeholder='Store Name'
+                                            // value={defaultResume.firstName}
+                                            // onChange={(e) => handleChange('firstName', e.target.value)}
+                                            maxLength='50'
+                                            className="mobile-textarea"
+                                            />
+                                        </Form.Group>
+                                    </Form>
+                                </div>
+                                <div className='cardInnerDivRight'>
+                                    <h3>Questionnaire</h3>
+                                <Form>
                                 <Form.Group>
                                     <Form.Label>Do you want to print things</Form.Label>
                                     <Form.Control/>
@@ -108,9 +114,11 @@ export default function CreateStore() {
                                     <Form.Control/>
                                 </Form.Group>
                             </Form>
+                                </div>
+                            </div>
+                            <br/>
+                            <Button>Submit</Button>
                         </div>
-                        <br/>
-                        <Button>Submit</Button>
                     </Card.Body>
                 </Card>
                 {/* after submission create entity and redirect to mystore page */}

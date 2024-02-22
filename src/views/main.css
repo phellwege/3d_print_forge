@@ -114,6 +114,16 @@ tr .userSwiperWrap {
 #setupShopCard {
     width: 80%;
 }
+.cardInnerDivSeparator {
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardInnerDivLeft {
+    width: 45%;
+}
+.cardInnerDivRight {
+    width: 45%;
+}
 .swiper-pagination-bullet {
     background-color: #E88873;
 }
