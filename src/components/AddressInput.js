@@ -28,7 +28,7 @@ export default function AddressInput({onChange}) {
             </Form.Group>
             <Form.Group as={Row} controlId="addressState">
             <Form.Label column sm="2">State</Form.Label>
-                <Col sm="10">
+                <Col sm="5">
                 <Form.Control as="select" onChange={e => onChange({ state: e.target.value })}>
                     {usStates.map(state => (
                     <option key={state.abbr} value={state.abbr}>{state.name}</option>
