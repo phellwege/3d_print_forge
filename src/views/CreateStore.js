@@ -18,38 +18,13 @@ export default function CreateStore() {
     const businessAdressTooltip = "Enter a Business Address for your shop";
     const aboutMyShopTooltip ="Tell us about your shop";
 
-    function hasResinPrinter(){
-        if(resin){
-            return(
-                <>
-                <Form.Label>How Many SLA (Resin) Printers?</Form.Label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5+</option>
-                    </select>
-                </>
-            )
-        } 
-    }
-    function hasFilamentPrinter(){
-        if(filament){
-            return(
-                <>
-                    <Form.Label>How Many FDM (Filament) Printers?</Form.Label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5+</option>
-                        </select>
-                </>
-            )
-        }
-    }
+    const handleResinChange = (e) => {
+        setResin(e.target.checked);
+    };
+    const handleFilamentChange = (e) => {
+        setFilament(e.target.checked);
+    };
+
 
     // address input
     const [address, setAddress] = useState({});
@@ -169,19 +144,41 @@ export default function CreateStore() {
                                     inline
                                     label="SLA (Resin)"
                                     type={'checkbox'}
-                                    onChange={setResin(true)}
+                                    onChange={handleResinChange}
                                     />
                                     <Form.Check
                                     inline
                                     label="FDM (Filament)"
                                     type={'checkbox'}
-                                    onChange={setFilament(true)}
+                                    onChange={handleFilamentChange}
                                     />
                                     <br/>
                                     {/* these are used to calculate availability of jobs */}
                                     
-                                    {hasResinPrinter()}
-                                    {hasFilamentPrinter()}
+                                    {resin && (
+                                        <>
+                                        <Form.Label>How Many SLA (Resin) Printers?</Form.Label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5+</option>
+                                        </select>
+                                        </>
+                                    )}
+                                    {filament && (
+                                        <>
+                                        <Form.Label>How Many FDM (Filament) Printers?</Form.Label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5+</option>
+                                        </select>
+                                        </>
+                                    )}
                                 </Form.Group>
                             </Form>
                                 </div>
