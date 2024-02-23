@@ -97,7 +97,6 @@ export default function UserProfile() {
               <div>
                 <h5>Bio</h5>
                 <p>lorem ipsum</p>
-                <br/>
                 <Button>Edit Bio</Button>
               </div>
             </div>
@@ -112,9 +111,7 @@ export default function UserProfile() {
                     <img src={StoreImagePlaceHolder} alt='Store Logo' className='storeImgPlaceholder'/>
                     <br/>
                     <h3>Store Name</h3>
-                    <h5>Address</h5>
-                    <Button>Edit</Button>
-                    <p>Info About My shop</p>
+                    <p>About my Store</p>
                     <Button>Edit</Button>
                     </>
                   ) : (

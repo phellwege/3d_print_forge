@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import Header from '../components/Header'
-
 import { Button, Card, Alert, Form, OverlayTrigger, Tooltip} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BsQuestionCircle } from "react-icons/bs";
 
 import '../views/main.css';
@@ -11,6 +10,7 @@ import { useStore } from '../context/StoreContext';
 import { useUser } from '../context/UserContext';
 
 export default function CreateStore() {
+    const history = useNavigate()
     const {
         hasPrinter, setHasPrinter,
         customPrints, setCustomPrints,
@@ -30,9 +30,19 @@ export default function CreateStore() {
 
     const handleResinChange = (e) => {
         setResin(e.target.checked);
+        if (e.target.checked) {
+            setSlaPrinter(1);
+        } else {
+            setSlaPrinter(null);
+        }
     };
     const handleFilamentChange = (e) => {
         setFilament(e.target.checked);
+        if (e.target.checked) {
+            setFdmPrinter(1);
+        } else {
+            setFdmPrinter(null);
+        }
     };
     const handleHasPrinter = (e) => {
         setHasPrinter(prevState => !prevState);
@@ -42,6 +52,7 @@ export default function CreateStore() {
     }
     const handleStoreOwnership = (e) => {
         setStoreOwnership(true);
+        history('/Storefront');
     }
     const handleSettingAmountOfSla = (e) => {
         setSlaPrinter(parseInt(e.target.value))
@@ -180,12 +191,14 @@ export default function CreateStore() {
                                             label="SLA (Resin)"
                                             type={'checkbox'}
                                             onChange={handleResinChange}
+                                            checked={slaPrinter >= 1}
                                             />
                                             <Form.Check
                                             inline
                                             label="FDM (Filament)"
                                             type={'checkbox'}
                                             onChange={handleFilamentChange}
+                                            checked={fdmPrinter >= 1}
                                             />
                                             <br/>
                                         </>
@@ -220,7 +233,7 @@ export default function CreateStore() {
                                 </div>
                             </div>
                             <br/>
-                            <Button onClick={handleStoreOwnership}>Submit</Button>
+                            <Button onClick={() => handleStoreOwnership()}>Submit</Button>
                         </div>
                     </Card.Body>
                 </Card>

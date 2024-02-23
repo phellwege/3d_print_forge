@@ -47,8 +47,8 @@ export function StoreProvider({ children }) {
     const [hasPrinter, setHasPrinter] = useState(false);
     const [customPrints, setCustomPrints] = useState(null);
     
-    const [slaPrinter, setSlaPrinter] = useState(0);
-    const [fdmPrinter, setFdmPrinter] = useState(0);
+    const [slaPrinter, setSlaPrinter] = useState(null);
+    const [fdmPrinter, setFdmPrinter] = useState(null);
 
     const [sla, setSla] = useState(null);
     const [fdm, setFdm] = useState(null);

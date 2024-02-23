@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Card, Alert} from 'react-bootstrap';
 import { FaShop } from "react-icons/fa6";
-
 import { FaStar } from "react-icons/fa";
 import { useUser } from '../context/UserContext';
 import { useStore } from '../context/StoreContext';
@@ -18,7 +17,6 @@ import PrintMarketPlace from '../components/PrintMarketPlace';
 import Reviews from '../components/Reviews';
 import CurrentItemsForSale from '../components/CurrentItemsForSale';
 import PrinterStatus from '../components/PrinterStatus';
-
 
 
 // this is where you will have a description of your store and show current items for sale from your shop
@@ -75,12 +73,8 @@ export default function Storefront() {
       {reviewed && (
         <Reviews />
       )}
-      
       <UploadStl />
       <CurrentItemsForSale />
-      {/* add service or item to your store */}
-      {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}
-      {/* Owner only -> can go to creationhub where they have a todo and list of current jobs */}
       </div>
       {hasPrinter && (
         <>

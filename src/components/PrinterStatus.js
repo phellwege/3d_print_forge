@@ -20,8 +20,6 @@ export default function PrinterStatus() {
             <Card.Body>
                 <h3>Printer Status</h3>
                 <div className='cardInnerDiv'>
-                    {/* for each printer */}
-                    {/* SLA */}
                     <Table striped bordered hover variant='dark'>
                         <thead>
                             <tr>
