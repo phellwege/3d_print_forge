@@ -7,9 +7,15 @@ import { BsQuestionCircle } from "react-icons/bs";
 
 import '../views/main.css';
 import AddressInput from '../components/AddressInput';
+import { useStore } from '../context/StoreContext';
 
 export default function CreateStore() {
-
+    const {
+        hasPrinter, setHasPrinter,
+        printerInUse, setPrinterInUse,
+        slaPrinter, setSlaPrinter,
+        fdmPrinter, setFdmPrinter,
+    } = useStore();
     // handling checking if they have resin/filament printers and displaying appropriately
     const [resin, setResin] = useState(null);
     const [filament, setFilament] = useState(null);
@@ -23,6 +29,9 @@ export default function CreateStore() {
     const handleFilamentChange = (e) => {
         setFilament(e.target.checked);
     };
+    const handleHasPrinter = (e) => {
+        setHasPrinter(prevState => !prevState);
+    }
 
 
     // address input
@@ -112,49 +121,56 @@ export default function CreateStore() {
                                     <h3>Questionnaire</h3>
                                 <Form>
                                 <Form.Group>
-                                    <Form.Label>Do you want to sell printing services?</Form.Label>
+                                    <Form.Label>Do You have a 3d Printer?</Form.Label>
                                     <br/>
                                     <Form.Check
                                     inline
                                     label="Yes"
                                     type={'checkbox'}
+                                    onChange={handleHasPrinter}
+                                    checked={hasPrinter}
                                     />
                                     <Form.Check
                                     inline
                                     label="No"
                                     type={'checkbox'}
+                                    onChange={handleHasPrinter}
+                                    checked={!hasPrinter}
                                     />
                                     <br/>
-                                    <Form.Label>Custom Prints too?</Form.Label>
-                                    <br/>
-                                    <Form.Check
-                                    inline
-                                    label="Yes"
-                                    type={'checkbox'}
-                                    />
-                                    <Form.Check
-                                    inline
-                                    label="No"
-                                    type={'checkbox'}
-                                    />
-                                    <br/>
-                                    <Form.Label>What type of printers do you own?</Form.Label>
-                                    <br/>
-                                    <Form.Check
-                                    inline
-                                    label="SLA (Resin)"
-                                    type={'checkbox'}
-                                    onChange={handleResinChange}
-                                    />
-                                    <Form.Check
-                                    inline
-                                    label="FDM (Filament)"
-                                    type={'checkbox'}
-                                    onChange={handleFilamentChange}
-                                    />
-                                    <br/>
+                                    {hasPrinter && (
+                                        <>
+                                            <Form.Label>Sell Custom Prints?</Form.Label>
+                                            <br/>
+                                            <Form.Check
+                                            inline
+                                            label="Yes"
+                                            type={'checkbox'}
+                                            />
+                                            <Form.Check
+                                            inline
+                                            label="No"
+                                            type={'checkbox'}
+                                            />
+                                            <br/>
+                                            <Form.Label>What type of printers do you own?</Form.Label>
+                                            <br/>
+                                            <Form.Check
+                                            inline
+                                            label="SLA (Resin)"
+                                            type={'checkbox'}
+                                            onChange={handleResinChange}
+                                            />
+                                            <Form.Check
+                                            inline
+                                            label="FDM (Filament)"
+                                            type={'checkbox'}
+                                            onChange={handleFilamentChange}
+                                            />
+                                            <br/>
+                                        </>
+                                    )}
                                     {/* these are used to calculate availability of jobs */}
-                                    
                                     {resin && (
                                         <>
                                         <Form.Label>How Many SLA (Resin) Printers?</Form.Label>
