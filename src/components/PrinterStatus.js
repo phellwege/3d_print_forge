@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import { Button, Card, Alert, Table, OverlayTrigger, Tooltip} from 'react-bootstrap';
-
-import { MdEventAvailable } from "react-icons/md";
-import { CgUnavailable } from "react-icons/cg";
+import { MdOutlinePauseCircleOutline, MdOutlinePlayCircle } from "react-icons/md";
 
 import '../views/main.css';
+import { useStore } from '../context/StoreContext';
 
 export default function PrinterStatus() {
+
+    const {
+        printerInUse
+    } = useStore();
+
   return (
     <>
         <Card id='printerStatusCard'>
@@ -17,23 +21,53 @@ export default function PrinterStatus() {
                     <Table striped bordered hover variant='dark'>
                         <thead>
                             <tr>
-                                <th>Icon</th>
-                                <th>Printer Type</th>
                                 <th>Availability</th>
+                                <th>Printer Type</th>
                                 <th>Working On</th>
                                 <th>Calendar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><MdEventAvailable size={25}/></td>
-                                <td>FDM || SLA</td>
-                                <td>in use || Available</td>
-                                <td>if in use order# with link to todo</td>
                                 <td>
-                                    Started Printing:
-                                    <br/>
-                                    Deadline:
+                                {printerInUse ? (
+                                        <>
+                                            In Use
+                                            <MdOutlinePauseCircleOutline size={25} />
+                                        </>
+                                        
+                                    ) : (
+                                    <>
+                                        Available
+                                        <br/>
+                                        <MdOutlinePlayCircle size={25} />
+                                    </>
+                                    )}
+                                </td>
+                                <td>FDM || SLA</td>
+                                <td>
+                                    {printerInUse ? (
+                                        <>
+                                            Order #
+                                        </>
+                                    ) : (
+                                        <>
+                                            Not In Use
+                                        </>
+                                    )}
+                                </td>
+                                <td>
+                                    {printerInUse ? (
+                                        <>
+                                            Started Printing:
+                                            <br/>
+                                            Deadline:
+                                        </>
+                                    ) : (
+                                        <>
+                                            Not In Use
+                                        </>
+                                    )}
                                 </td>
                             </tr>
                         </tbody>

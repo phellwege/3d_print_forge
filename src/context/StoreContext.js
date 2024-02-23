@@ -31,7 +31,6 @@ import placeholder4 from '../static/UserAvatars/astro4.png'
 import placeholder5 from '../static/UserAvatars/Chimp.png'
 
 
-
 const StoreContext = React.createContext()
 
 export function useStore(){
@@ -44,6 +43,7 @@ export function StoreProvider({ children }) {
     // add logic for todo when user accepts print
     // add logic for when user accepts custom print
     // add shop creation logic
+    const [printerInUse, setPrinterInUse] = useState();
 
     // feature for homepage swiper. 
     function Featured(){
