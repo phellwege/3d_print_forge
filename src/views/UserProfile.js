@@ -111,7 +111,7 @@ export default function UserProfile() {
                     <>
                     <img src={StoreImagePlaceHolder} alt='Store Logo' className='storeImgPlaceholder'/>
                     <br/>
-                    <Button>Upload New Logo</Button>
+                    <h3>Store Name</h3>
                     <h5>Address</h5>
                     <Button>Edit</Button>
                     <p>Info About My shop</p>

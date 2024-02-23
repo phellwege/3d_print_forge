@@ -40,10 +40,15 @@ export default function CreateStore() {
     const handleCustomPrints = (e) => {
         setCustomPrints(prevState => !prevState);
     }
-    function handleStoreOwnership() {
+    const handleStoreOwnership = (e) => {
         setStoreOwnership(true);
     }
-
+    const handleSettingAmountOfSla = (e) => {
+        setSlaPrinter(parseInt(e.target.value))
+    }
+    const handleSettingAmountOfFdm = (e) => {
+        setFdmPrinter(parseInt(e.target.value))
+    }
 
     // address input
     const [address, setAddress] = useState({});
@@ -189,24 +194,24 @@ export default function CreateStore() {
                                     {resin && (
                                         <>
                                         <Form.Label>How Many SLA (Resin) Printers?</Form.Label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5+</option>
+                                        <select class="form-control" id="exampleFormControlSelect1" onChange={handleSettingAmountOfSla} value={slaPrinter}>
+                                            <option value={1}>1</option>
+                                            <option value={2}>2</option>
+                                            <option value={3}>3</option>
+                                            <option value={4}>4</option>
+                                            <option value={5}>5+</option>
                                         </select>
                                         </>
                                     )}
                                     {filament && (
                                         <>
                                         <Form.Label>How Many FDM (Filament) Printers?</Form.Label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5+</option>
+                                        <select class="form-control" id="exampleFormControlSelect1" onChange={handleSettingAmountOfFdm} value={fdmPrinter}>
+                                            <option value={1}>1</option>
+                                            <option value={2}>2</option>
+                                            <option value={3}>3</option>
+                                            <option value={4}>4</option>
+                                            <option value={5}>5+</option>
                                         </select>
                                         </>
                                     )}

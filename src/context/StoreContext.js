@@ -46,9 +46,9 @@ export function StoreProvider({ children }) {
     const [printerInUse, setPrinterInUse] = useState(null);
     const [hasPrinter, setHasPrinter] = useState(false);
     const [customPrints, setCustomPrints] = useState(null);
-    // these will be a count of how many printers maxing out at 5
-    const [slaPrinter, setSlaPrinter] = useState(null);
-    const [fdmPrinter, setFdmPrinter] = useState(null);
+    
+    const [slaPrinter, setSlaPrinter] = useState(0);
+    const [fdmPrinter, setFdmPrinter] = useState(0);
 
     const [sla, setSla] = useState(null);
     const [fdm, setFdm] = useState(null);
