@@ -21,7 +21,10 @@ import CurrentItemsForSale from '../components/CurrentItemsForSale';
 export default function Storefront() {
 
   // this will come from an average rating of all items shop has
-  const {rating} = useUser();
+  const {
+    rating, 
+    reviewed
+  } = useUser();
   
   return (
     <>
@@ -29,7 +32,7 @@ export default function Storefront() {
     <div className='pageWrap'>
       {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store <FaShop /></h1>
-      {rating && (
+      {reviewed && (
         <>
           <div className='ratingComponent'>
             <h3>Average Rating</h3>
@@ -63,7 +66,10 @@ export default function Storefront() {
           </div>
         </Card.Body>
       </Card>
-      <Reviews />
+      {reviewed && (
+        <Reviews />
+      )}
+      
       <UploadStl />
       <CurrentItemsForSale />
       {/* add service or item to your store */}
