@@ -17,9 +17,17 @@ import { FaRegCircleCheck, FaRegCircleXmark } from "react-icons/fa6";
 import { MdNotes, MdOutlineSpeakerNotes } from "react-icons/md";
 import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useStore } from '../context/StoreContext';
+import '../views/main.css';
 
-import '../views/main.css'
 export default function PrintMarketPlace() {
+
+    const {
+        setPrinterInUse
+    } = useStore()
+    function handleSetPrinterStatus(){
+        setPrinterInUse(true)
+    }
   return (
     <>
         <Card className='marketPlaceCard'>
@@ -31,6 +39,7 @@ export default function PrintMarketPlace() {
                             <tr>
                                 <th>Accept / Decline</th>
                                 <th>STL File(s)</th>
+                                <th>SLA (Resin) or FDM (Filament)</th>
                                 <th>Date Ordered</th>
                                 <th>Payment</th>
                                 <th>City / State</th>
@@ -42,7 +51,7 @@ export default function PrintMarketPlace() {
                             <tr>
                                 <td>
                                     <div className='marketplaceIconsSpacingDiv'>
-                                        <FaRegCircleCheck size={25} color={'#34b233'} className='marketplaceYesNoIcons'/> 
+                                        <FaRegCircleCheck size={25} color={'#34b233'} className='marketplaceYesNoIcons' onClick={handleSetPrinterStatus}/> 
                                         {/* onClick Accepts */}
                                         <FaRegCircleXmark size={25} color={'#e50000'} className='marketplaceYesNoIcons' />
                                         {/* onClick Declines */}
@@ -50,6 +59,7 @@ export default function PrintMarketPlace() {
                                 </td>
                                 <td>File(s)</td>
                                 {/* files will be in a swiper and can be viewed in detail */}
+                                <td>setType</td>
                                 <td>Date</td>
                                 <td>$$$</td>
                                 <td>Someplace, Somewhere</td>

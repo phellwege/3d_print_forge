@@ -33,14 +33,15 @@ export default function PrinterStatus() {
                                 {printerInUse ? (
                                         <>
                                             In Use
-                                            <MdOutlinePauseCircleOutline size={25} />
+                                            <br/>
+                                            <MdOutlinePauseCircleOutline size={25} color='	#f0ad4e'/>
                                         </>
                                         
                                     ) : (
                                     <>
                                         Available
                                         <br/>
-                                        <MdOutlinePlayCircle size={25} />
+                                        <MdOutlinePlayCircle size={25} color='#22bb33'/>
                                     </>
                                     )}
                                 </td>

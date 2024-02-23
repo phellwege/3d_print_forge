@@ -43,7 +43,9 @@ export function StoreProvider({ children }) {
     // add logic for todo when user accepts print
     // add logic for when user accepts custom print
     // add shop creation logic
-    const [printerInUse, setPrinterInUse] = useState();
+    const [printerInUse, setPrinterInUse] = useState(null);
+    const [sla, setSla] = useState(null);
+    const [fdm, setFdm] = useState(null);
 
     // feature for homepage swiper. 
     function Featured(){
@@ -217,6 +219,10 @@ export function StoreProvider({ children }) {
 
 
     const value = {
+        printerInUse, setPrinterInUse,
+        sla, setSla,
+        fdm, setFdm,
+
         orderChecked, setOrderChecked,
         confirmChecked, setConfirmChecked,
         printedChecked, setPrintedChecked,
