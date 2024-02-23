@@ -8,11 +8,16 @@ import { useStore } from '../context/StoreContext';
 export default function PrinterStatus() {
 
     const {
-        printerInUse
+        printerInUse,
+        slaPrinter,
+        fdmPrinter,
+        hasPrinter
     } = useStore();
-
+    const range = (count) => [...Array(count).keys()];
   return (
     <>
+    {hasPrinter && (<>
+    
         <Card id='printerStatusCard'>
             <Card.Body>
                 <h3>Printer Status</h3>
@@ -29,7 +34,8 @@ export default function PrinterStatus() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                        {range(slaPrinter).map((printer, index) => (
+                            <tr key={`slaPrinter-${index}`}>
                                 <td>
                                 {printerInUse ? (
                                         <>
@@ -46,7 +52,7 @@ export default function PrinterStatus() {
                                     </>
                                     )}
                                 </td>
-                                <td>FDM || SLA</td>
+                                <td>SLA</td>
                                 <td>
                                     {printerInUse ? (
                                         <>
@@ -72,12 +78,60 @@ export default function PrinterStatus() {
                                     )}
                                 </td>
                             </tr>
+                        ))}
+                        {range(fdmPrinter).map((printer, index) => (
+                            <tr key={`fdmPrinter-${index}`}>
+                                <td>
+                                {printerInUse ? (
+                                        <>
+                                            In Use
+                                            <br/>
+                                            <MdOutlinePauseCircleOutline size={25} color='	#f0ad4e'/>
+                                        </>
+                                        
+                                    ) : (
+                                    <>
+                                        Available
+                                        <br/>
+                                        <MdOutlinePlayCircle size={25} color='#22bb33'/>
+                                    </>
+                                    )}
+                                </td>
+                                <td>FDM</td>
+                                <td>
+                                    {printerInUse ? (
+                                        <>
+                                            Order #
+                                        </>
+                                    ) : (
+                                        <>
+                                            Not In Use
+                                        </>
+                                    )}
+                                </td>
+                                <td>
+                                    {printerInUse ? (
+                                        <>
+                                            Started Printing:
+                                            <br/>
+                                            Deadline:
+                                        </>
+                                    ) : (
+                                        <>
+                                            Not In Use
+                                        </>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
                         </tbody>
                     </Table>
                     {/* FDM */}
                 </div>
             </Card.Body>
         </Card>
+        </>
+        )}
     </>
   )
 }
