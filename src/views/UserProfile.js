@@ -13,6 +13,8 @@ import RateModal from '../components/modals/RateModal';
 
 import StarForDisplayComponent from '../components/StarForDisplayComponent';
 
+import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG';
+
 import './main.css';
 
 // this is where the user can view and edit their profile. see the progress on their prints etc
@@ -21,7 +23,8 @@ export default function UserProfile() {
   const {
     UserSwiper,
     defaultUserAvatar,
-    reviewed
+    reviewed,
+    storeOwnership
   } = useUser();
 
   const history = useNavigate();
@@ -100,15 +103,31 @@ export default function UserProfile() {
             </div>
           </Card.Body>
         </Card>
-        <Card>
-          <Card.Body>
-            <h3>My Shop</h3>
-            <div className='cardInnerDiv'>
-            {/* ternary if store owner or not */}
-            {storeOwner()}
-            </div>
-          </Card.Body>
-        </Card>
+            <Card>
+              <Card.Body>
+                <h3>My Shop</h3>
+                <div className='cardInnerDiv'>
+                  {storeOwnership ? (
+                    <>
+                    <img src={StoreImagePlaceHolder} alt='Store Logo' className='storeImgPlaceholder'/>
+                    <br/>
+                    <Button>Upload New Logo</Button>
+                    <h5>Address</h5>
+                    <Button>Edit</Button>
+                    <p>Info About My shop</p>
+                    <Button>Edit</Button>
+                    </>
+                  ) : (
+                    <>
+                    <div>
+                      <p>You don't currently have a storefront</p>
+                      <Button onClick={handleNavCreateStore}>Open Shop</Button>
+                    </div>
+                    </>
+                  )}
+                </div>
+              </Card.Body>
+            </Card>
         <Card id='purchaseHistory'>
           <Card.Body>
             <h3>My Purchases</h3>

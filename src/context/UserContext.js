@@ -22,9 +22,10 @@ export function useUser(){
 
 export function UserProvider({ children }) {
         // has been reviewed?
-    const [reviewed, setReviewed] = useState(false)
-    const [rating, setRating] = useState(null)
-    const [reviewDescription, setReviewDescription] = useState('')
+    const [reviewed, setReviewed] = useState(false);
+    const [rating, setRating] = useState(null);
+    const [reviewDescription, setReviewDescription] = useState('');
+    const [storeOwnership, setStoreOwnership] = useState(null)
 
     // user avatar selection stuff
     const userAvatarKeys = [
@@ -87,6 +88,8 @@ export function UserProvider({ children }) {
 
     const value = {
         UserSwiper,
+
+        storeOwnership, setStoreOwnership,
 
         reviewed, setReviewed,
         rating, setRating,

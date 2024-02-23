@@ -8,6 +8,7 @@ import { BsQuestionCircle } from "react-icons/bs";
 import '../views/main.css';
 import AddressInput from '../components/AddressInput';
 import { useStore } from '../context/StoreContext';
+import { useUser } from '../context/UserContext';
 
 export default function CreateStore() {
     const {
@@ -17,6 +18,9 @@ export default function CreateStore() {
         slaPrinter, setSlaPrinter,
         fdmPrinter, setFdmPrinter,
     } = useStore();
+    const {
+        setStoreOwnership,
+    } = useUser();
     // handling checking if they have resin/filament printers and displaying appropriately
     const [resin, setResin] = useState(null);
     const [filament, setFilament] = useState(null);
@@ -35,6 +39,9 @@ export default function CreateStore() {
     }
     const handleCustomPrints = (e) => {
         setCustomPrints(prevState => !prevState);
+    }
+    function handleStoreOwnership() {
+        setStoreOwnership(true);
     }
 
 
@@ -208,7 +215,7 @@ export default function CreateStore() {
                                 </div>
                             </div>
                             <br/>
-                            <Button>Submit</Button>
+                            <Button onClick={handleStoreOwnership}>Submit</Button>
                         </div>
                     </Card.Body>
                 </Card>

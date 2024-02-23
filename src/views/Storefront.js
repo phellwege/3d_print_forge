@@ -6,7 +6,7 @@ import { FaShop } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { useUser } from '../context/UserContext';
 
-import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
+import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG';
 
 import './main.css';
 
