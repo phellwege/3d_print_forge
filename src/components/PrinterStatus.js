@@ -16,8 +16,6 @@ export default function PrinterStatus() {
     const range = (count) => [...Array(count).keys()];
   return (
     <>
-    {hasPrinter && (<>
-    
         <Card id='printerStatusCard'>
             <Card.Body>
                 <h3>Printer Status</h3>
@@ -131,7 +129,5 @@ export default function PrinterStatus() {
             </Card.Body>
         </Card>
         </>
-        )}
-    </>
   )
 }

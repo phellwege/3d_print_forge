@@ -5,6 +5,7 @@ import { FaShop } from "react-icons/fa6";
 
 import { FaStar } from "react-icons/fa";
 import { useUser } from '../context/UserContext';
+import { useStore } from '../context/StoreContext';
 
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG';
 
@@ -19,15 +20,18 @@ import CurrentItemsForSale from '../components/CurrentItemsForSale';
 import PrinterStatus from '../components/PrinterStatus';
 
 
+
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
 
   // this will come from an average rating of all items shop has
   const {
     rating, 
-    reviewed
+    reviewed,
   } = useUser();
-  
+  const {
+    hasPrinter,
+  } = useStore();
   return (
     <>
     <Header />
@@ -78,13 +82,16 @@ export default function Storefront() {
       {/* if doing prints for people how many printers do you have and what type of printer is it SL or FDM */}
       {/* Owner only -> can go to creationhub where they have a todo and list of current jobs */}
       </div>
-
-      <h1>3D Printing Section</h1>
-      <div className='secondaryPageWrapper'>
-        <PrinterStatus />
-        <TodoComponent />
-        <PrintMarketPlace />
-      </div>
+      {hasPrinter && (
+        <>
+          <h1>3D Printing Section</h1>
+          <div className='secondaryPageWrapper'>
+            <PrinterStatus />
+            <TodoComponent />
+            <PrintMarketPlace />
+          </div>
+        </>
+      )}
     </div>
     </>
   )
