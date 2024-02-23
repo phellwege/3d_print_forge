@@ -44,6 +44,11 @@ export function StoreProvider({ children }) {
     // add logic for when user accepts custom print
     // add shop creation logic
     const [printerInUse, setPrinterInUse] = useState(null);
+    const [hasPrinter, setHasPrinter] = useState(false);
+    // these will be a count of how many printers maxing out at 5
+    const [slaPrinter, setSlaPrinter] = useState(null);
+    const [fdmPrinter, setFdmPrinter] = useState(null);
+
     const [sla, setSla] = useState(null);
     const [fdm, setFdm] = useState(null);
 
@@ -219,7 +224,11 @@ export function StoreProvider({ children }) {
 
 
     const value = {
+        hasPrinter, setHasPrinter,
         printerInUse, setPrinterInUse,
+        slaPrinter, setSlaPrinter,
+        fdmPrinter, setFdmPrinter,
+
         sla, setSla,
         fdm, setFdm,
 

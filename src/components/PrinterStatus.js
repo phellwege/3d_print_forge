@@ -15,6 +15,7 @@ export default function PrinterStatus() {
     <>
         <Card id='printerStatusCard'>
             <Card.Body>
+                <h3>Printer Status</h3>
                 <div className='cardInnerDiv'>
                     {/* for each printer */}
                     {/* SLA */}
