@@ -7,14 +7,16 @@ import { FaStar } from "react-icons/fa";
 import { useUser } from '../context/UserContext';
 
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG'
+
 import './main.css';
+
 import Header from '../components/Header';
 import UploadStl from '../components/UploadStl';
 import TodoComponent from '../components/TodoComponent';
 import PrintMarketPlace from '../components/PrintMarketPlace';
 import Reviews from '../components/Reviews';
 import CurrentItemsForSale from '../components/CurrentItemsForSale';
-
+import PrinterStatus from '../components/PrinterStatus';
 
 
 // this is where you will have a description of your store and show current items for sale from your shop
@@ -79,6 +81,7 @@ export default function Storefront() {
 
       <h1>3D Printing Section</h1>
       <div className='secondaryPageWrapper'>
+        <PrinterStatus />
         <TodoComponent />
         <PrintMarketPlace />
       </div>

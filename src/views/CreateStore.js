@@ -15,7 +15,6 @@ export default function CreateStore() {
     const [filament, setFilament] = useState(null);
 
     const shopNameTooltip = "Enter a Shop Name";
-    const businessAdressTooltip = "Enter a Business Address for your shop";
     const aboutMyShopTooltip ="Tell us about your shop";
 
     const handleResinChange = (e) => {
@@ -190,4 +189,8 @@ export default function CreateStore() {
                     </Card.Body>
                 </Card>
                 {/* after submission create entity and redirect to mystore page */}
- 
+            </div>
+        </div>
+        </>
+    )
+}
