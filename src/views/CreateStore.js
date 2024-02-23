@@ -98,11 +98,12 @@ export default function CreateStore() {
                                                     {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
                                             </Form.Label>
                                             <Form.Control 
-                                            type='text' 
-                                            placeholder='Store Name'
+                                            as={'textarea'} 
+                                            rows={3}
+                                            placeholder='About'
                                             // value={defaultResume.firstName}
                                             // onChange={(e) => handleChange('firstName', e.target.value)}
-                                            maxLength='50'
+                                            maxLength='250'
                                             className="mobile-textarea"
                                             />
                                         </Form.Group>
@@ -189,8 +190,4 @@ export default function CreateStore() {
                     </Card.Body>
                 </Card>
                 {/* after submission create entity and redirect to mystore page */}
-            </div>
-        </div>
-        </>
-    )
-}
+ 
