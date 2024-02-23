@@ -154,7 +154,9 @@ input[type=radio]{
 .ratingComponent {
     padding: 2.5%;
 }
-
+#printerStatusCard {
+    width:45%;
+}
 #cartCard {
     width: 80%;
 }
