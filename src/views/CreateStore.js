@@ -12,6 +12,7 @@ import { useStore } from '../context/StoreContext';
 export default function CreateStore() {
     const {
         hasPrinter, setHasPrinter,
+        customPrints, setCustomPrints,
         printerInUse, setPrinterInUse,
         slaPrinter, setSlaPrinter,
         fdmPrinter, setFdmPrinter,
@@ -31,6 +32,9 @@ export default function CreateStore() {
     };
     const handleHasPrinter = (e) => {
         setHasPrinter(prevState => !prevState);
+    }
+    const handleCustomPrints = (e) => {
+        setCustomPrints(prevState => !prevState);
     }
 
 
@@ -146,11 +150,15 @@ export default function CreateStore() {
                                             inline
                                             label="Yes"
                                             type={'checkbox'}
+                                            onChange={handleCustomPrints}
+                                            checked={customPrints}
                                             />
                                             <Form.Check
                                             inline
                                             label="No"
                                             type={'checkbox'}
+                                            onChange={handleCustomPrints}
+                                            checked={!customPrints}
                                             />
                                             <br/>
                                             <Form.Label>What type of printers do you own?</Form.Label>

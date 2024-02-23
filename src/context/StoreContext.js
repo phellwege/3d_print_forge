@@ -45,6 +45,7 @@ export function StoreProvider({ children }) {
     // add shop creation logic
     const [printerInUse, setPrinterInUse] = useState(null);
     const [hasPrinter, setHasPrinter] = useState(false);
+    const [customPrints, setCustomPrints] = useState(null);
     // these will be a count of how many printers maxing out at 5
     const [slaPrinter, setSlaPrinter] = useState(null);
     const [fdmPrinter, setFdmPrinter] = useState(null);
@@ -225,6 +226,7 @@ export function StoreProvider({ children }) {
 
     const value = {
         hasPrinter, setHasPrinter,
+        customPrints, setCustomPrints,
         printerInUse, setPrinterInUse,
         slaPrinter, setSlaPrinter,
         fdmPrinter, setFdmPrinter,
