@@ -53,7 +53,10 @@ this app is a community of 3d printing enthusiasts.
     - Total Sold
 
 - Item
+    - belongs to (storeID)
     - Category (dropdown)
     - Item name
     - Description
     - Price
+    - Files (STL)
+    - Files (thumbnails of STL)
