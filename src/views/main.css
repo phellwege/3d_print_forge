@@ -33,6 +33,7 @@ a:hover {
     justify-content: space-evenly;
     align-items: center;
 }
+
 .pageWrap {
     padding-top: 15%;
     padding-bottom: 5%;
@@ -106,7 +107,10 @@ tr .userSwiperWrap {
     border-radius: 50%;
 }
 .itemsListedCard {
-    width: 50%;
+    width: 55%;
+}
+.itemsForSaleButtons {
+    margin: 5px;
 }
 .ShopReviewsSwiper img {
     width: 90%;

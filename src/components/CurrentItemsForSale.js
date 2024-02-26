@@ -24,6 +24,7 @@ export default function CurrentItemsForSale() {
                             <th>Description</th>
                             <th>Current Sale Price</th>
                             <th>Number Sold</th>
+                            <th>Make Changes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,11 @@ export default function CurrentItemsForSale() {
                             <td>Bob Lob Law</td>
                             <td>$$$</td>
                             <td>#</td>
+                            <td>
+                                <Button className='itemsForSaleButtons'>Edit</Button>
+                                <br/>
+                                <Button className='itemsForSaleButtons' variant='danger'>Delete</Button>
+                            </td>
                         </tr>
                     </tbody>
                 </Table>
