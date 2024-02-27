@@ -15,6 +15,7 @@ export default function UploadStl() {
   const fileNameTooltip = "Title of what you're uploading";
   const priceTooltip = "How much you're asking";
   const descriptionTooltip = 'Tell us about this STL or group of STLs';
+  
   function CurrencyInputField() {
     return(
       <>
