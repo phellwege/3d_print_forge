@@ -1,18 +1,12 @@
 import React, {useState} from 'react'
 import Header from '../components/Header'
 import {StlViewer} from "react-stl-viewer";
-import { makeStandardMaterial, makeEdgeMaterial, makeLambertMaterial, makeTexture, stl2png } from 'stl-to-png';
+import { stl2png } from 'stl-to-png';
 import fs from 'fs';
 import path from 'path';
 import {Card, Button} from 'react-bootstrap';
 import BackButton from '../components/BackButton';
 import './main.css';
-
-import preview from '../static/UserAvatars/coffeeBro1.png'
-import preview2 from '../static/UserAvatars/Dwarf.png'
-import preview3 from '../static/UserAvatars/elf1.png'
-import preview4 from '../static/UserAvatars/elf2.png'
-import preview5 from '../static/UserAvatars/fox.png'
 
 import deer1 from '../static/STL/deerlayleft.stl';
 import deer2 from '../static/STL/deerlayright.stl';
@@ -20,9 +14,9 @@ import deer3 from '../static/STL/Laying_Remastered_2019.stl';
 
 export default function Details() {
 // this url as well as the other previews will be loaded via state from the server
-    const url = "https://storage.googleapis.com/ucloud-v3/ccab50f18fb14c91ccca300a.stl"
-    const [currentlySelectedImg, setCurrentlySelectedImg] = useState(null)
+    const [currentlySelectedImg, setCurrentlySelectedImg] = useState(stlFilePaths[0]);
     const [thumbnails, setThumbnails] = useState([]);
+
     useEffect(() => {
         // Function to generate thumbnail in memory for a single STL file
         async function generateThumbnail(stlFilePath, options) {
@@ -61,6 +55,10 @@ export default function Details() {
         };
         loadThumbnails(stlFilePaths, thumbnailOptions);
     }, []); // Empty dependency array to run only once when component mounts
+    const handleThumbnailClick = (stlUrl) => {
+        setCurrentlySelectedImg(stlUrl);
+        setSelectedThumbnail(stlUrl)
+    };
 
     return (
         <>
@@ -75,7 +73,7 @@ export default function Details() {
                                 <StlViewer
                                     orbitControls
                                     shadows
-                                    url={deer3}
+                                    url={currentlySelectedImg}
                                     className='stlViewerComponent'
                                 />
                                 <h6>Image Preview</h6>
@@ -85,7 +83,7 @@ export default function Details() {
                                             key={index}
                                             src={`data:image/png;base64,${thumbnail.toString('base64')}`}
                                             alt={`Thumbnail ${index}`}
-                                            onClick={() => setSelectedThumbnail(thumbnail)}
+                                            onClick={() => handleThumbnailClick(stlFilePaths[index])}
                                             className={thumbnail === selectedThumbnail ? 'selected' : ''}
                                         />
                                     ))}
