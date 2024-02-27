@@ -48,7 +48,6 @@ export default function Details() {
                                         />
                                     ))}
                                 </div>
-                                {console.log(currentlySelectedImg)}
                             </div>
                             <div className='cartAndCheckoutButtonGroup'>
                                 <Button>Add To Cart</Button>

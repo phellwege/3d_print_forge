@@ -9,7 +9,9 @@ import './main.css';
 import { useUser } from '../context/UserContext';
 
 export default function Cart() {
-const {UserSwiper} = useUser();
+    const {
+        UserSwiper
+    } = useUser();
   return (
     <>
     <Header />
