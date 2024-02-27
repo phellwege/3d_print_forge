@@ -12,7 +12,6 @@ import deer3 from '../static/STL/Laying_Remastered_2019.stl';
 
 export default function Details() {
     const [currentlySelectedImg, setCurrentlySelectedImg] = useState(deer3);
-    const [thumbnails, setThumbnails] = useState([]);
     const thumbnailImages = [deer1, deer2, deer3]
     const handleThumbnailClick = (stlFilePath) => {
         setCurrentlySelectedImg(stlFilePath);
@@ -36,7 +35,14 @@ export default function Details() {
                                 />
                                 <h6>Image Preview</h6>
                                 <div className='detailsImagePreview'>
-                                    
+                                    {thumbnailImages.map((thumbnail, index) => (
+                                        <StlViewer
+                                            key={index}
+                                            url={thumbnail}
+                                            className='thumbnailStlViewer'
+                                            onClick={() => handleThumbnailClick(thumbnail)}
+                                        />
+                                    ))}
                                 </div>
                             </div>
                             <div className='cartAndCheckoutButtonGroup'>

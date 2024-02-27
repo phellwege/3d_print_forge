@@ -253,7 +253,7 @@ input[type=radio]{
 .backButton:hover {
     color: #E88873;
 }
-.detailsImagePreview img {
+.detailsImagePreview .thumbnailStlViewer {
     width: 18%;
     border: 3px solid #E0AC9D;
     border-radius: .5em;
