@@ -9,12 +9,13 @@ import './main.css';
 import deer1 from '../static/STL/deerlayleft.stl';
 import deer2 from '../static/STL/deerlayright.stl';
 import deer3 from '../static/STL/Laying_Remastered_2019.stl';
+import aqui from '../static/STL/aquila_trayscape.stl';
 
 export default function Details() {
     const [currentlySelectedImg, setCurrentlySelectedImg] = useState(deer3);
-    const thumbnailImages = [deer1, deer2, deer3]
-    const handleThumbnailClick = (stlFilePath) => {
-        setCurrentlySelectedImg(stlFilePath);
+    const thumbnailImages = [deer1, deer2, deer3, aqui]
+    const handleThumbnailClick = (index) => {
+        setCurrentlySelectedImg(thumbnailImages[index]);
     };
 
     return (
@@ -28,9 +29,12 @@ export default function Details() {
                             <h3>Preview</h3>
                             <div className='cardInnerDiv'>
                                 <StlViewer
+                                    key={currentlySelectedImg}
                                     orbitControls
                                     shadows
                                     url={currentlySelectedImg}
+                                    cameraProps={true}
+                                    // cameraPosition={{ x: 0, y: 0, z: 100 }}
                                     className='stlViewerComponent'
                                 />
                                 <h6>Image Preview</h6>
@@ -40,10 +44,11 @@ export default function Details() {
                                             key={index}
                                             url={thumbnail}
                                             className='thumbnailStlViewer'
-                                            onClick={() => handleThumbnailClick(thumbnail)}
+                                            onClick={() => handleThumbnailClick(index)}
                                         />
                                     ))}
                                 </div>
+                                {console.log(currentlySelectedImg)}
                             </div>
                             <div className='cartAndCheckoutButtonGroup'>
                                 <Button>Add To Cart</Button>
