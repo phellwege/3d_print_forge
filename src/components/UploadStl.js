@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import { Button, Card, Alert, Form} from 'react-bootstrap';
+import { Button, Card, Alert, Form, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BsPlusSquareDotted } from "react-icons/bs";
 import { BsQuestionCircle } from "react-icons/bs";
@@ -8,12 +8,13 @@ import CurrencyInput from 'react-currency-input-field';
 import '../views/main.css'
 
 export default function UploadStl() {
-
   const fileInputRef = useRef(null);
-
   const handleImageClick = () => {
     fileInputRef.current.click();
   };
+  const fileNameTooltip = "Title of what you're uploading";
+  const priceTooltip = "How much you're asking";
+  const descriptionTooltip = 'Tell us about this STL or group of STLs';
   function CurrencyInputField() {
     return(
       <>
@@ -61,9 +62,13 @@ export default function UploadStl() {
                             File Name
                             <span className="required-indicator">{" "}*</span>
                           </div>
-                                <span className="question-icon">
-                                    <BsQuestionCircle />
-                                </span>
+                          <OverlayTrigger
+                          overlay={<Tooltip id="tooltip">{fileNameTooltip}</Tooltip>}
+                          >
+                              <span className="question-icon">
+                                  <BsQuestionCircle />
+                              </span>
+                          </OverlayTrigger>
                         </div>
                         </Form.Label>
                         <Form.Control
@@ -79,9 +84,13 @@ export default function UploadStl() {
                             Price
                             <span className="required-indicator">{" "}*</span>
                           </div>
+                            <OverlayTrigger
+                            overlay={<Tooltip id="tooltip">{priceTooltip}</Tooltip>}
+                            >
                                 <span className="question-icon">
                                     <BsQuestionCircle />
                                 </span>
+                            </OverlayTrigger>
                         </div>
                         </Form.Label>
                         <Form.Control
@@ -96,9 +105,13 @@ export default function UploadStl() {
                                 Description
                                 <span className="required-indicator">{" "}*</span>
                                 </div>
-                                <span className="question-icon">
-                                    <BsQuestionCircle />
-                                </span>
+                                <OverlayTrigger
+                                overlay={<Tooltip id="tooltip">{descriptionTooltip}</Tooltip>}
+                                >
+                                    <span className="question-icon">
+                                        <BsQuestionCircle />
+                                    </span>
+                                </OverlayTrigger>
                         </div>
                         </Form.Label>
                         <Form.Control
