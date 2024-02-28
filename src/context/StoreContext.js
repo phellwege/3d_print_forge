@@ -38,7 +38,14 @@ export function useStore(){
 }
 
 export function StoreProvider({ children }) {
-
+    
+    const initialState = {
+        files: [], // Array of STL files
+        title: '',
+        description: '',
+        price: 0,
+    };
+    const [upload, setUpload] = useState(initialState)
     // add a function to accept or decline creating prints at the printing marketplace
     // add logic for todo when user accepts print
     // add logic for when user accepts custom print
@@ -258,6 +265,8 @@ export function StoreProvider({ children }) {
         Featured,
         ShopReviewsSwiper,
 
+        upload, setUpload,
+        initialState
     }
 
     return (
