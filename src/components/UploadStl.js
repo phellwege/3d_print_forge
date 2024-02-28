@@ -42,6 +42,12 @@ export default function UploadStl() {
   // }
   // this is for currency input, having trouble with state management
   function CurrencyInputField() {
+    const handlePriceChange = (value) => {
+      setFormData(prevState => ({
+        ...prevState,
+        price: value
+      }));
+    };
     return (
       <CurrencyInput
         id="UploadSTLCurrencyInput"
@@ -55,7 +61,7 @@ export default function UploadStl() {
         prefix="$"
         groupSeparator=","
         value={formData.price}
-        onValueChange={(value, name, values) => handleChange({ target: { name: 'price', value } })}
+        onValueChange={(value, name, values) => handlePriceChange(value)}
       />
     );
   };
@@ -168,12 +174,7 @@ export default function UploadStl() {
                             </OverlayTrigger>
                         </div>
                         </Form.Label>
-                        <Form.Control
-                          as={CurrencyInputField}
-                          placeholder='Price'
-                          className="mobile-textarea"
-                          
-                        />
+                        {CurrencyInputField()}
                         <br/>
                         <Form.Label className="d-flex justify-content-between align-items-center" >
                         <div className="text-center">
@@ -206,7 +207,6 @@ export default function UploadStl() {
                 </div>
                 <br/>
                 <Button onClick={handleSubmit}>Save</Button>
-                {console.log(upload)}
             </Card.Body>
         </Card>
         
