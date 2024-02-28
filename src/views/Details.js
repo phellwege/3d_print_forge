@@ -5,6 +5,7 @@ import { Card, Button } from 'react-bootstrap';
 import BackButton from '../components/BackButton';
 import './main.css';
 
+
 // Import STL file paths directly
 import deer1 from '../static/STL/deerlayleft.stl';
 import deer2 from '../static/STL/deerlayright.stl';
@@ -28,6 +29,7 @@ export default function Details() {
                         <Card.Body>
                             <h3>Preview</h3>
                             <div className='cardInnerDiv'>
+                                <h3>Item Name</h3>
                                 <StlViewer
                                     key={currentlySelectedImg}
                                     orbitControls
@@ -48,6 +50,12 @@ export default function Details() {
                                         />
                                     ))}
                                 </div>
+                                <div>
+                                    <br/>
+                                    <h5 className='leftAlign'>Description</h5>
+                                    <p className='leftAlign'> lorem ipsum</p>
+                                </div>
+                                
                             </div>
                             <div className='cartAndCheckoutButtonGroup'>
                                 <Button>Add To Cart</Button>

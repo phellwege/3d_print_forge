@@ -40,7 +40,7 @@ export function useStore(){
 export function StoreProvider({ children }) {
     
     const initialState = {
-        files: [], // Array of STL files
+        files: [], 
         title: '',
         description: '',
         price: 0,
