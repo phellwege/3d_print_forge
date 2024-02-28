@@ -18,29 +18,6 @@ export default function UploadStl() {
   const priceTooltip = "How much you're asking";
   const descriptionTooltip = 'Tell us about this STL or group of STLs';
 
-  // function CurrencyInputField({ onChange }) {
-  //   const handleCurrencyChange = (value) => {
-  //     onChange({ target: { name: 'price', value } });
-  //   };
-  //   return(
-  //     <>
-  //       <CurrencyInput
-  //         id="currencyInput"
-  //         name="UploadSTLCurrencyInput"
-  //         placeholder="$0.00"
-  //         allowNegativeValue={false}
-  //         decimalsLimit={2}
-  //         decimalScale={2}
-  //         disableAbbreviations={true}
-  //         step={1}
-  //         prefix='$'
-  //         groupSeparator=','
-  //         onValueChange={handleCurrencyChange}
-  //       />
-  //     </>
-  //   )
-  // }
-  // this is for currency input, having trouble with state management
   function CurrencyInputField() {
     const handlePriceChange = (value) => {
       setFormData(prevState => ({
@@ -65,10 +42,7 @@ export default function UploadStl() {
       />
     );
   };
-  
-  
-  
-  // below is form state for initial value of upload
+
   const {
     upload, setUpload,
   } = useStore();
