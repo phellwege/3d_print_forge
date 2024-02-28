@@ -85,7 +85,10 @@ export default function CreateStore() {
                                 <Form>
                                     <Form.Group controlId="formFile" className="mb-3">
                                         <Form.Label>Upload Shop Logo</Form.Label>
-                                        <Form.Control type="file" />
+                                        <Form.Control 
+                                        type="file"
+                                        accept='image/*'
+                                        />
                                     </Form.Group>
                                         <Form.Group>
                                             <Form.Label className="d-flex justify-content-between align-items-center" >

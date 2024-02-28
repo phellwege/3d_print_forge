@@ -44,7 +44,7 @@ export default function UploadStl() {
   };
 
   const {
-    upload, setUpload,
+    setUpload,
   } = useStore();
 
   const [formData, setFormData] = useState({

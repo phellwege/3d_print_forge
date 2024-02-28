@@ -258,15 +258,14 @@ input[type=radio]{
     width: 18%;
     border: 3px solid #E0AC9D;
     border-radius: .5em;
+    margin: 2%;
 }
-.detailsImagePreview img:hover {
+.detailsImagePreview .thumbnailStlViewer:hover {
     cursor: pointer;
     border: 3px solid #E88873;
 }
-.leftAlign {
+#leftAlign {
     text-align: left;
-    width: 80%;
-    margin-left: 10%;
 }
 .stlViewerComponent:hover {
     cursor: pointer;

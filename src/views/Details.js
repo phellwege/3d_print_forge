@@ -11,8 +11,13 @@ import deer1 from '../static/STL/deerlayleft.stl';
 import deer2 from '../static/STL/deerlayright.stl';
 import deer3 from '../static/STL/Laying_Remastered_2019.stl';
 import aqui from '../static/STL/aquila_trayscape.stl';
+import { useStore } from '../context/StoreContext';
 
 export default function Details() {
+    const {
+        initialState,
+        upload
+    } = useStore()
     const [currentlySelectedImg, setCurrentlySelectedImg] = useState(deer3);
     const thumbnailImages = [deer1, deer2, deer3, aqui]
     const handleThumbnailClick = (index) => {
@@ -29,7 +34,7 @@ export default function Details() {
                         <Card.Body>
                             <h3>Preview</h3>
                             <div className='cardInnerDiv'>
-                                <h3>Item Name</h3>
+                                <h3>{upload.title}</h3>
                                 <StlViewer
                                     key={currentlySelectedImg}
                                     orbitControls
@@ -50,12 +55,18 @@ export default function Details() {
                                         />
                                     ))}
                                 </div>
-                                <div>
-                                    <br/>
-                                    <h5 className='leftAlign'>Description</h5>
-                                    <p className='leftAlign'> lorem ipsum</p>
+                                <div className='cardInnerDivSeparator'>
+                                    <div className='cardInnerDivLeft'>
+                                        <br/>
+                                        <h5>Price</h5>
+                                        <h4>${upload.price}</h4>
+                                    </div>
+                                    <div className='cardInnerDivRight' id='leftAlign'>
+                                        <br/>
+                                        <h5>Description</h5>
+                                        <p>{upload.description}</p>
+                                    </div>
                                 </div>
-                                
                             </div>
                             <div className='cartAndCheckoutButtonGroup'>
                                 <Button>Add To Cart</Button>
