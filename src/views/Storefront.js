@@ -26,6 +26,7 @@ export default function Storefront() {
   const {
     rating, 
     reviewed,
+    user, setUser
   } = useUser();
   const {
     hasPrinter,
@@ -37,7 +38,7 @@ export default function Storefront() {
     <div className='pageWrap'>
       {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store <FaShop /></h1>
-      {reviewed && (
+      {user.reviews.reviewed && (
         <>
           <div className='ratingComponent'>
             <h3>Average Rating</h3>
@@ -47,7 +48,7 @@ export default function Storefront() {
                 <label key={index}>
                   <FaStar 
                     size={20} 
-                    color={currentRating <= (rating) ? '#ffc107' : '#e4e5e9'}
+                    color={currentRating <= (user.reviews.rating) ? '#ffc107' : '#e4e5e9'}
                   />
                 </label>
               )
@@ -73,7 +74,7 @@ export default function Storefront() {
           </div>
         </Card.Body>
       </Card>
-      {reviewed && (
+      {user.reviews.reviewed && (
         <Reviews />
       )}
       <UploadStl />

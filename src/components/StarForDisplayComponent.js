@@ -5,7 +5,7 @@ import { useUser } from '../context/UserContext';
 // this component allows you to see a star rating's state
 import '../views/main.css'
 export default function StarForDisplayComponent() {
-    const {rating} = useUser();
+    const {user} = useUser();
 
     return (
         <>
@@ -16,7 +16,7 @@ export default function StarForDisplayComponent() {
                         <label key={index}>
                             <FaStar 
                                 size={20} 
-                                color={currentRating <= (rating) ? '#ffc107' : '#e4e5e9'}
+                                color={currentRating <= (user.reviews.rating) ? '#ffc107' : '#e4e5e9'}
                             />
                         </label>
                     )

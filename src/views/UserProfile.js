@@ -19,12 +19,9 @@ import { useStore } from '../context/StoreContext';
 
 // this is where the user can view and edit their profile. see the progress on their prints etc
 export default function UserProfile() {
-
   const {
+    user, setUser,
     UserSwiper,
-    defaultUserAvatar,
-    reviewed,
-    storeOwnership
   } = useUser();
  const {
   myStore
@@ -44,11 +41,11 @@ export default function UserProfile() {
   }
 
   function hasBeenReviewed(){
-    if(reviewed){
+    if(user.reviews.reviewed){
         return(
             <>
               Already Reviewed
-              {StarForDisplayComponent()}
+              {StarForDisplayComponent(user.reviews.rating)}
             </>
         )
     } else {
@@ -83,7 +80,7 @@ export default function UserProfile() {
             <div className='cardInnerDiv'>
               <div>
                 <img 
-                  src={defaultUserAvatar} 
+                  src={user.defaultUserAvatar} 
                   className='userProfileAvatarImg' 
                   alt='user Avatar'
                 />
@@ -102,7 +99,7 @@ export default function UserProfile() {
               <Card.Body>
                 <h3>My Shop</h3>
                 <div className='cardInnerDiv'>
-                  {storeOwnership ? (
+                  {user.storeOwnership ? (
                     <>
                     <img 
                       src={myStore.logo} 

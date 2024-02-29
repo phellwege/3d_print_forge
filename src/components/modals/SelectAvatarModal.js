@@ -9,10 +9,8 @@ import './modals.css';
 
 export default function SelectAvatar(props) {
   const {
-    userAvatars,
-    setUserPic,
+    user, setUser,
   } = useUser();
-
   let avatarRef = useRef();
 
   const openAvatarWindow = () => {
@@ -27,16 +25,29 @@ export default function SelectAvatar(props) {
 
   useEffect(() => {
     let handler = (event) => {
-        if(!avatarRef.current.contains(event.target)){
-            if (document.getElementsByClassName('openAvatarWindow')[0].style.display == 'block') openAvatarWindow();
+      if (avatarRef.current && !avatarRef.current.contains(event.target)) {
+        const openAvatarWindowElement = document.querySelector('openAvatarWindow');
+        if (openAvatarWindowElement && openAvatarWindowElement.style.display === 'block') {
+          openAvatarWindow();
         }
-    }
-    document.addEventListener('mousedown', handler)
+      }
+    };
+    document.addEventListener('mousedown', handler);
     return () => {
-        document.removeEventListener('mousedown', handler);
-    }
-}, [])
+      document.removeEventListener('mousedown', handler);
+    };
+  }, []);
 
+  const handleSelectAvatar = (picIndex) => {
+    if (user) {
+      setUser({ ...user, defaultUserAvatar: picIndex }); // Update defaultUserAvatar with the index of the selected avatar
+    }
+    openAvatarWindow();
+  }
+
+  if (!user || !user.userAvatars) {
+    return null;
+  }
   return (
     <div className="openAvatarWindow">
       <div 
@@ -51,16 +62,15 @@ export default function SelectAvatar(props) {
         >
         <MdClose style={{ color: "#E4FDE1", width: "40px", height: "40px" }} />
         </button>
-          {userAvatars.map((pic, picIndex) => (
+          {user.userAvatars.map((pic, picIndex) => (
             <div key={picIndex} className='modalAvatar'>
                 <div  className='modalAvatarImg'>
                     <img src={pic} alt='avatarPicture' loading='lazy'/>
                 </div>
                     <Button 
                       aria-label='select avatar button'
-                      onClick={(e) => {
-                        setUserPic(picIndex);
-                        openAvatarWindow();
+                      onClick={() => {
+                        handleSelectAvatar(picIndex)
                     }}>
                         Select
                     </Button>

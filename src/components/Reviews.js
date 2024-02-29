@@ -13,7 +13,7 @@ export default function Reviews() {
     ShopReviewsSwiper,
   } = useStore();
   const {
-    reviewDescription
+    user
   } = useUser();
 
   return (
@@ -36,7 +36,7 @@ export default function Reviews() {
                     </li>
                     <li><StarForDisplayComponent /></li>
                     <li>
-                      <p>{reviewDescription}</p>
+                      <p>{user.reviews.reviewDescription}</p>
                     </li>
                 </ul>
             </div>

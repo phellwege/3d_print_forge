@@ -7,12 +7,19 @@ import { useUser } from '../context/UserContext';
 
 // leave a review for something you've purchased option only available after item has arrived or 1 day after purchasing STL
 export default function LeaveAReview() {
-
     const {
-        reviewDescription, 
-        setReviewDescription
+        user, setUser,
     } = useUser()
 
+    const handleReviewChange = (event) => {
+        setUser({
+            ...user,
+            reviews: {
+                ...user.reviews,
+                reviewDescription: event.target.value
+            }
+        });
+    };
   return (
     <>
         <Card>
@@ -23,8 +30,8 @@ export default function LeaveAReview() {
                     <div>
                         <h6>Tell us Why</h6>
                         <textarea 
-                        value={reviewDescription}
-                        onChange={setReviewDescription(reviewDescription)}
+                        value={user.reviews.reviewDescription}
+                        onChange={handleReviewChange}
                         />
                     </div>
                     <Button>Submit</Button>

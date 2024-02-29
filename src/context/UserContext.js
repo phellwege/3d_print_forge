@@ -26,11 +26,6 @@ export function UserProvider({ children }) {
     // thumbnails dynamic from selection
     const [thumbnailImages, setThumbnailImages] = useState([deer1, deer2, deer3, aqui]);
 
-    const [reviewed, setReviewed] = useState(false);
-    const [rating, setRating] = useState(null);
-    const [reviewDescription, setReviewDescription] = useState('');
-    const [storeOwnership, setStoreOwnership] = useState(null)
-
     // user avatar selection stuff
     const userAvatarKeys = [
         'astro1', 'astro2', 'astro3', 'astro4', 'CatMan', 
@@ -40,11 +35,17 @@ export function UserProvider({ children }) {
         'wizard2', 'wizard3', 'wolf', 'Zebra'
     ];
     const userAvatars = userAvatarKeys.map(key => require(`../static/UserAvatars/${key}.png`));
-    const [defaultUserAvatar, setDefaultUserAvatar] = useState(userAvatars[0]);
-    function setUserPic(picIndex) {
-        setDefaultUserAvatar(userAvatars[picIndex]);
-    }
-
+    // user object
+    const [user, setUser] = useState({
+        userName: '',
+        defaultUserAvatar: userAvatars[0],
+        storeOwnership: false,
+        reviews: {
+            rating: null,
+            reviewDescription: '',
+            reviewed: false
+        },
+    });
 
     function UserSwiper(){
         return (
@@ -75,18 +76,8 @@ export function UserProvider({ children }) {
 
 
     const value = {
+        user, setUser,
         UserSwiper,
-
-        storeOwnership, setStoreOwnership,
-
-        reviewed, setReviewed,
-        rating, setRating,
-        reviewDescription, setReviewDescription,
-
-        defaultUserAvatar,
-        userAvatars,
-        setUserPic
-
     }
 
     return (

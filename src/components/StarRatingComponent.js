@@ -4,26 +4,34 @@ import { useUser } from '../context/UserContext';
 // this component allows you to save a star rating in state
 import '../views/main.css'
 export default function StarRatingComponent() {
-    const {rating, setRating} = useUser();
+    const {user, setUser} = useUser();
     const [hover, setHover] = useState(null)
-
+    const handleRatingClick = (rating) => {
+        setUser({
+            ...user,
+            reviews: {
+                ...user.reviews,
+                rating: rating
+            }
+        });
+    };
     return (
         <>
             <div  className='ratingComponent'>
                 {[...Array(5)].map((star, index) => {
-                    const currentRating = index + 1;
+                    const rating = index + 1;
                     return (
                         <label key={index}>
                             <input 
                                 type='radio'
                                 name='rating'
-                                value={currentRating}
-                                onClick={() => setRating(currentRating)}
+                                value={rating}
+                                onClick={() => handleRatingClick(rating)}
                             />
                             <FaStar 
                             className='star' size={25} 
-                            color={currentRating <= (hover || rating) ? '#ffc107' : '#e4e5e9'}
-                            onMouseEnter={() => setHover(currentRating)}
+                            color={rating <= (hover || user.reviews.rating) ? '#ffc107' : '#e4e5e9'}
+                            onMouseEnter={() => setHover(rating)}
                             onMouseLeave={() => setHover(null)}
                             />
                         </label>

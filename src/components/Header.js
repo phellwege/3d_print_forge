@@ -11,7 +11,7 @@ import "./header.css";
 import logo from '../static/logos/DwarvenForgeLogo3.PNG';
 
 function Header(props) {
-    const {defaultUserAvatar} = useUser();
+    const {user} = useUser();
     const history = useNavigate();
     const [error, setError] = useState('');
 
@@ -83,7 +83,7 @@ return (
             <div className='avatarWindow'>
                 {/* {AlertMessage()} */}
                 {shoppingCart()}
-                <img src={defaultUserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
+                <img src={user.defaultUserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
                 <Link to='/UserProfile'>UserName</Link>
                 <Link to='/'>Login/Logout</Link>
             </div>

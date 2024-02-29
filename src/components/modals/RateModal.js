@@ -9,13 +9,19 @@ import './modals.css';
 
 export default function RateModal(props) {
     const {
-        setReviewed,
-        reviewDescription, 
-        setReviewDescription
+        user, setUser
     } = useUser()
-
     let rateRef = useRef();
-    
+    const handleReviewChange = (event) => {
+        const newReviewDescription = event.target.value;
+        setUser({
+            ...user,
+            reviews: {
+                ...user.reviews,
+                reviewDescription: newReviewDescription
+            }
+        });
+    };
     const openRateWindow = () => {
         const x = document.getElementsByClassName('openRateWindow')[0];
         if(x.style.display == 'block') {
@@ -37,6 +43,16 @@ export default function RateModal(props) {
             document.removeEventListener('mousedown', handler);
         }
     }, [])
+    const handleReviewSubmit = () => {
+        setUser(prevUser => ({
+            ...prevUser,
+            reviews: {
+                ...prevUser.reviews,
+                reviewed: true
+            }
+        }));
+        openRateWindow();
+    }
 
     return (
         <div className="openRateWindow">
@@ -71,15 +87,15 @@ export default function RateModal(props) {
                             as="textarea" 
                             rows={5} 
                             placeholder='Tell us More'
-                            value={reviewDescription}
-                            onChange={(e)=> setReviewDescription(e.target.value)}
+                            value={user.reviews.reviewDescription}
+                            onChange={handleReviewChange}
                             maxLength='300'
                             className="mobile-textarea"
                             />
                         </Form.Group>
                     </Form>
                     <br/>
-                    <Button onClick={()=> {openRateWindow(); setReviewed(true)}}>Submit</Button>
+                    <Button onClick={()=> handleReviewSubmit()}>Submit</Button>
                 </div>
             </div>
         </div>
