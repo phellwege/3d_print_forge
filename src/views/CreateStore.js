@@ -24,52 +24,41 @@ export default function CreateStore() {
     } = useUser();
     // handling checking if they have resin/filament printers and displaying appropriately
     const { printer } = myStore;
-    const { hasPrinter, customPrints, slaPrinter, fdmPrinter } = printer;
+    const { 
+        hasPrinter, 
+        customPrints, 
+        slaPrinter, 
+        fdmPrinter 
+    } = printer;
     const [resin, setResin] = useState(null);
     const [filament, setFilament] = useState(null);
     const shopNameTooltip = "Enter a Shop Name";
     const aboutMyShopTooltip ="Tell us about your shop";
 
     const handleResinChange = (e) => {
-        setResin(e.target.checked);
-        if (e.target.checked) {
-            setMyStore(prevState => ({
-                ...prevState,
-                printer: {
-                    ...prevState.printer,
-                    slaPrinter: 1
-                }
-            }));
-        } else {
-            setMyStore(prevState => ({
-                ...prevState,
-                printer: {
-                    ...prevState.printer,
-                    slaPrinter: null
-                }
-            }));
-        }
+        const isChecked = e.target.checked;
+        setResin(isChecked);
+        const value = isChecked ? 1 : 0; 
+        setMyStore(prevState => ({
+            ...prevState,
+            printer: {
+                ...prevState.printer,
+                slaPrinter: value
+            }
+        }));
     };
 
     const handleFilamentChange = (e) => {
-        setFilament(e.target.checked);
-        if (e.target.checked) {
-            setMyStore(prevState => ({
-                ...prevState,
-                printer: {
-                    ...prevState.printer,
-                    fdmPrinter: 1
-                }
-            }));
-        } else {
-            setMyStore(prevState => ({
-                ...prevState,
-                printer: {
-                    ...prevState.printer,
-                    fdmPrinter: null
-                }
-            }));
-        }
+        const isChecked = e.target.checked;
+        setFilament(isChecked);
+        const value = isChecked ? 1 : 0;
+        setMyStore(prevState => ({
+            ...prevState,
+            printer: {
+                ...prevState.printer,
+                fdmPrinter: value
+            }
+        }));
     };
 
     const handleHasPrinter = (e) => {
@@ -331,7 +320,6 @@ export default function CreateStore() {
                         </div>
                     </Card.Body>
                 </Card>
-                {/* after submission create entity and redirect to mystore page */}
             </div>
         </div>
         </>

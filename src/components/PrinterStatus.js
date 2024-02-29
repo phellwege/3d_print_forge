@@ -8,10 +8,7 @@ import { useStore } from '../context/StoreContext';
 export default function PrinterStatus() {
 
     const {
-        printerInUse,
-        slaPrinter,
-        fdmPrinter,
-        hasPrinter
+        myStore
     } = useStore();
     const range = (count) => [...Array(count).keys()];
   return (
@@ -30,10 +27,10 @@ export default function PrinterStatus() {
                             </tr>
                         </thead>
                         <tbody>
-                        {range(slaPrinter).map((printer, index) => (
+                        {range(myStore.printer.slaPrinter).map((printer, index) => (
                             <tr key={`slaPrinter-${index}`}>
                                 <td>
-                                {printerInUse ? (
+                                {myStore.printer.printerInUse ? (
                                         <>
                                             In Use
                                             <br/>
@@ -50,7 +47,7 @@ export default function PrinterStatus() {
                                 </td>
                                 <td>SLA</td>
                                 <td>
-                                    {printerInUse ? (
+                                    {myStore.printer.printerInUse ? (
                                         <>
                                             Order #
                                         </>
@@ -61,7 +58,7 @@ export default function PrinterStatus() {
                                     )}
                                 </td>
                                 <td>
-                                    {printerInUse ? (
+                                    {myStore.printer.printerInUse ? (
                                         <>
                                             Started Printing:
                                             <br/>
@@ -75,10 +72,10 @@ export default function PrinterStatus() {
                                 </td>
                             </tr>
                         ))}
-                        {range(fdmPrinter).map((printer, index) => (
+                        {range(myStore.printer.fdmPrinter).map((printer, index) => (
                             <tr key={`fdmPrinter-${index}`}>
                                 <td>
-                                {printerInUse ? (
+                                {myStore.printer.printerInUse ? (
                                         <>
                                             In Use
                                             <br/>
@@ -95,7 +92,7 @@ export default function PrinterStatus() {
                                 </td>
                                 <td>FDM</td>
                                 <td>
-                                    {printerInUse ? (
+                                    {myStore.printer.printerInUse ? (
                                         <>
                                             Order #
                                         </>
@@ -106,7 +103,7 @@ export default function PrinterStatus() {
                                     )}
                                 </td>
                                 <td>
-                                    {printerInUse ? (
+                                    {myStore.printer.printerInUse ? (
                                         <>
                                             Started Printing:
                                             <br/>
@@ -122,7 +119,6 @@ export default function PrinterStatus() {
                         ))}
                         </tbody>
                     </Table>
-                    {/* FDM */}
                 </div>
             </Card.Body>
         </Card>

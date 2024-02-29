@@ -59,8 +59,8 @@ export function StoreProvider({ children }) {
             hasPrinter: false,
             customPrints: false,
             printerInUse: null,
-            slaPrinter: null,
-            fdmPrinter: null
+            slaPrinter: 0,
+            fdmPrinter: 0
         }
     });
     
@@ -69,12 +69,6 @@ export function StoreProvider({ children }) {
     // add logic for todo when user accepts print
     // add logic for when user accepts custom print
     // add shop creation logic
-    const [printerInUse, setPrinterInUse] = useState(null);
-    const [hasPrinter, setHasPrinter] = useState(false);
-    const [customPrints, setCustomPrints] = useState(null);
-    
-    const [slaPrinter, setSlaPrinter] = useState(null);
-    const [fdmPrinter, setFdmPrinter] = useState(null);
 
     const [sla, setSla] = useState(null);
     const [fdm, setFdm] = useState(null);
@@ -251,11 +245,6 @@ export function StoreProvider({ children }) {
 
 
     const value = {
-        hasPrinter, setHasPrinter,
-        customPrints, setCustomPrints,
-        printerInUse, setPrinterInUse,
-        slaPrinter, setSlaPrinter,
-        fdmPrinter, setFdmPrinter,
 
         sla, setSla,
         fdm, setFdm,

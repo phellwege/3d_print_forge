@@ -79,7 +79,7 @@ export default function Storefront() {
       <UploadStl />
       <CurrentItemsForSale />
       </div>
-      {hasPrinter && (
+      {myStore.printer.hasPrinter && (
         <>
           <h1>3D Printing Section</h1>
           <div className='secondaryPageWrapper'>
