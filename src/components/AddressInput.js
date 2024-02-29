@@ -13,6 +13,7 @@ export default function AddressInput({onChange}) {
                 type="text" 
                 placeholder="Street Address" 
                 onChange={e => onChange({ street: e.target.value })} 
+                maxLength='50'
                 />
             </Col>
             </Form.Group>
@@ -23,6 +24,7 @@ export default function AddressInput({onChange}) {
                 type="text" 
                 placeholder="City" 
                 onChange={e => onChange({ city: e.target.value })} 
+                maxLength='50'
                 />
             </Col>
             </Form.Group>
@@ -43,6 +45,7 @@ export default function AddressInput({onChange}) {
                 type="text" 
                 placeholder="ZIP" 
                 onChange={e => onChange({ zip: e.target.value })} 
+                maxLength='50'
                 />
             </Col>
             </Form.Group>

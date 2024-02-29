@@ -172,16 +172,17 @@ export default function CreateStore() {
                                                         Shop Name
                                                         <span className="required-indicator">{" "}*</span>
                                                     </div>
-                                                    
-                                                    <OverlayTrigger
-                                                    overlay={<Tooltip id="tooltip">{shopNameTooltip}</Tooltip>}
-                                                    >
-                                                        <span className="question-icon">
-                                                            <BsQuestionCircle />
-                                                        </span>
-                                                    </OverlayTrigger>
+                                                    <div>
+                                                        <sub>{myStore.shopName.length} / 25{" "}</sub> 
+                                                        <OverlayTrigger
+                                                        overlay={<Tooltip id="tooltip">{shopNameTooltip}</Tooltip>}
+                                                        >
+                                                            <span className="question-icon">
+                                                                <BsQuestionCircle />
+                                                            </span>
+                                                        </OverlayTrigger>
+                                                    </div>
                                                 </div>
-                                                    {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
                                             </Form.Label>
                                             <Form.Control 
                                                 type='text' 
@@ -189,7 +190,7 @@ export default function CreateStore() {
                                                 name='shopName'
                                                 value={myStore.shopName}
                                                 onChange={handleChange}
-                                                maxLength='50'
+                                                maxLength='25'
                                                 className="mobile-textarea"
                                             />
                                             <br/>
@@ -201,18 +202,20 @@ export default function CreateStore() {
                                                         About My Shop
                                                         <span className="required-indicator">{" "}*</span>
                                                     </div>
-                                                    <OverlayTrigger
-                                                        overlay={
-                                                        <Tooltip id="tooltip">
-                                                            {aboutMyShopTooltip}
-                                                        </Tooltip>
-                                                    }>
-                                                        <span className="question-icon">
-                                                            <BsQuestionCircle />
-                                                        </span>
-                                                    </OverlayTrigger>
+                                                    <div>
+                                                        <sub>{myStore.about.length} / 250{" "}</sub> 
+                                                        <OverlayTrigger
+                                                            overlay={
+                                                                <Tooltip id="tooltip">
+                                                                    {aboutMyShopTooltip}
+                                                                </Tooltip>
+                                                        }>
+                                                            <span className="question-icon">
+                                                                <BsQuestionCircle />
+                                                            </span>
+                                                        </OverlayTrigger>
+                                                    </div>
                                                 </div>
-                                                    {/* <sub>({defaultResume.firstName.length} / 25)</sub> */}
                                             </Form.Label>
                                             <Form.Control 
                                                 as={'textarea'} 
