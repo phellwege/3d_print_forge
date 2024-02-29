@@ -12,17 +12,19 @@ import { useUser } from '../context/UserContext';
 export default function CreateStore() {
     const history = useNavigate()
     const {
-        hasPrinter, setHasPrinter,
-        customPrints, setCustomPrints,
-        printerInUse, setPrinterInUse,
-        slaPrinter, setSlaPrinter,
-        fdmPrinter, setFdmPrinter,
+        // hasPrinter, setHasPrinter,
+        // customPrints, setCustomPrints,
+        // printerInUse, setPrinterInUse,
+        // slaPrinter, setSlaPrinter,
+        // fdmPrinter, setFdmPrinter,
         myStore, setMyStore
     } = useStore();
     const {
         setStoreOwnership,
     } = useUser();
     // handling checking if they have resin/filament printers and displaying appropriately
+    const { printer } = myStore;
+    const { hasPrinter, customPrints, slaPrinter, fdmPrinter } = printer;
     const [resin, setResin] = useState(null);
     const [filament, setFilament] = useState(null);
     const shopNameTooltip = "Enter a Shop Name";
@@ -31,32 +33,85 @@ export default function CreateStore() {
     const handleResinChange = (e) => {
         setResin(e.target.checked);
         if (e.target.checked) {
-            setSlaPrinter(1);
+            setMyStore(prevState => ({
+                ...prevState,
+                printer: {
+                    ...prevState.printer,
+                    slaPrinter: 1
+                }
+            }));
         } else {
-            setSlaPrinter(null);
+            setMyStore(prevState => ({
+                ...prevState,
+                printer: {
+                    ...prevState.printer,
+                    slaPrinter: null
+                }
+            }));
         }
     };
+
     const handleFilamentChange = (e) => {
         setFilament(e.target.checked);
         if (e.target.checked) {
-            setFdmPrinter(1);
+            setMyStore(prevState => ({
+                ...prevState,
+                printer: {
+                    ...prevState.printer,
+                    fdmPrinter: 1
+                }
+            }));
         } else {
-            setFdmPrinter(null);
+            setMyStore(prevState => ({
+                ...prevState,
+                printer: {
+                    ...prevState.printer,
+                    fdmPrinter: null
+                }
+            }));
         }
     };
+
     const handleHasPrinter = (e) => {
-        setHasPrinter(prevState => !prevState);
-    }
+        setMyStore(prevState => ({
+            ...prevState,
+            printer: {
+                ...prevState.printer,
+                hasPrinter: !prevState.printer.hasPrinter
+            }
+        }));
+    };
+
     const handleCustomPrints = (e) => {
-        setCustomPrints(prevState => !prevState);
-    }
+        setMyStore(prevState => ({
+            ...prevState,
+            printer: {
+                ...prevState.printer,
+                customPrints: !prevState.printer.customPrints
+            }
+        }));
+    };
+
     const handleSettingAmountOfSla = (e) => {
-        setSlaPrinter(parseInt(e.target.value))
-    }
+        setMyStore(prevState => ({
+            ...prevState,
+            printer: {
+                ...prevState.printer,
+                slaPrinter: parseInt(e.target.value)
+            }
+        }));
+    };
+
     const handleSettingAmountOfFdm = (e) => {
-        setFdmPrinter(parseInt(e.target.value))
-    }
-    
+        setMyStore(prevState => ({
+            ...prevState,
+            printer: {
+                ...prevState.printer,
+                fdmPrinter: parseInt(e.target.value)
+            }
+        }));
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setMyStore(prevState => ({
@@ -74,7 +129,7 @@ export default function CreateStore() {
             }
         }));
     };
-    
+
     const handleLogoChange = async (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -97,13 +152,6 @@ export default function CreateStore() {
     };
 
     const handleStoreOwnership = () => {
-        setMyStore(prevState => ({
-            ...prevState,
-            logo: prevState.logo,
-            shopName: prevState.shopName,
-            address: prevState.address,
-            about: prevState.about
-        }));
         setStoreOwnership(true);
         history('/Storefront');
     };

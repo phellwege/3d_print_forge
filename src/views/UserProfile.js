@@ -90,7 +90,11 @@ export default function UserProfile() {
             <h3>Profile</h3>
             <div className='cardInnerDiv'>
               <div>
-                <img src={defaultUserAvatar} className='userProfileAvatarImg'/>
+                <img 
+                  src={defaultUserAvatar} 
+                  className='userProfileAvatarImg' 
+                  alt='user Avatar'
+                />
                 <h5>Choose Avatar</h5>
                 <Button onClick={()=> OpenAvatarWindow()}>Select</Button>
               </div>
@@ -108,7 +112,11 @@ export default function UserProfile() {
                 <div className='cardInnerDiv'>
                   {storeOwnership ? (
                     <>
-                    <img src={StoreImagePlaceHolder} alt='Store Logo' className='storeImgPlaceholder'/>
+                    <img 
+                      src={StoreImagePlaceHolder} 
+                      alt='Store Logo' 
+                      className='storeImgPlaceholder'
+                    />
                     <br/>
                     <h3>Store Name</h3>
                     <p>About my Store</p>
@@ -117,7 +125,9 @@ export default function UserProfile() {
                   ) : (
                     <>
                     <div>
-                      <p>You don't currently have a storefront</p>
+                      <p>
+                        You don't currently have a storefront
+                      </p>
                       <Button onClick={handleNavCreateStore}>Open Shop</Button>
                     </div>
                     </>

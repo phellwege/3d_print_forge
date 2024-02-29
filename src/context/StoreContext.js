@@ -55,7 +55,15 @@ export function StoreProvider({ children }) {
             zip: '',
         },
         about:'',
+        printer: {
+            hasPrinter: false,
+            customPrints: null,
+            printerInUse: null,
+            slaPrinter: null,
+            fdmPrinter: null
+        }
     });
+    
     const [upload, setUpload] = useState(initialState)
     // add a function to accept or decline creating prints at the printing marketplace
     // add logic for todo when user accepts print

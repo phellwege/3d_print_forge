@@ -5,7 +5,7 @@ import '../views/main.css';
 
 export default function AddressInput({onChange}) {
     return (
-        <Form className='addressForm'>
+        <div className='addressForm'>
             <Form.Group as={Row} controlId="addressStreet">
             <Form.Label column sm="2">Street:</Form.Label>
             <Col sm="15">
@@ -31,7 +31,7 @@ export default function AddressInput({onChange}) {
                 <Col sm="5">
                 <Form.Control as="select" onChange={e => onChange({ state: e.target.value })}>
                     {usStates.map(state => (
-                    <option key={state.abbr} value={state.abbr}>{state.name}</option>
+                        <option key={state.abbr} value={state.abbr}>{state.name}</option>
                     ))}
                 </Form.Control>
                 </Col>
@@ -46,6 +46,6 @@ export default function AddressInput({onChange}) {
                 />
             </Col>
             </Form.Group>
-        </Form>
+        </div>
         );
     };
