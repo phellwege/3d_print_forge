@@ -328,7 +328,6 @@ export default function CreateStore() {
                             </div>
                             <br/>
                             <Button onClick={() => handleStoreOwnership()}>Submit</Button>
-                            {console.log(myStore)}
                         </div>
                     </Card.Body>
                 </Card>

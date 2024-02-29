@@ -13,7 +13,6 @@ import RateModal from '../components/modals/RateModal';
 
 import StarForDisplayComponent from '../components/StarForDisplayComponent';
 
-import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG';
 
 import './main.css';
 import { useStore } from '../context/StoreContext';
@@ -59,7 +58,7 @@ export default function UserProfile() {
             </>
         )
     }
-}
+  }
   const openRateWindow = (clickedToReview) => {
     const x = document.getElementsByClassName('openRateWindow')[0];
     if(x.style.display === 'block') {
@@ -70,16 +69,6 @@ export default function UserProfile() {
     }
   }
 
-
-  // edit function to operate properly if user has registered a store
-  function storeOwner() {
-      return (
-        <div>
-          <p>You don't currently have a storefront</p>
-          <Button onClick={handleNavCreateStore}>Open Shop</Button>
-        </div>
-      )
-  }
   return (
     <>
     <Header />
