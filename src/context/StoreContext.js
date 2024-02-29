@@ -45,6 +45,17 @@ export function StoreProvider({ children }) {
         description: '',
         price: 0,
     };
+    const [myStore, setMyStore] = useState({
+        logo: null,
+        shopName: '',
+        address: {
+            street: '',
+            city: '',
+            state: '',
+            zip: '',
+        },
+        about:'',
+    });
     const [upload, setUpload] = useState(initialState)
     // add a function to accept or decline creating prints at the printing marketplace
     // add logic for todo when user accepts print
@@ -266,7 +277,8 @@ export function StoreProvider({ children }) {
         ShopReviewsSwiper,
 
         upload, setUpload,
-        initialState
+        initialState,
+        myStore, setMyStore
     }
 
     return (
