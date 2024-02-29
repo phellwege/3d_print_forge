@@ -57,7 +57,7 @@ export function StoreProvider({ children }) {
         about:'',
         printer: {
             hasPrinter: false,
-            customPrints: null,
+            customPrints: false,
             printerInUse: null,
             slaPrinter: null,
             fdmPrinter: null

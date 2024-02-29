@@ -301,7 +301,7 @@ export default function CreateStore() {
                                     {resin && (
                                         <>
                                         <Form.Label>How Many SLA (Resin) Printers?</Form.Label>
-                                        <select class="form-control" id="exampleFormControlSelect1" onChange={handleSettingAmountOfSla} value={slaPrinter}>
+                                        <select className="form-control" id="exampleFormControlSelect1" onChange={handleSettingAmountOfSla} value={slaPrinter}>
                                             <option value={1}>1</option>
                                             <option value={2}>2</option>
                                             <option value={3}>3</option>
@@ -313,7 +313,7 @@ export default function CreateStore() {
                                     {filament && (
                                         <>
                                         <Form.Label>How Many FDM (Filament) Printers?</Form.Label>
-                                        <select class="form-control" id="exampleFormControlSelect1" onChange={handleSettingAmountOfFdm} value={fdmPrinter}>
+                                        <select className="form-control" id="exampleFormControlSelect1" onChange={handleSettingAmountOfFdm} value={fdmPrinter}>
                                             <option value={1}>1</option>
                                             <option value={2}>2</option>
                                             <option value={3}>3</option>

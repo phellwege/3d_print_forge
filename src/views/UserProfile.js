@@ -16,6 +16,7 @@ import StarForDisplayComponent from '../components/StarForDisplayComponent';
 import StoreImagePlaceHolder from '../static/logos/DwarvenForgeLogo5.PNG';
 
 import './main.css';
+import { useStore } from '../context/StoreContext';
 
 // this is where the user can view and edit their profile. see the progress on their prints etc
 export default function UserProfile() {
@@ -26,7 +27,9 @@ export default function UserProfile() {
     reviewed,
     storeOwnership
   } = useUser();
-
+ const {
+  myStore
+ } = useStore()
   const history = useNavigate();
   function handleNavCreateStore(){
     history('/CreateStore')
@@ -113,13 +116,13 @@ export default function UserProfile() {
                   {storeOwnership ? (
                     <>
                     <img 
-                      src={StoreImagePlaceHolder} 
+                      src={myStore.logo} 
                       alt='Store Logo' 
                       className='storeImgPlaceholder'
                     />
                     <br/>
-                    <h3>Store Name</h3>
-                    <p>About my Store</p>
+                    <h3>{myStore.shopName}</h3>
+                    <p>{myStore.about}</p>
                     <Button>Edit</Button>
                     </>
                   ) : (

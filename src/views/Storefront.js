@@ -29,6 +29,7 @@ export default function Storefront() {
   } = useUser();
   const {
     hasPrinter,
+    myStore
   } = useStore();
   return (
     <>
@@ -60,12 +61,14 @@ export default function Storefront() {
         <Card.Body>
           <h3>About</h3>
           <div className='cardInnerDiv'>
-            <img src={StoreImagePlaceHolder} alt='Store Logo' className='storeImgPlaceholder'/>
+            <img src={myStore.logo} alt='Store Logo' className='storeImgPlaceholder'/>
             <br/>
             <Button>Upload New Logo</Button>
-            <h5>Address</h5>
+            <h5>{myStore.address.street}</h5>
+            <h5>{myStore.address.city} {myStore.address.state}</h5>
+            <h5>{myStore.address.zip}</h5>
             <Button>Edit</Button>
-            <p>Info About My shop</p>
+            <p>{myStore.about}</p>
             <Button>Edit</Button>
           </div>
         </Card.Body>

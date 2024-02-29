@@ -31,7 +31,7 @@ export default function AddressInput({onChange}) {
                 <Col sm="5">
                 <Form.Control as="select" onChange={e => onChange({ state: e.target.value })}>
                     {usStates.map(state => (
-                        <option key={state.abbr} value={state.abbr}>{state.name}</option>
+                        <option key={state.name} value={state.abbr}>{state.name}</option>
                     ))}
                 </Form.Control>
                 </Col>
