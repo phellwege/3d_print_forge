@@ -37,7 +37,7 @@ export function UserProvider({ children }) {
     const userAvatars = userAvatarKeys.map(key => require(`../static/UserAvatars/${key}.png`));
     // user object
     const [user, setUser] = useState({
-        userName: '',
+        userName: 'username',
         defaultUserAvatar: userAvatars[0],
         storeOwnership: false,
         reviews: {
@@ -77,6 +77,7 @@ export function UserProvider({ children }) {
 
     const value = {
         user, setUser,
+        userAvatars,
         UserSwiper,
     }
 

@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineFileDownload } from "react-icons/md";
 import { useUser } from '../context/UserContext';
-
+import { useStore } from '../context/StoreContext';
 import { CgProfile } from "react-icons/cg";
 
 import SelectAvatar from '../components/modals/SelectAvatarModal';
@@ -13,23 +13,22 @@ import RateModal from '../components/modals/RateModal';
 
 import StarForDisplayComponent from '../components/StarForDisplayComponent';
 
-
 import './main.css';
-import { useStore } from '../context/StoreContext';
 
 // this is where the user can view and edit their profile. see the progress on their prints etc
 export default function UserProfile() {
   const {
-    user, setUser,
+    user,
     UserSwiper,
   } = useUser();
- const {
-  myStore
- } = useStore()
+  const {
+    myStore
+  } = useStore()
   const history = useNavigate();
   function handleNavCreateStore(){
     history('/CreateStore')
   }
+
   const OpenAvatarWindow = () => {
     const x = document.getElementsByClassName('openAvatarWindow')[0];
     if(x.style.display === 'block') {

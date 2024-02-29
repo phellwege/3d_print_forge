@@ -24,8 +24,6 @@ export default function Storefront() {
 
   // this will come from an average rating of all items shop has
   const {
-    rating, 
-    reviewed,
     user, setUser
   } = useUser();
   const {
@@ -36,7 +34,6 @@ export default function Storefront() {
     <>
     <Header />
     <div className='pageWrap'>
-      {/* TODO this will be renamed if the customer has a store */}
       <h1>My Store <FaShop /></h1>
       {user.reviews.reviewed && (
         <>
