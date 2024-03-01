@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { Button, Alert, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import NavBar from './NavBar/NavBar';
 import { useUser } from '../context/UserContext';
+import { CgProfile } from "react-icons/cg";
 
 import { FiAlertCircle } from "react-icons/fi";
 import { FaCartShopping } from "react-icons/fa6";
@@ -80,21 +81,23 @@ return (
             {error && <Alert variant='danger' className='alerts' dismissible>{error}</Alert>}
         </div>
         <div className='headerRight'>
-            <div className='avatarWindow'>
-                {/* {AlertMessage()} */}
-                {shoppingCart()}
-                <img src={user.defaultUserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
-                {user.username ? (
-                    <>
-                        <Link to='/UserProfile'>{user.username}</Link>
-                    </>
-                ) : (
-                    <>
-                        <Link to='/UserProfile'>UserName</Link>
-                    </>
-                )}
-                <Link to='/'>Login/Logout</Link>
-            </div>
+            {user.username ? (
+                <div className='avatarWindow'>
+                    {/* {AlertMessage()} */}
+                    {shoppingCart()}
+                    <img src={user.defaultUserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
+                    {user.username && (
+                        <>
+                            <Link to='/UserProfile'>{user.username}</Link>
+                        </>
+                    )}
+                    <Link to='/'>Login/Logout</Link>
+                </div>
+            ) : (
+                <div id='noProfile'>
+                    <CgProfile size={45}/>
+                </div>
+            )}
         </div>
     </div>
     </>
