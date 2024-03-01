@@ -38,6 +38,7 @@ export function UserProvider({ children }) {
     // user object
     const [user, setUser] = useState({
         userName: 'username',
+        bio: '',
         defaultUserAvatar: userAvatars[0],
         storeOwnership: false,
         reviews: {
