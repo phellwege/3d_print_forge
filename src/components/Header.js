@@ -84,7 +84,15 @@ return (
                 {/* {AlertMessage()} */}
                 {shoppingCart()}
                 <img src={user.defaultUserAvatar} alt='userAvatar' id='userAvatar' onClick={handleClickImg}/>
-                <Link to='/UserProfile'>UserName</Link>
+                {user.username ? (
+                    <>
+                        <Link to='/UserProfile'>{user.username}</Link>
+                    </>
+                ) : (
+                    <>
+                        <Link to='/UserProfile'>UserName</Link>
+                    </>
+                )}
                 <Link to='/'>Login/Logout</Link>
             </div>
         </div>

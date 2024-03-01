@@ -22,10 +22,27 @@ export default function SetupUser() {
             x.style.display = 'block';
         }
     }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setUser(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+    const handleAddressChange = (newAddress) => {
+        setUser(prevState => ({
+            ...prevState,
+            address: {
+                ...prevState.address,
+                ...newAddress
+            }
+        }));
+    };
   return (
     <>
     <Header />
     <SelectAvatar />
+    {console.log(user)}
     <div className='pageWrap'>
         <h1>Create User</h1>
         <div className='secondaryPageWrapper'>
@@ -50,11 +67,11 @@ export default function SetupUser() {
                                     </Form.Label>
                                     <Form.Control 
                                         type='text'
-                                        name='userName'
+                                        name='username'
                                         placeholder='username'
                                         maxLength={25}
-                                        value={user.userName}
-                                        // onChange={}
+                                        value={user.username}
+                                        onChange={handleChange}
                                     />
                                 </Form>
                             </div>
@@ -66,13 +83,13 @@ export default function SetupUser() {
                                     <Form.Control 
                                         as='textarea'
                                         rows={3}
-                                        name='userName'
+                                        name='bio'
                                         placeholder='Enter a Bio'
                                         maxLength={250}
                                         value={user.bio}
-                                        // onChange={}
+                                        onChange={handleChange}
                                     />
-                                    <AddressInput/>
+                                    <AddressInput onChange={handleAddressChange}/>
                                     <br/>
                                     <Form.Label>Setup a shop now?</Form.Label>
                                     <br/>
