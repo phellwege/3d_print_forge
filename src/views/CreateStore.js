@@ -20,7 +20,7 @@ export default function CreateStore() {
         myStore, setMyStore
     } = useStore();
     const {
-        setStoreOwnership,
+        user, setUser
     } = useUser();
     // handling checking if they have resin/filament printers and displaying appropriately
     const { printer } = myStore;
@@ -118,6 +118,13 @@ export default function CreateStore() {
             }
         }));
     };
+    const handleStoreOwnership = (newOwner) => {
+        setUser(prevState => ({
+            ...prevState,
+            storeOwnership: newOwner 
+        }));
+        history('/Storefront'); 
+    };
 
     const handleLogoChange = async (event) => {
         const file = event.target.files[0];
@@ -140,10 +147,10 @@ export default function CreateStore() {
         }
     };
 
-    const handleStoreOwnership = () => {
-        setStoreOwnership(true);
-        history('/Storefront');
-    };
+    // const handleStoreOwnership = () => {
+    //     setStoreOwnership(true);
+    //     history('/Storefront');
+    // };
     return (
         <>
         <Header />
@@ -319,7 +326,7 @@ export default function CreateStore() {
                                 </div>
                             </div>
                             <br/>
-                            <Button onClick={() => handleStoreOwnership()}>Submit</Button>
+                            <Button onClick={() => handleStoreOwnership(true)}>Submit</Button>
                         </div>
                     </Card.Body>
                 </Card>

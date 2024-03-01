@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Card, Alert} from 'react-bootstrap';
 import { FaShop } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
@@ -21,7 +21,10 @@ import PrinterStatus from '../components/PrinterStatus';
 
 // this is where you will have a description of your store and show current items for sale from your shop
 export default function Storefront() {
-
+  const history = useNavigate();
+  const handleNav = () => {
+    history('/CreateStore')
+  }
   // this will come from an average rating of all items shop has
   const {
     user, setUser
@@ -59,15 +62,14 @@ export default function Storefront() {
         <Card.Body>
           <h3>About</h3>
           <div className='cardInnerDiv'>
+            <h3>{myStore.shopName}</h3>
             <img src={myStore.logo} alt='Store Logo' className='storeImgPlaceholder'/>
             <br/>
-            <Button>Upload New Logo</Button>
             <h5>{myStore.address.street}</h5>
             <h5>{myStore.address.city} {myStore.address.state}</h5>
             <h5>{myStore.address.zip}</h5>
-            <Button>Edit</Button>
             <p>{myStore.about}</p>
-            <Button>Edit</Button>
+            <Button onClick={() => handleNav()}>Edit</Button>
           </div>
         </Card.Body>
       </Card>
