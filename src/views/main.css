@@ -118,6 +118,9 @@ tr .userSwiperWrap {
 #setupShopCard {
     width: 80%;
 }
+#setupUserCard {
+    width: 80%;
+}
 .cardInnerDivSeparator {
     display: flex;
     justify-content: space-evenly;

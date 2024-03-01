@@ -41,6 +41,12 @@ export function UserProvider({ children }) {
         bio: '',
         defaultUserAvatar: userAvatars[0],
         storeOwnership: false,
+        address: {
+            street: '',
+            city: '',
+            state: '',
+            zip: '',
+        },
         reviews: {
             rating: null,
             reviewDescription: '',

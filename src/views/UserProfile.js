@@ -87,9 +87,10 @@ export default function UserProfile() {
                 <Button onClick={()=> OpenAvatarWindow()}>Select</Button>
               </div>
               <div>
+                <br/>
                 <h5>Bio</h5>
                 <p>lorem ipsum</p>
-                <Button>Edit Bio</Button>
+                <Button>Edit User</Button>
               </div>
             </div>
           </Card.Body>
