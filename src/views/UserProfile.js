@@ -28,7 +28,9 @@ export default function UserProfile() {
   function handleNavCreateStore(){
     history('/CreateStore')
   }
-
+  const handleNavEditUser = () => {
+    history('/setupUser')
+  }
   const OpenAvatarWindow = () => {
     const x = document.getElementsByClassName('openAvatarWindow')[0];
     if(x.style.display === 'block') {
@@ -78,19 +80,20 @@ export default function UserProfile() {
             <h3>Profile</h3>
             <div className='cardInnerDiv'>
               <div>
+                <h4>{user.username}</h4>
                 <img 
                   src={user.defaultUserAvatar} 
                   className='userProfileAvatarImg' 
                   alt='user Avatar'
                 />
-                <h5>Choose Avatar</h5>
-                <Button onClick={()=> OpenAvatarWindow()}>Select</Button>
               </div>
               <div>
                 <br/>
-                <h5>Bio</h5>
-                <p>lorem ipsum</p>
-                <Button>Edit User</Button>
+                <h6>{user.address.street}</h6>
+                <h6>{user.address.city} {user.address.state}</h6>
+                <h6>{user.address.zip}</h6>
+                <p>{user.bio}</p>
+                <Button onClick={handleNavEditUser}>Edit</Button>
               </div>
             </div>
           </Card.Body>
