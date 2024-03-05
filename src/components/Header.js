@@ -81,7 +81,7 @@ return (
             {error && <Alert variant='danger' className='alerts' dismissible>{error}</Alert>}
         </div>
         <div className='headerRight'>
-            {user.username ? (
+            {user.id ? (
                 <div className='avatarWindow'>
                     {/* {AlertMessage()} */}
                     {shoppingCart()}
