@@ -15,27 +15,40 @@ export function PrintsProvider({ children }) {
         user
     } = useUser();
 
-const [prints, setPrints] = useState({
-    printId: null,
-    customerId: `${user.id}`,
-    acceptOrDecline: null,
-    orderNumber: null,
-    files: null,
-    printType: null,
-    datePrintOrdered: null,
-    printPrice: 0,
-    address: {
-        street: `${user.address.street}`,
-        city: `${user.address.city}`,
-        state: `${user.address.state}`,
-        zip: `${user.address.zip}`,
-    },
-    printNotes: '',
-    customerContact: '',
-});
+    function generateOrderNumber() {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const datePart = `${year}${month}${day}`;
+        
+        const randomPart = Math.floor(100000000000 + Math.random() * 900000000000);
+        
+        return `${datePart}-${randomPart}`;
+    }
+    const [prints, setPrints] = useState({
+        printId: null,
+        customerId: `${user.id}`,
+        storeId: null,
+        acceptOrDecline: null,
+        orderNumber: null,
+        files: null,
+        printType: null,
+        datePrintOrdered: null,
+        printPrice: 0,
+        address: {
+            street: `${user.address.street}`,
+            city: `${user.address.city}`,
+            state: `${user.address.state}`,
+            zip: `${user.address.zip}`,
+        },
+        printNotes: '',
+        customerContact: '',
+    });
 
 const value = {
-    prints, setPrints
+    prints, setPrints,
+    generateOrderNumber
 }
 
 return (

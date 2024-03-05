@@ -17,7 +17,7 @@
 
 import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { v4 as uuidv4 } from 'uuid';
 
 // swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -40,6 +40,7 @@ export function useStore(){
 export function StoreProvider({ children }) {
     
     const initialState = {
+        id: uuidv4(),
         files: [], 
         title: '',
         description: '',
@@ -62,7 +63,8 @@ export function StoreProvider({ children }) {
             printerInUse: null,
             slaPrinter: 0,
             fdmPrinter: 0
-        }
+        },
+        listings: []
     });
     
     const [upload, setUpload] = useState(initialState)

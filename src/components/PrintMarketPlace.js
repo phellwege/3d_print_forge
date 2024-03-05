@@ -19,14 +19,30 @@ import { Button, Card, Alert} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useStore } from '../context/StoreContext';
 import '../views/main.css';
+import { usePrints } from '../context/PrintsContext';
 
 export default function PrintMarketPlace() {
-
+    const [hiddenItem, setHiddenItem] = useState(false)
     const {
-        setPrinterInUse
+        myStore, setMyStore
     } = useStore()
+    const {
+        generateOrderNumber,
+        prints, setPrints
+    } = usePrints()
+    const handleHiddenItem = () => {
+        setHiddenItem(true)
+    }
     function handleSetPrinterStatus(){
-        setPrinterInUse(true)
+        generateOrderNumber();
+        const newStore = { ...myStore }; // Create a copy of myStore
+        // Check if the printer type matches and it's not already in use
+        if (newStore.printer.slaPrinter > 0 && !newStore.printer.printerInUse) {
+            newStore.printer.printerInUse = 'sla'; // Mark the SLA printer as in use
+        } else if (newStore.printer.fdmPrinter > 0 && !newStore.printer.printerInUse) {
+            newStore.printer.printerInUse = 'fdm'; // Mark the FDM printer as in use
+        }
+        setMyStore(newStore);
     }
   return (
     <>
@@ -62,7 +78,7 @@ export default function PrintMarketPlace() {
                                 <td>setType</td>
                                 <td>Date</td>
                                 <td>$$$</td>
-                                <td>Someplace, Somewhere</td>
+                                <td>{prints.address.city}, {prints.address.state}</td>
                                 <td>
                                     <MdNotes size={25} className='marketPlaceIcons' />
                                     {/* onclick opens a modal with notes */}
