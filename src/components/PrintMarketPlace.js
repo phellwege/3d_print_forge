@@ -22,7 +22,6 @@ import '../views/main.css';
 import { usePrints } from '../context/PrintsContext';
 
 export default function PrintMarketPlace() {
-    const [hiddenItem, setHiddenItem] = useState(false)
     const {
         myStore, setMyStore
     } = useStore()
@@ -30,9 +29,7 @@ export default function PrintMarketPlace() {
         generateOrderNumber,
         prints, setPrints
     } = usePrints()
-    const handleHiddenItem = () => {
-        setHiddenItem(true)
-    }
+
     function handleSetPrinterStatus(){
         generateOrderNumber();
         const newStore = { ...myStore }; // Create a copy of myStore
