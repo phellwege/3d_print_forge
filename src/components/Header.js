@@ -95,7 +95,9 @@ return (
                 </div>
             ) : (
                 <div id='noProfile'>
-                    <CgProfile size={45}/>
+                    <Link to='/setupUser'>
+                        <CgProfile size={45}/>
+                    </Link>
                 </div>
             )}
         </div>
