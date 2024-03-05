@@ -21,7 +21,7 @@ export default function CreateStore() {
         myStore, setMyStore
     } = useStore();
     const {
-        user, setUser
+        setUser
     } = useUser();
     // handling checking if they have resin/filament printers and displaying appropriately
     const { printer } = myStore;
@@ -119,12 +119,19 @@ export default function CreateStore() {
             }
         }));
     };
+    const generateUniqueId = () => {
+        setMyStore(prevState => ({
+            ...prevState,
+            storeId: uuidv4()
+        }));
+    };
+
     const handleStoreOwnership = (newOwner) => {
+        generateUniqueId();
         setUser(prevState => ({
             ...prevState,
             storeOwnership: newOwner 
         }));
-        generateUniqueId();
         history('/Storefront'); 
     };
 
@@ -149,15 +156,11 @@ export default function CreateStore() {
         }
     };
 
-    const generateUniqueId = () => {
-        setMyStore(prevUser => ({
-            ...prevUser,
-            id: uuidv4()
-        }));
-    };
+
     return (
         <>
         <Header />
+        {console.log(myStore)}
         <div className='pageWrap'>
             <h1>Setup Shop</h1>
             <div className='secondaryPageWrapper'>
