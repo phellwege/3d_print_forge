@@ -46,7 +46,7 @@ export function StoreProvider({ children }) {
         price: 0,
     };
     const [myStore, setMyStore] = useState({
-        id: null,
+        storeId: null,
         logo: null,
         shopName: '',
         address: {
@@ -69,10 +69,21 @@ export function StoreProvider({ children }) {
     // add a function to accept or decline creating prints at the printing marketplace
     // add logic for todo when user accepts print
     // add logic for when user accepts custom print
-    // add shop creation logic
 
     const [sla, setSla] = useState(null);
     const [fdm, setFdm] = useState(null);
+
+    function generateOrderNumber() {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const datePart = `${year}${month}${day}`;
+        
+        const randomPart = Math.floor(100000000000 + Math.random() * 900000000000);
+        
+        return `${datePart}-${randomPart}`;
+    }
 
     // feature for homepage swiper. 
     function Featured(){
@@ -246,7 +257,7 @@ export function StoreProvider({ children }) {
 
 
     const value = {
-
+        generateOrderNumber,
         sla, setSla,
         fdm, setFdm,
 

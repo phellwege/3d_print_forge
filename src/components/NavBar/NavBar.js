@@ -14,13 +14,16 @@ import { FaShop } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 
 import "./NavBar.css";
+import { useUser } from '../../context/UserContext';
 
 
 const NavBar = () => {
     const history = useNavigate();
     const [toggled, setToggled] = useState(false);
     const [theme, setTheme] = useState({mode: 'dark'})
-    
+    const {
+        user
+    } = useUser()
     const handleClick =() => {
         setToggled((s)=>!s);
         setTheme(theme.mode === 'dark' ? {mode: 'light'}: {mode:'dark'})
@@ -89,16 +92,26 @@ const NavBar = () => {
                                     <FaCartShopping className='navIcons'/> My Cart
                                 </Link>
                             </li>
-                            <li>
-                                <Link to="/Storefront" onClick={() => closeMenu()}>
-                                    <FaShop className='navIcons'/> My Shop
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/UserProfile" onClick={() => closeMenu()}>
-                                    <CgProfile className='navIcons'/> Profile
-                                </Link>
-                            </li>
+                            {user.storeOwnerShip && (
+                                <li>
+                                    <Link to="/Storefront" onClick={() => closeMenu()}>
+                                        <FaShop className='navIcons'/> My Shop
+                                    </Link>
+                                </li>
+                            )}
+                            {user.id ? (
+                                <li>
+                                    <Link to="/UserProfile" onClick={() => closeMenu()}>
+                                        <CgProfile className='navIcons'/> Profile
+                                    </Link>
+                                </li>
+                            ):(
+                                <li>
+                                    <Link to="/setupUser" onClick={() => closeMenu()}>
+                                        Create Profile
+                                    </Link>
+                                </li>
+                            )}
                             <li>
                                 <div className="Mode" id='menu_toggle' onClick={() => closeMenu()}>
                                     <Toggle toggled={toggled} onClick={handleClick} />

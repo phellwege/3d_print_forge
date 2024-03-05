@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import { Button, Card, Alert, Form, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { BsQuestionCircle } from "react-icons/bs";
+import { v4 as uuidv4 } from 'uuid';
 
 import '../views/main.css';
 import AddressInput from '../components/AddressInput';
@@ -123,6 +124,7 @@ export default function CreateStore() {
             ...prevState,
             storeOwnership: newOwner 
         }));
+        generateUniqueId();
         history('/Storefront'); 
     };
 
@@ -147,10 +149,12 @@ export default function CreateStore() {
         }
     };
 
-    // const handleStoreOwnership = () => {
-    //     setStoreOwnership(true);
-    //     history('/Storefront');
-    // };
+    const generateUniqueId = () => {
+        setMyStore(prevUser => ({
+            ...prevUser,
+            id: uuidv4()
+        }));
+    };
     return (
         <>
         <Header />
