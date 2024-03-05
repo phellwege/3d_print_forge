@@ -92,7 +92,7 @@ const NavBar = () => {
                                     <FaCartShopping className='navIcons'/> My Cart
                                 </Link>
                             </li>
-                            {user.storeOwnerShip && (
+                            {user.storeOwnership && (
                                 <li>
                                     <Link to="/Storefront" onClick={() => closeMenu()}>
                                         <FaShop className='navIcons'/> My Shop

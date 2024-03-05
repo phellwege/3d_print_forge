@@ -156,11 +156,9 @@ export default function CreateStore() {
         }
     };
 
-
     return (
         <>
         <Header />
-        {console.log(myStore)}
         <div className='pageWrap'>
             <h1>Setup Shop</h1>
             <div className='secondaryPageWrapper'>
