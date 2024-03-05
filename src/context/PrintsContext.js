@@ -1,8 +1,3 @@
-// Prints
-// - order Placed Date
-// - accept / decline? - if you decline it will remove it from your list of available contracts
-
-// logic for printMarketPlace
 import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
@@ -18,7 +13,7 @@ export function PrintsProvider({ children }) {
 
 const [prints, setPrints] = useState({
     printId: null,
-    cstmrId: null,
+    customerId: null,
     accept: null,
     files: null,
     printType: null,

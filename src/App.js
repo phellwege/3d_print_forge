@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import { StoreProvider } from './context/StoreContext';
 import Home from './views/Home';
 import UserProfile from './views/UserProfile';
 import MarketPlace from './views/MarketPlace';
@@ -10,15 +9,19 @@ import Details from './views/Details';
 import {ThemeProvider} from 'styled-components';
 import './App.css';
 import { UserProvider } from './context/UserContext';
+import { StoreProvider } from './context/StoreContext';
+import { PrintsProvider } from './context/PrintsContext';
 import Cart from './views/Cart';
 import SetupUser from './views/SetupUser';
+
 
 function App() {
   const [theme, setTheme] = useState({mode: 'light'})
   return (
     <BrowserRouter>
-      <StoreProvider>
       <UserProvider>
+      <StoreProvider>
+      <PrintsProvider >
         <ThemeProvider theme={theme}>
         <React.Fragment>
           <Routes>
@@ -33,8 +36,9 @@ function App() {
           </Routes>
         </React.Fragment>
         </ThemeProvider>
-      </UserProvider>
+      </PrintsProvider>
       </StoreProvider>
+      </UserProvider>
     </BrowserRouter>
   );
 }
