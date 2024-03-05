@@ -46,6 +46,7 @@ export function StoreProvider({ children }) {
         price: 0,
     };
     const [myStore, setMyStore] = useState({
+        id: null,
         logo: null,
         shopName: '',
         address: {
