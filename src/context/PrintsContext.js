@@ -1,7 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-
 import { useUser } from './UserContext';
 
 const PrintsContext = React.createContext()
@@ -13,6 +11,8 @@ export function PrintsProvider({ children }) {
     const {
         user
     } = useUser();
+    const [orderNumber, setOrderNumber] = useState(null);
+    // this is the initial state of this object
     const [prints, setPrints] = useState({
         printId: null,
         customerId: `${user.id}`,
@@ -32,6 +32,7 @@ export function PrintsProvider({ children }) {
         printNotes: '',
         customerContact: '',
     });
+
     function generateOrderNumber() {
         const currentDate = new Date();
         const year = currentDate.getFullYear();
@@ -39,13 +40,14 @@ export function PrintsProvider({ children }) {
         const day = String(currentDate.getDate()).padStart(2, '0');
         const datePart = `${year}${month}${day}`;
         const randomPart = Math.floor(100000000000 + Math.random() * 900000000000);
-        const orderNumber = `${datePart} - ${randomPart}`
-        return orderNumber
+        const orderNumber = `${datePart}-${randomPart}`
+        setOrderNumber(orderNumber)
     }
 
 const value = {
     prints, setPrints,
-    generateOrderNumber
+    generateOrderNumber,
+    orderNumber
 }
 
 return (

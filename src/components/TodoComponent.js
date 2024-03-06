@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useStore } from '../context/StoreContext';
 
 import '../views/main.css'
+import { usePrints } from '../context/PrintsContext';
 
 export default function TodoComponent() {
   const OrderRecievedTooltip = "Checked automatically when an order is received";
@@ -42,7 +43,10 @@ export default function TodoComponent() {
     handlePaidChecked,
     handleReviewedChecked,
   } = useStore();
-
+  const {
+    prints,
+    orderNumber
+  } = usePrints();
   function handleExpansion(){
     setExpanded(!expanded)
   }

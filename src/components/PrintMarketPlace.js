@@ -27,12 +27,13 @@ export default function PrintMarketPlace() {
     } = useStore()
     const {
         generateOrderNumber,
-        prints, setPrints
+        prints, setPrints,
+        orderNumber,
     } = usePrints()
 
     function handleAcceptContract(){
-        const orderNumber = generateOrderNumber();
-        console.log("Contract accepted. Order number: ", orderNumber);
+        generateOrderNumber();
+        console.log("Order number: ", orderNumber);
         const newStore = { ...myStore }; // Create a copy of myStore
         // Check if the printer type matches and it's not already in use
         if (newStore.printer.slaPrinter > 0 && !newStore.printer.printerInUse) {
@@ -68,25 +69,40 @@ export default function PrintMarketPlace() {
                             <tr>
                                 <td>
                                     <div className='marketplaceIconsSpacingDiv'>
-                                        <FaRegCircleCheck size={25} color={'#34b233'} className='marketplaceYesNoIcons' onClick={handleAcceptContract}/> 
+                                        <FaRegCircleCheck 
+                                            size={25} 
+                                            color={'#34b233'} 
+                                            className='marketplaceYesNoIcons' 
+                                            onClick={handleAcceptContract}
+                                        /> 
                                         {/* onClick Accepts */}
-                                        <FaRegCircleXmark size={25} color={'#e50000'} className='marketplaceYesNoIcons' />
+                                        <FaRegCircleXmark 
+                                            size={25} 
+                                            color={'#e50000'} 
+                                            className='marketplaceYesNoIcons' 
+                                        />
                                         {/* onClick Declines */}
                                     </div>
                                 </td>
-                                <td>File(s)</td>
+                                <td>{prints.files}</td>
                                 {/* files will be in a swiper and can be viewed in detail */}
-                                <td>setType</td>
-                                <td>Date</td>
-                                <td>$$$</td>
+                                <td>{prints.printType}</td>
+                                <td>{prints.datePrintOrdered}</td>
+                                <td>{prints.printPrice}</td>
                                 <td>{prints.address.city}, {prints.address.state}</td>
                                 <td>
-                                    <MdNotes size={25} className='marketPlaceIcons' />
-                                    {/* onclick opens a modal with notes */}
+                                    <MdNotes 
+                                        size={25} 
+                                        className='marketPlaceIcons' 
+                                        //onclick opens a modal with notes
+                                    />
                                 </td>
                                 <td>
-                                    <MdOutlineSpeakerNotes size={25} className='marketPlaceIcons' />
-                                    {/* onclick opens chat */}
+                                    <MdOutlineSpeakerNotes 
+                                    size={25} 
+                                    className='marketPlaceIcons' 
+                                    // onclick opens chat with customer
+                                    />
                                 </td>
                             </tr>
                         </tbody>
