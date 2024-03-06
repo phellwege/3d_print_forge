@@ -37,11 +37,11 @@ export function PrintsProvider({ children }) {
         const year = currentDate.getFullYear();
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
-
         const datePart = `${year}${month}${day}`;
         const randomPart = Math.floor(100000000000 + Math.random() * 900000000000);
+        const orderNumber = `${datePart} - ${randomPart}`
+        return orderNumber
     }
-    
 
 const value = {
     prints, setPrints,

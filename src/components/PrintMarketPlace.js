@@ -30,8 +30,9 @@ export default function PrintMarketPlace() {
         prints, setPrints
     } = usePrints()
 
-    function handleSetPrinterStatus(){
-        generateOrderNumber();
+    function handleAcceptContract(){
+        const orderNumber = generateOrderNumber();
+        console.log("Contract accepted. Order number: ", orderNumber);
         const newStore = { ...myStore }; // Create a copy of myStore
         // Check if the printer type matches and it's not already in use
         if (newStore.printer.slaPrinter > 0 && !newStore.printer.printerInUse) {
@@ -41,9 +42,11 @@ export default function PrintMarketPlace() {
         }
         setMyStore(newStore);
     }
+    function handleDeclineContract() {
+        // Add logic for declining the contract
+    }
   return (
     <>
-    {console.log(`${datePart} - ${randomPart}`)}
         <Card className='marketPlaceCard'>
             <Card.Body>
                 <h3>Printing marketplace</h3>
@@ -65,7 +68,7 @@ export default function PrintMarketPlace() {
                             <tr>
                                 <td>
                                     <div className='marketplaceIconsSpacingDiv'>
-                                        <FaRegCircleCheck size={25} color={'#34b233'} className='marketplaceYesNoIcons' onClick={handleSetPrinterStatus}/> 
+                                        <FaRegCircleCheck size={25} color={'#34b233'} className='marketplaceYesNoIcons' onClick={handleAcceptContract}/> 
                                         {/* onClick Accepts */}
                                         <FaRegCircleXmark size={25} color={'#e50000'} className='marketplaceYesNoIcons' />
                                         {/* onClick Declines */}
