@@ -30,7 +30,7 @@ export default function PrinterStatus() {
                         {range(myStore.printer.slaPrinter).map((printer, index) => (
                             <tr key={`slaPrinter-${index}`}>
                                 <td>
-                                {myStore.printer.printerInUse ? (
+                                {myStore.printer.slaPrinterInUseStatus[index] ? (
                                         <>
                                             In Use
                                             <br/>
@@ -47,7 +47,7 @@ export default function PrinterStatus() {
                                 </td>
                                 <td>SLA</td>
                                 <td>
-                                    {myStore.printer.printerInUse ? (
+                                    {myStore.printer.slaPrinterInUseStatus[index] ? (
                                         <>
                                             Order #
                                         </>
@@ -58,7 +58,7 @@ export default function PrinterStatus() {
                                     )}
                                 </td>
                                 <td>
-                                    {myStore.printer.printerInUse ? (
+                                    {myStore.printer.slaPrinterInUseStatus[index] ? (
                                         <>
                                             Started Printing:
                                             <br/>
@@ -75,7 +75,7 @@ export default function PrinterStatus() {
                         {range(myStore.printer.fdmPrinter).map((printer, index) => (
                             <tr key={`fdmPrinter-${index}`}>
                                 <td>
-                                {myStore.printer.printerInUse ? (
+                                {myStore.printer.fdmPrinterInUseStatus[index] ? (
                                         <>
                                             In Use
                                             <br/>
@@ -92,7 +92,7 @@ export default function PrinterStatus() {
                                 </td>
                                 <td>FDM</td>
                                 <td>
-                                    {myStore.printer.printerInUse ? (
+                                    {myStore.printer.fdmPrinterInUseStatus[index] ? (
                                         <>
                                             Order #
                                         </>
@@ -103,7 +103,7 @@ export default function PrinterStatus() {
                                     )}
                                 </td>
                                 <td>
-                                    {myStore.printer.printerInUse ? (
+                                    {myStore.printer.fdmPrinterInUseStatus[index] ? (
                                         <>
                                             Started Printing:
                                             <br/>

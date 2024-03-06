@@ -60,7 +60,8 @@ export function StoreProvider({ children }) {
         printer: {
             hasPrinter: false,
             customPrints: false,
-            printerInUse: null,
+            slaPrinterInUseStatus: Array.from({ length: 5 }, () => false),
+            fdmPrinterInUseStatus: Array.from({ length: 5 }, () => false),
             slaPrinter: 0,
             fdmPrinter: 0
         },
@@ -81,9 +82,7 @@ export function StoreProvider({ children }) {
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
         const datePart = `${year}${month}${day}`;
-        
         const randomPart = Math.floor(100000000000 + Math.random() * 900000000000);
-        
         return `${datePart}-${randomPart}`;
     }
 

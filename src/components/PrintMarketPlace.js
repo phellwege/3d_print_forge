@@ -33,13 +33,18 @@ export default function PrintMarketPlace() {
 
     function handleAcceptContract(){
         generateOrderNumber();
-        console.log("Order number: ", orderNumber);
-        const newStore = { ...myStore }; // Create a copy of myStore
-        // Check if the printer type matches and it's not already in use
-        if (newStore.printer.slaPrinter > 0 && !newStore.printer.printerInUse) {
-            newStore.printer.printerInUse = 'sla'; // Mark the SLA printer as in use
-        } else if (newStore.printer.fdmPrinter > 0 && !newStore.printer.printerInUse) {
-            newStore.printer.printerInUse = 'fdm'; // Mark the FDM printer as in use
+        const newStore = { ...myStore }; 
+        if (newStore.printer.slaPrinter > 0) {
+            const index = newStore.printer.slaPrinterInUseStatus.findIndex(status => !status);
+            if (index !== -1) {
+                newStore.printer.slaPrinterInUseStatus[index] = true;
+            }
+        }
+        if (newStore.printer.fdmPrinter > 0) {
+            const index = newStore.printer.fdmPrinterInUseStatus.findIndex(status => !status);
+            if (index !== -1) {
+                newStore.printer.fdmPrinterInUseStatus[index] = true;
+            }
         }
         setMyStore(newStore);
     }
