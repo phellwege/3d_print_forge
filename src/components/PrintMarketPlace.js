@@ -43,6 +43,7 @@ export default function PrintMarketPlace() {
     }
   return (
     <>
+    {console.log(`${datePart} - ${randomPart}`)}
         <Card className='marketPlaceCard'>
             <Card.Body>
                 <h3>Printing marketplace</h3>

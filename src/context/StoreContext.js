@@ -40,7 +40,7 @@ export function useStore(){
 export function StoreProvider({ children }) {
     
     const initialState = {
-        id: uuidv4(),
+        itemId: uuidv4(),
         files: [], 
         title: '',
         description: '',
