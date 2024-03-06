@@ -209,8 +209,23 @@ export function StoreProvider({ children }) {
             reviewedDate: null,
         }
     })
-    
-
+    function handleCheckboxChange(name) {
+        setTodo(prevTodo => ({
+            ...prevTodo,
+            checkBoxes: {
+                ...prevTodo.checkBoxes,
+                [name]: !prevTodo.checkBoxes[name]
+            },
+            dates: {
+                ...prevTodo.dates,
+                [`${name.replace('Checked', 'Date')}`]: !prevTodo.dates[
+                    `${name.replace('Checked', 'Date')}`
+                ] 
+                ? new Date().toLocaleDateString() 
+                : null
+            }
+        }));
+    }
 
     const value = {
         generateOrderNumber,
@@ -218,6 +233,7 @@ export function StoreProvider({ children }) {
         fdm, setFdm,
 
         todo, setTodo,
+        handleCheckboxChange,
 
         Featured,
         ShopReviewsSwiper,

@@ -64,7 +64,7 @@ export default function TodoComponent() {
                       />
                     )}
                     </td>
-                    <td>#</td>
+                    <td>{orderNumber}</td>
                   </tr>
                 </tbody>
               </Table>
