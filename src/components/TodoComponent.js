@@ -20,7 +20,7 @@ export default function TodoComponent() {
 
   const {
     todo,
-    handleCheckBoxChange
+    handleCheckboxChange
   } = useStore();
 
   const {
@@ -94,7 +94,7 @@ export default function TodoComponent() {
                         ) : (
                         <FaRegSquare 
                           className='checkBox' 
-                          onClick={() => handleCheckBoxChange('orderChecked')}
+                          onClick={() => handleCheckboxChange('orderChecked')}
                         />
                       )}
                     </td>
@@ -120,7 +120,7 @@ export default function TodoComponent() {
                       {todo.checkBoxes.confirmChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('confirmChecked')}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckboxChange('confirmChecked')}/>
                       )}
                     </td>
                     <td style={{ textDecoration: todo.checkBoxes.confirmChecked ? 'line-through' : 'none' }}>Order Confirmed</td>
@@ -143,7 +143,7 @@ export default function TodoComponent() {
                       {todo.checkBoxes.printedChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('printedChecked')}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckboxChange('printedChecked')}/>
                       )}
                     </td>
                     <td style={{ textDecoration: todo.checkBoxes.printedChecked ? 'line-through' : 'none' }}>Print Completed</td>
@@ -168,7 +168,7 @@ export default function TodoComponent() {
                       {todo.checkBoxes.shippedChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('shippedChecked')}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckboxChange('shippedChecked')}/>
                       )}
                     </td>
                     <td style={{ textDecoration: todo.checkBoxes.shippedChecked ? 'line-through' : 'none' }}>Order Shipped</td>
@@ -191,7 +191,7 @@ export default function TodoComponent() {
                       {todo.checkBoxes.paidChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('paidChecked')}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckboxChange('paidChecked')}/>
                       )}
                     </td>
                     <td style={{ textDecoration: todo.checkBoxes.paidChecked ? 'line-through' : 'none' }}>Payment Completed</td>
@@ -216,7 +216,7 @@ export default function TodoComponent() {
                       {todo.checkBoxes.reviewedChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('reviewedChecked')}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckboxChange('reviewedChecked')}/>
                       )}
                     </td>
                     <td style={{ textDecoration: todo.checkBoxes.reviewedChecked ? 'line-through' : 'none' }}>Print Reviewed - optional</td>
