@@ -1,15 +1,12 @@
 import React, {useState} from 'react'
 import { MdOutlineExpandCircleDown, MdExpandLess } from "react-icons/md";
 import { FaRegSquare, FaRegCheckSquare } from "react-icons/fa";
-
+import { Link } from 'react-router-dom';
 import { BsQuestionCircle } from "react-icons/bs";
 import { Button, Card, Alert, Table, OverlayTrigger, Tooltip} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
 import { useStore } from '../context/StoreContext';
-
-import '../views/main.css'
 import { usePrints } from '../context/PrintsContext';
+import '../views/main.css'
 
 export default function TodoComponent() {
   const OrderRecievedTooltip = "Checked automatically when an order is received";
@@ -22,27 +19,10 @@ export default function TodoComponent() {
   const [expanded, setExpanded] = useState(false);
 
   const {
-    orderChecked,
-    confirmChecked,
-    printedChecked,
-    shippedChecked,
-    paidChecked,
-    reviewedChecked,
-
-    orderDate,
-    confirmDate,
-    printedDate,
-    shippedDate,
-    paidDate,
-    reviewedDate,
-
-    handleOrderChecked,
-    handleConfirmChecked,
-    handlePrintedChecked,
-    handleShippedChecked,
-    handlePaidChecked,
-    handleReviewedChecked,
+    todo,
+    handleCheckBoxChange
   } = useStore();
+
   const {
     prints,
     orderNumber
@@ -88,7 +68,14 @@ export default function TodoComponent() {
                   </tr>
                 </tbody>
               </Table>
-              <Table striped bordered hover variant='dark'  style={{ display: expanded ? '' : 'none' }} className='todoExpandedTable'>
+              <Table 
+                striped 
+                bordered 
+                hover 
+                variant='dark'  
+                style={{ display: expanded ? '' : 'none' }} 
+                className='todoExpandedTable'
+              >
                 <thead>
                   <tr>
                     <th>Status</th>
@@ -100,15 +87,20 @@ export default function TodoComponent() {
                 <tbody>
                   <tr>
                     <td>
-                      {orderChecked ? (
-                        <FaRegCheckSquare className='checkedBox'/>
+                      {todo.checkBoxes.orderChecked ? (
+                        <FaRegCheckSquare 
+                          className='checkedBox'
+                        />
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleOrderChecked()}/>
+                        <FaRegSquare 
+                          className='checkBox' 
+                          onClick={() => handleCheckBoxChange('orderChecked')}
+                        />
                       )}
                     </td>
-                    <td style={{ textDecoration: orderChecked ? 'line-through' : 'none' }}>Order Recieved</td>
+                    <td style={{ textDecoration: todo.checkBoxes.orderChecked ? 'line-through' : 'none' }}>Order Recieved</td>
                     <td>
-                      {orderDate ? orderDate : "Date"}
+                      {todo.dates.orderDate ? todo.dates.orderDate : 'Date'}
                     </td>
                     <td>
                       <OverlayTrigger
@@ -125,14 +117,14 @@ export default function TodoComponent() {
                   </tr>
                   <tr>
                     <td>
-                      {confirmChecked ? (
+                      {todo.checkBoxes.confirmChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleConfirmChecked()}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('confirmChecked')}/>
                       )}
                     </td>
-                    <td style={{ textDecoration: confirmChecked ? 'line-through' : 'none' }}>Order Confirmed</td>
-                    <td>{confirmDate ? confirmDate : "Date"}</td>
+                    <td style={{ textDecoration: todo.checkBoxes.confirmChecked ? 'line-through' : 'none' }}>Order Confirmed</td>
+                    <td>{todo.dates.confirmDate ? todo.dates.confirmDate : "Date"}</td>
                     <td>
                     <OverlayTrigger
                         overlay={
@@ -148,15 +140,15 @@ export default function TodoComponent() {
                   </tr>
                   <tr>
                     <td>
-                      {printedChecked ? (
+                      {todo.checkBoxes.printedChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handlePrintedChecked()}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('printedChecked')}/>
                       )}
                     </td>
-                    <td style={{ textDecoration: printedChecked ? 'line-through' : 'none' }}>Print Completed</td>
+                    <td style={{ textDecoration: todo.checkBoxes.printedChecked ? 'line-through' : 'none' }}>Print Completed</td>
                     <td>
-                      {printedDate ? printedDate : "Date"}
+                      {todo.dates.printedDate ? todo.dates.printedDate : "Date"}
                     </td>
                     <td>
                     <OverlayTrigger
@@ -173,14 +165,14 @@ export default function TodoComponent() {
                   </tr>
                   <tr>
                     <td>
-                      {shippedChecked ? (
+                      {todo.checkBoxes.shippedChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleShippedChecked()}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('shippedChecked')}/>
                       )}
                     </td>
-                    <td style={{ textDecoration: shippedChecked ? 'line-through' : 'none' }}>Order Shipped</td>
-                    <td>{shippedDate ? shippedDate : "Date"}</td>
+                    <td style={{ textDecoration: todo.checkBoxes.shippedChecked ? 'line-through' : 'none' }}>Order Shipped</td>
+                    <td>{todo.dates.shippedDate ? todo.dates.shippedDate : "Date"}</td>
                     <td>
                     <OverlayTrigger
                         overlay={
@@ -196,15 +188,15 @@ export default function TodoComponent() {
                   </tr>
                   <tr>
                     <td>
-                      {paidChecked ? (
+                      {todo.checkBoxes.paidChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handlePaidChecked()}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('paidChecked')}/>
                       )}
                     </td>
-                    <td style={{ textDecoration: paidChecked ? 'line-through' : 'none' }}>Payment Completed</td>
+                    <td style={{ textDecoration: todo.checkBoxes.paidChecked ? 'line-through' : 'none' }}>Payment Completed</td>
                     <td>
-                      {paidDate ? paidDate : "Date"}
+                      {todo.dates.paidDate ? todo.dates.paidDate : "Date"}
                     </td>
                     <td>
                     <OverlayTrigger
@@ -221,15 +213,15 @@ export default function TodoComponent() {
                   </tr>
                   <tr>
                     <td>
-                      {reviewedChecked ? (
+                      {todo.checkBoxes.reviewedChecked ? (
                         <FaRegCheckSquare className='checkedBox'/>
                         ) : (
-                        <FaRegSquare className='checkBox' onClick={() => handleReviewedChecked()}/>
+                        <FaRegSquare className='checkBox' onClick={() => handleCheckBoxChange('reviewedChecked')}/>
                       )}
                     </td>
-                    <td style={{ textDecoration: reviewedChecked ? 'line-through' : 'none' }}>Print Reviewed - optional</td>
+                    <td style={{ textDecoration: todo.checkBoxes.reviewedChecked ? 'line-through' : 'none' }}>Print Reviewed - optional</td>
                     <td>
-                      {reviewedDate ? reviewedDate : "Date"}
+                      {todo.dates.reviewedDate ? todo.dates.reviewedDate : "Date"}
                     </td>
                     <td>
                     <OverlayTrigger

@@ -1,15 +1,22 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Card, Alert, Table, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import { MdOutlinePauseCircleOutline, MdOutlinePlayCircle } from "react-icons/md";
 
 import '../views/main.css';
 import { useStore } from '../context/StoreContext';
+import { usePrints } from '../context/PrintsContext';
+
 
 export default function PrinterStatus() {
 
     const {
         myStore
     } = useStore();
+    const {
+        prints,
+        orderNumber
+    } = usePrints()
     const range = (count) => [...Array(count).keys()];
   return (
     <>
@@ -49,7 +56,9 @@ export default function PrinterStatus() {
                                 <td>
                                     {myStore.printer.slaPrinterInUseStatus[index] ? (
                                         <>
-                                            Order #
+                                            {orderNumber}
+                                            <br/>
+                                            <Link to='/Details'>Details</Link>
                                         </>
                                     ) : (
                                         <>
@@ -94,7 +103,9 @@ export default function PrinterStatus() {
                                 <td>
                                     {myStore.printer.fdmPrinterInUseStatus[index] ? (
                                         <>
-                                            Order #
+                                            {orderNumber}
+                                            <br/>
+                                            <Link to='/Details'>Details</Link>
                                         </>
                                     ) : (
                                         <>
