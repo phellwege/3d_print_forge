@@ -6,13 +6,15 @@ import MarketPlace from './views/MarketPlace';
 import Storefront from './views/Storefront';
 import CreateStore from './views/CreateStore';
 import Details from './views/Details';
+import Cart from './views/Cart';
+import SetupUser from './views/SetupUser';
+import GetItPrinted from './views/GetItPrinted';
 import {ThemeProvider} from 'styled-components';
 import './App.css';
 import { UserProvider } from './context/UserContext';
 import { StoreProvider } from './context/StoreContext';
 import { PrintsProvider } from './context/PrintsContext';
-import Cart from './views/Cart';
-import SetupUser from './views/SetupUser';
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
             <Route exact path="/CreateStore" element={<CreateStore />} />
             <Route exact path="/SetupUser" element={<SetupUser />} />
             <Route exact path="/MarketPlace" element={<MarketPlace />} />
+            <Route exact path="/GetItPrinted" element={<GetItPrinted />} />
             <Route exact path="/Storefront" element={<Storefront />} />
             <Route exact path="/Cart" element={<Cart />} />
             <Route exact path="/Details" element={<Details />} />
