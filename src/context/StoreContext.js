@@ -218,7 +218,11 @@ export function StoreProvider({ children }) {
             },
             dates: {
                 ...prevTodo.dates,
-                [`${name.replace('Checked', 'Date')}`]: !prevTodo.dates[`${name.replace('Checked', 'Date')}`] ? new Date().toLocaleDateString() : null
+                [`${name.replace('Checked', 'Date')}`]: !prevTodo.dates[
+                    `${name.replace('Checked', 'Date')}`
+                ] 
+                ? new Date().toLocaleDateString() 
+                : null
             }
         }));
     }
@@ -229,7 +233,7 @@ export function StoreProvider({ children }) {
         sla, setSla,
         fdm, setFdm,
 
-        todo,
+        todo, setTodo,
         handleCheckboxChange,
 
         Featured,
