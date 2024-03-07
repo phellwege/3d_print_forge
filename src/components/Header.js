@@ -96,7 +96,7 @@ return (
             ) : (
                 <div className='avatarWindow'>
                     <Link to='/setupUser'>
-                        <CgProfile size={45} id='userAvatar'/>
+                        <CgProfile size={45} />
                     </Link>
                     <Link to=''>Login</Link>
                     <Link to=''>Register</Link>
