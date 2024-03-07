@@ -2,7 +2,7 @@
 // these will appear in this table
 
 // they will have the STL file, the fullfillment date, city/state shipping dest with shipping estimate, price, notes
-// a shopowner may accept / decline these, 
+// a shopOwner may accept / decline these, 
 // if declined they will no longer appear in his list.
 
 // if accepted 
@@ -80,13 +80,14 @@ export default function PrintMarketPlace() {
                                             className='marketplaceYesNoIcons' 
                                             onClick={handleAcceptContract}
                                         /> 
-                                        {/* onClick Accepts */}
+                                        
                                         <FaRegCircleXmark 
                                             size={25} 
                                             color={'#e50000'} 
                                             className='marketplaceYesNoIcons' 
+                                            // onClick={handleDeclineContract}
                                         />
-                                        {/* onClick Declines */}
+                                        
                                     </div>
                                 </td>
                                 <td>{prints.files}</td>

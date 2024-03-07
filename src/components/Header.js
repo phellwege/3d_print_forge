@@ -94,12 +94,11 @@ return (
                     <Link to='/'>Login/Logout</Link>
                 </div>
             ) : (
-                <div id='noProfile'>
+                <div className='avatarWindow'>
                     <Link to='/setupUser'>
-                        <CgProfile size={45}/>
+                        <CgProfile size={45} id='userAvatar'/>
                     </Link>
                     <Link to=''>Login</Link>
-                    <br/>
                     <Link to=''>Register</Link>
                 </div>
             )}
