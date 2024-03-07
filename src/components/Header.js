@@ -99,6 +99,7 @@ return (
                         <CgProfile size={45} />
                     </Link>
                     <Link to=''>Login</Link>
+                    Or
                     <Link to=''>Register</Link>
                 </div>
             )}
