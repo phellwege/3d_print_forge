@@ -7,7 +7,7 @@ namespace WebAPI.Models.User
     public string Bio { get; set; }
     public string DefaultUserAvatar { get; set; }
     public bool StoreOwnership { get; set; }
-    public Address Address { get; set; }
+    public UserAddressDTO Address { get; set; }
     public Reviews Reviews { get; set; }
     }
 }
