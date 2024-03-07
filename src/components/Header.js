@@ -98,6 +98,9 @@ return (
                     <Link to='/setupUser'>
                         <CgProfile size={45}/>
                     </Link>
+                    <Link to=''>Login</Link>
+                    <br/>
+                    <Link to=''>Register</Link>
                 </div>
             )}
         </div>

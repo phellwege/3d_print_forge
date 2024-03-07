@@ -99,16 +99,10 @@ const NavBar = () => {
                                     </Link>
                                 </li>
                             )}
-                            {user.id ? (
+                            {user.id && (
                                 <li>
                                     <Link to="/UserProfile" onClick={() => closeMenu()}>
                                         <CgProfile className='navIcons'/> Profile
-                                    </Link>
-                                </li>
-                            ):(
-                                <li>
-                                    <Link to="/setupUser" onClick={() => closeMenu()}>
-                                        Create Profile
                                     </Link>
                                 </li>
                             )}
